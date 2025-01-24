@@ -1,0 +1,80 @@
+## Ignore everything by default
+#android/app
+#
+## Allow assets and lib folders
+#!/assets/
+#!/lib/
+#
+## Allow .gitignore file to be tracked
+#!.gitignore
+#
+## Allow README or other project-specific files
+#!README.md
+#
+## Ignore Flutter and Android-specific files
+#build/
+#*.apk
+#
+#/gradle-wrapper.jar
+#/.gradle/
+#/captures/
+#/gradlew
+#/gradlew.bat
+#/local.properties
+#/build/
+#/android/.cxx/
+#/android/.externalNativeBuild/
+#
+## Ignore Flutter build artifacts
+#build/app/outputs/apk/
+#build/app/intermediates/
+#build/app/generated/
+#
+## Ignore Dart generated files
+#**/GeneratedPluginRegistrant.java
+#**/GeneratedPluginRegistrant.h
+#**/GeneratedPluginRegistrant.cc
+#
+## Ignore sensitive keystore files
+#key.properties
+#**/*.keystore
+#**/*.jks
+#
+## Exclude IDE and OS-specific files
+#.DS_Store
+#*.log
+#*.lock
+#*.iml
+#.idea/
+#.vscode/
+#
+## Exclude debugging files
+#*.tmp
+#*.swp
+#*.bak
+#
+## Exclude IntelliJ and Android Studio settings
+#/.idea/
+#/*.iml
+#/.vs/
+#/.android/
+# Ignore node_modules folder
+# Dart dependencies
+.dart_tool/
+.packages
+
+# Flutter build output
+build/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+android/app/debug
+android/app/profile
+android/app/release
+
+# Ignore environment files
+.env
+
+# macOS
+.DS_Store
+
