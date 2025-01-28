@@ -41,7 +41,7 @@ class LoginState extends StatefulWidget {
 
 class _LoginStateState extends State<LoginState> {
   bool _obscurePassword = true;
-   TextEditingController usernameController = TextEditingController();
+   TextEditingController emailController = TextEditingController();
    TextEditingController passwordController = TextEditingController();
   Dio _dio = Dio();
   bool isLoading = false;
@@ -57,7 +57,7 @@ class _LoginStateState extends State<LoginState> {
   }
 
   _handleLogin() async {
-    if(passwordController.text.isEmpty && usernameController.text.isEmpty){
+    if(passwordController.text.isEmpty && emailController.text.isEmpty){
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Please fill in all fields")),
       );
@@ -67,7 +67,7 @@ class _LoginStateState extends State<LoginState> {
     setState(() {
       isLoading = true;
     });
-    String emailTrim = usernameController.text.trim();
+    String emailTrim = emailController.text.trim();
     String passwordTrim = passwordController.text.trim();
 
     Map<String, dynamic> params =  {
@@ -85,10 +85,10 @@ class _LoginStateState extends State<LoginState> {
         ),
       );
 
-      if (response.statusCode == 200 && response.data["status"] != null) {
+      if (response.data["user"] != null && response.data["rtn"].toString().isEmpty) {
         Map<String, dynamic> user = response.data["user"][0] as Map<String, dynamic>;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("succes")),
+          SnackBar(content: Text("Login successful"))
         );
         // print('$user after casting');
         SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -159,7 +159,7 @@ class _LoginStateState extends State<LoginState> {
             labelText: 'Email',
             fontSize: getFontSize(16, context),
             hintText: 'sanni12@gmail.com',
-            controller: usernameController,
+            controller: emailController,
           ),
 
           SizedBox(height: getFontSize(20.0, context)),

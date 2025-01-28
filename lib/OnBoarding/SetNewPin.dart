@@ -6,12 +6,9 @@ import 'package:flutter_svg/svg.dart';
 
 
 
-void main(){
-  runApp(SetNewPin());
-}
-
 class SetNewPin extends StatefulWidget {
-  SetNewPin({super.key});
+  final Map<String, dynamic> user;
+  SetNewPin({super.key, required this.user});
   @override
   _AppointmentPaymentScreen createState() => _AppointmentPaymentScreen();
 }

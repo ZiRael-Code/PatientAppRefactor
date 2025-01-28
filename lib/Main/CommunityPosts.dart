@@ -58,7 +58,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
         body:
         Container(
           decoration: BoxDecoration(color: Colors.white),
-            // padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
+            // padding.dart: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:

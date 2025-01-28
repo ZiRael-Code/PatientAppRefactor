@@ -15,7 +15,7 @@ void main() {
       .toList();
 
   final searchPattern = RegExp(
-      r"Container\(\s*width: getFontSize\(35, context\),\s*height: getFontSize\(35, context\),\s*padding: EdgeInsets\.all\(10\),\s*decoration: BoxDecoration\(\s*borderRadius: BorderRadius\.circular\(50\),\s*color: Color\(0xFFE5E5E5\),\s*\),\s*child: SvgPicture\.asset\('assets/images/back\.svg',\s*width: getFontSize\(8\.0, context\),\s*height: getFontSize\(15, context\),\),\s*\),");
+      r"Container\(\s*width: getFontSize\(35, context\),\s*height: getFontSize\(35, context\),\s*padding.dart: EdgeInsets\.all\(10\),\s*decoration: BoxDecoration\(\s*borderRadius: BorderRadius\.circular\(50\),\s*color: Color\(0xFFE5E5E5\),\s*\),\s*child: SvgPicture\.asset\('assets/images/back\.svg',\s*width: getFontSize\(8\.0, context\),\s*height: getFontSize\(15, context\),\),\s*\),");
 
   final replacement = '''
 InkWell(
@@ -24,7 +24,7 @@ InkWell(
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
-                padding: EdgeInsets.all(10),
+                padding.dart: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),

@@ -198,7 +198,7 @@ class _AppointmentDoctorPageState extends State<AppointmentDoctor> {
 //     required BuildContext context
 // }){
 // return Container(
-//   padding: EdgeInsets.all(12),
+//   padding.dart: EdgeInsets.all(12),
 //   // height: getFontSize(167, context),
 // width: MediaQuery.of(context).size.width * 0.8,
 // decoration: BoxDecoration(

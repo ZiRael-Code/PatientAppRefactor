@@ -13,21 +13,36 @@ import 'main.dart';
 void main() {
   runApp(main_app());
 }
-// this is israel on main.dart
 
 class main_app extends StatelessWidget {
   main_app({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Patient App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: Colors.blue,
+        hintColor: Colors.orange,
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: TextTheme(
+          displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
+          titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+          bodyLarge: TextStyle(fontSize: 16, color: Colors.grey[800]),
+          bodyMedium: TextStyle(fontSize: 14, color: Colors.grey[700]),
+          bodySmall: TextStyle(fontSize: 11, color: Colors.grey[700]),
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
+
+      debugShowCheckedModeBanner: false,
+      title: 'Patient App',
       home: Loader(),
     );
   }

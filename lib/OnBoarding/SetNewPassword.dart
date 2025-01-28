@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/OnBoarding/EnableFingerprint.dart';
 import 'package:flutter_svg/svg.dart';
 
-void main(){
-  runApp(SetNewPassword());
-}
 
 class SetNewPassword extends StatefulWidget{
+  final Map<String, dynamic> user;
+  SetNewPassword({super.key, required this.user});
   SetNewPasswordState createState() => SetNewPasswordState();
 }
 
 class SetNewPasswordState extends State<SetNewPassword>{
   bool _obscurePassword = true;
+  TextEditingController newPController = TextEditingController();
+  TextEditingController confirmPController = TextEditingController();
+
   void _togglePasswordVisibility() {
     setState(() {
       _obscurePassword = !_obscurePassword;
@@ -29,23 +31,31 @@ class SetNewPasswordState extends State<SetNewPassword>{
          mainAxisAlignment: MainAxisAlignment.center,
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
-           Align(
-            alignment: Alignment.topCenter,
-             child: SvgPicture.asset('assets/images/slide.svg'),
-           ),
            SizedBox(height: getFontSize(20, context),),
            Text('Set new password', style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
            SizedBox(height: getFontSize(15, context),),
            input_field(
                label: 'Type in new password',
+             controller: newPController
                ),
            input_field(
                label: 'Confirm password',
-               ),
+             controller: confirmPController
+           ),
            Spacer(),
            ElevatedButton(
              onPressed: () {
-               Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> EnableFingerprint()));
+               String newP = newPController.text.trim();
+               String confirmP = confirmPController.text.trim();
+               if(newP.characters==confirmP.characters){
+                 Map<String, dynamic> params =  widget.user;
+                 params['password'] = newP;
+                 Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> EnableFingerprint(user: params)));
+               }else{
+                 ScaffoldMessenger.of(context).showSnackBar(
+                   SnackBar(content: Text("Password does not match")),
+                 );
+               }
              },
              style: ElevatedButton.styleFrom(
                backgroundColor: Colors.blue,
@@ -70,7 +80,7 @@ class SetNewPasswordState extends State<SetNewPassword>{
   }
 
   input_field({
-    required String label,
+    required String label, required TextEditingController controller,
   }) {
     return Container(
       margin: EdgeInsets.only(bottom: getFontSize(20, context)),
@@ -87,6 +97,7 @@ class SetNewPasswordState extends State<SetNewPassword>{
           ),
           SizedBox(height: getFontSize(8.0, context)),
           TextField(
+            controller: controller,
             obscureText: _obscurePassword,
             decoration: InputDecoration(
               hintText: '*********',

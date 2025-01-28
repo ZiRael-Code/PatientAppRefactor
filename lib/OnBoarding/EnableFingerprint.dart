@@ -1,14 +1,15 @@
+import 'package:dio/dio.dart';
+import 'package:flutter_app/SetupComplete.dart';
+
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/OnBoarding/SetNewPin.dart';
 import 'package:flutter_svg/svg.dart';
 
-void main(){
-  runApp(EnableFingerprint());
-}
-
 class EnableFingerprint extends StatefulWidget{
+  final Map<String, dynamic> user;
+  EnableFingerprint({super.key, required this.user});
   EnableFingerprintState createState() => EnableFingerprintState();
 }
 
@@ -31,6 +32,45 @@ class EnableFingerprintState extends State<EnableFingerprint>{
 
     super.initState();
   }
+  bool isLoading = false;
+  Dio _dio = Dio();
+
+  void handleSignUp() async {
+    try {
+      Response response = await _dio.post(
+        "http://myaccount.myvitalz.org/api/signup-patient",
+        queryParameters : widget.user,
+        options: Options(
+          contentType: Headers.jsonContentType,
+        ),
+      );
+      if (response.data["rtn"].toString().isEmpty && response.data["reg"] == "1") {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("signup success")),
+        );
+        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SetupComplete()));
+
+      }else{
+        setState(() {
+          isLoading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(response.data["rtn"])),
+        );
+        print("error==-$response");
+      }
+    } catch (e) {
+      setState(() {
+      isLoading = false;
+    });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Connection failed, please check your connection and try again")),
+      );
+      print('Error occurred: $e');
+    }
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +101,10 @@ class EnableFingerprintState extends State<EnableFingerprint>{
            Spacer(),
            showButton ? ElevatedButton(
              onPressed: () {
-               Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SetNewPin()));
+               setState(() {
+                 isLoading = true;
+               });
+               handleSignUp();
              },
              style: ElevatedButton.styleFrom(
                backgroundColor: Colors.blue,
@@ -70,7 +113,17 @@ class EnableFingerprintState extends State<EnableFingerprint>{
                  borderRadius: BorderRadius.circular(9),
                ),
              ),
-             child: Padding(
+             child:isLoading
+                 ? SizedBox(
+               width: 20,
+               height: 20,
+               child: CircularProgressIndicator(
+                 color: Colors.white,
+                 strokeWidth: 2,
+               ),
+             )
+                 :
+             Padding(
                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',

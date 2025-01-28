@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fec967e-84f6-4439-b668-e7e6b4516f15" name="Changes" comment="commit" />
+    <list default="true" id="6fec967e-84f6-4439-b668-e7e6b4516f15" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/lib/components/padding/app_padding.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/texts/app_text_style.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/operation_room/WhatTypeDevice.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/responsive_remove.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/8.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_adder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/back_adder.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Appointments/AppointmentDoctor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/AppointmentDoctor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Main/CommunityPosts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Main/CommunityPosts.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/OnBoarding/EnableFingerprint.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/OnBoarding/EnableFingerprint.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/OnBoarding/SetNewPassword.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/OnBoarding/SetNewPassword.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/OnBoarding/SetNewPin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/OnBoarding/SetNewPin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/SetupComplete.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SetupComplete.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Signup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Signup.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/component/colors.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +75,7 @@
     &quot;Dart Command Line App.import_remover.dart.executor&quot;: &quot;Run&quot;,
     &quot;Dart Command Line App.rename_file.dart.executor&quot;: &quot;Run&quot;,
     &quot;Dart Command Line App.responsive_give.dart.executor&quot;: &quot;Run&quot;,
+    &quot;Dart Command Line App.responsive_remove.dart.executor&quot;: &quot;Run&quot;,
     &quot;Dart Command Line App.test.dart.executor&quot;: &quot;Run&quot;,
     &quot;Dart Command Line App.trailing_icon_remover.dart.executor&quot;: &quot;Run&quot;,
     &quot;Flutter Test.tests in rename_file.dart.executor&quot;: &quot;Run&quot;,
@@ -70,11 +95,11 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wandg/IdeaProjects/Patient-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/wandg/IdeaProjects/Patient-main/operation_room&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,24 +108,25 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\operation_room" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib\Account" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib\Account\Referral" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib\Appointments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\components\padding" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\components\texts" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\TheOperationRoom" />
       <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib\Account" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\assets\images" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\assets\girl" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -174,7 +200,10 @@
       <workItem from="1734435151373" duration="1777000" />
       <workItem from="1737714959812" duration="1000" />
       <workItem from="1737714969727" duration="1352000" />
-      <workItem from="1737716707428" duration="15176000" />
+      <workItem from="1737716707428" duration="19388000" />
+      <workItem from="1737970396542" duration="7026000" />
+      <workItem from="1737985578861" duration="3244000" />
+      <workItem from="1738050987702" duration="2836000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -223,7 +252,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/OnBoarding/SetNewPin.dart</url>
-          <line>33</line>
+          <line>30</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
