@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -83,7 +85,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   'Wallet Balance',
                   style: TextStyle(
                     fontSize: getFontSize(10, context),
-                    color: Colors.white
+                    color: AppColors.gray[100]
                   ),
                 ),
                 Text(
@@ -91,7 +93,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   style: TextStyle(
                     fontSize: getFontSize(20, context),
                     fontWeight: FontWeight.bold,
-                      color: Colors.white
+                      color: AppColors.gray[100]
                   ),
                 ),
 
@@ -142,7 +144,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   children: [
                     Text("Recent transactions",
                       style: TextStyle(fontSize: getFontSize(20, context),
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                           fontWeight: FontWeight.bold),),
                     Spacer(),
                     ElevatedButton(
@@ -292,7 +294,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                     style: TextStyle(
                       fontSize: getFontSize(12, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   SizedBox(height: getFontSize(10, context),),
@@ -311,7 +313,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                 price,
                 style: TextStyle(
                   fontSize: getFontSize(16, context),
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   fontWeight: FontWeight.bold,
                 ),
               ),

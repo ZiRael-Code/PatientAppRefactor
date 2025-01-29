@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -69,10 +71,10 @@ class _PaymentHistoryState extends State<PaymentHistory> {
               Container(
                 height: getFontSize(23, context),
                 width: getFontSize(23, context),
-                child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
+                child: Center(child: Icon(Icons.arrow_back_ios, color: AppColors.blue[700], size: getFontSize(15, context),),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.blue.withOpacity(0.20),
+                  color: AppColors.blue[700].withOpacity(0.20),
                 ),
               ),
               SizedBox(width: getFontSize(8, context),),
@@ -93,10 +95,10 @@ class _PaymentHistoryState extends State<PaymentHistory> {
               Container(
                 height: getFontSize(23, context),
                 width: getFontSize(23, context),
-                child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
+                child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700], size: getFontSize(15, context),),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.blue.withOpacity(0.20),
+                  color: AppColors.blue[700].withOpacity(0.20),
                 ),
               ),
 
@@ -189,7 +191,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                     style: TextStyle(
                       fontSize: getFontSize(14, context),
                       fontWeight: FontWeight.w500,
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   SizedBox(height: getFontSize(10, context),),
@@ -208,7 +210,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 price,
                 style: TextStyle(
                   fontSize: getFontSize(16, context),
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -250,7 +252,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
           return Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.gray[100],
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(20),
                 ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../colors/colours.dart';
+
 
 class ButtonBlack extends StatefulWidget {
   String btext;
@@ -28,7 +30,7 @@ class _buttonBlack extends State<ButtonBlack> {
       ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[700],
+        backgroundColor: AppColors.gray[700],
         elevation: 0,
         padding: const EdgeInsets.all(15),
         shape: StadiumBorder(),
@@ -72,7 +74,7 @@ class _buttonBlue extends State<ButtonBlue> {
       ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.blue[700],
+        backgroundColor: AppColors.blue[700],
         elevation: 0,
         padding: const EdgeInsets.all(10),
         shape: StadiumBorder(),
@@ -116,7 +118,7 @@ class _buttonRed extends State<ButtonRed> {
       ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.red[700],
+        backgroundColor: AppColors.red[700],
         elevation: 0,
         padding: const EdgeInsets.all(10),
         shape: StadiumBorder(),
@@ -157,7 +159,7 @@ class _buttonGray extends State<ButtonGray> {
       ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[500],
+        backgroundColor: AppColors.gray[500],
         elevation: 0,
         padding: const EdgeInsets.all(15),
         shape: StadiumBorder(),
@@ -198,7 +200,7 @@ class _buttonGrayTransparent extends State<ButtonGrayTransparent> {
           ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[0],
+        backgroundColor: AppColors.gray[0],
         elevation: 0,
         padding: const EdgeInsets.all(15),
         shape: StadiumBorder(),
@@ -241,7 +243,7 @@ class _buttonWhiteTransparent extends State<ButtonWhiteTransparent> {
           ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[0].withOpacity(0.0),
+        backgroundColor: AppColors.gray[0].withOpacity(0.0),
         elevation: 0,
         padding: const EdgeInsets.all(15),
         shape: StadiumBorder(),
@@ -285,7 +287,7 @@ class _circleButton extends State<CircleButton> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[0],
+        backgroundColor: AppColors.gray[0],
         elevation: 0,
         padding: const EdgeInsets.all(20),
         shape: CircleBorder(),
@@ -329,7 +331,7 @@ class _circleButtonBlack extends State<CircleButtonBlack> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: AppColors.gray[700],
+        backgroundColor: AppColors.gray[700],
         elevation: 0,
         padding: const EdgeInsets.all(20),
         shape: CircleBorder(),
@@ -343,4 +345,3 @@ class _circleButtonBlack extends State<CircleButtonBlack> {
 
   }
 }
-

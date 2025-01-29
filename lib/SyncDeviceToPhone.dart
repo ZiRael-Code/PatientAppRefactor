@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -90,7 +91,7 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> AddDeviceToPhone()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -100,7 +101,7 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Turn on bluetooth',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

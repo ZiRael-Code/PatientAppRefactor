@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -127,7 +128,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
           height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.60,
           decoration: BoxDecoration(
-            color: Color(0xFFE2EDFF),
+            color: AppColors.blue["600"],
             borderRadius: BorderRadius.circular(50),
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -145,7 +146,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
               fontSize: getFontSize(16, context),
               color: Color(0xFF3C8AFF),
             ),
-            icon: Icon(Icons.keyboard_arrow_down, color: Colors.blue,),
+            icon: Icon(Icons.keyboard_arrow_down, color: AppColors.blue[700],),
             onChanged: (newValue) {
               setState(() {
                 _selectedValue = newValue;
@@ -165,7 +166,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -175,7 +176,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Share readings',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -218,7 +219,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
                 children: [
                   Text(name, style: TextStyle(
                       fontSize: getFontSize(18, context),
-                      color: Colors.black
+                      color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(
@@ -236,7 +237,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
                   color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),
                 ),
                 child: isSelectedList[index]
-                    ? Icon(Icons.check, color: isSelectedList[index] ? Colors.white : Color(0xffC2C2C2))
+                    ? Icon(Icons.check, color: isSelectedList[index] ? AppColors.gray[100] : Color(0xffC2C2C2))
                     : Container(),
               ),
             ],

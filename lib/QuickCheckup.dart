@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -52,7 +53,7 @@ class QuickCheckup extends StatelessWidget {
               ],
             )
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         body: QuickCheckupState(),
       ),
     );

@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +97,7 @@ class _ConfiguringDeviceScreen extends  State<ConfiguringDevice> {
           height: getFontSize(185, context),
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Color(0xffE2EDFF).withOpacity(0.30),
+            color: AppColors.blue[600].withOpacity(0.30),
             shape: BoxShape.circle
           ),
           child: SvgPicture.asset('assets/images/dev.svg'),

@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'dart:math';
 
@@ -12,6 +14,7 @@ import 'package:flutter_app/Medication/TakeAQuickCheckup.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'MedicationUsageConfirmation.dart';
+import 'SelectMedicationToRenew.dart';
 
 void main(){
   runApp(NoMedication());
@@ -31,6 +34,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+          backgroundColor: AppColors.gray[100],
             appBar: AppBar(
           automaticallyImplyLeading: false,
               title: Row(
@@ -64,7 +68,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                               decoration: BoxDecoration(
                                 color: Color(0xffE40404),
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(width: getFontSize(2, context), color: Colors.white),
+                                border: Border.all(width: getFontSize(2, context), color: AppColors.gray[100]),
                               ),
                             ),
                             ),
@@ -83,12 +87,60 @@ class _NoMedicationScreen extends  State<NoMedication> {
             body: Padding(padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                randomMedicationChooser(),
+                GestureDetector(
+                  onTap:  () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TakeAQuickCheckup()));
+                  },
+                  child:
+                quickActionButtons(
+                  text: "Take a quick checkup",
+                  description: "You don’t have any medications as of now. quick session with a doctor/hospital.",
+                  icon: "assets/images/box.svg",
+                ),
+                ),
+
+                GestureDetector(
+                  onTap:  () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => MedicationUsageConfirmation()));
+                  },
+                  child:
+                  quickActionButtons(
+                  text: "Log today's Prescription",
+                  description: "Check that  you have taken your drugs today",
+                  icon: "assets/images/check.svg",
+                ),
+                ),
+
+                GestureDetector(
+                  onTap:  () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SelectMedicationToRenew()));
+                  },
+                  child:
+                  quickActionButtons(
+                  text: "Order new Medication",
+                  description: "You previous prescriptions have been exhausted",
+                  icon: "assets/images/drugs.svg",
+                ),
+                ),
+
+                GestureDetector(
+                  onTap:  () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrderDeatils()));
+                  },
+                  child:
+                  quickActionButtons(
+                  text: "Order history",
+                  description: "Your order for new medication is processing",
+                  icon: "assets/images/bikeman.svg",
+                ),
+                ),
+
+                // randomMedicationChooser(),
                 SizedBox(height: getFontSize(40, context),),
 
                 Row(
                   children: [
-                  Text('History', style: TextStyle(
+                  Text('Prescription History', style: TextStyle(
                   color: Color(0xFF2E2E42),
                   fontSize: getFontSize(18, context), // Font size
                   fontWeight: FontWeight.bold, // Bold text
@@ -165,7 +217,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrderDeatils()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: AppColors.blue[700],
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
@@ -174,8 +226,8 @@ class _NoMedicationScreen extends  State<NoMedication> {
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
-                  'Order new medications',
-                  style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                  'View orders',
+                  style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
                 ),
               ),
             ),
@@ -199,7 +251,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => RenewOrderSummary()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: AppColors.blue[700],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
                 ),
@@ -208,7 +260,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
                 child: Text(
                   'Order new medications',
-                  style: TextStyle(color: Colors.white, fontSize: getFontSize(15, context)),
+                  style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(15, context)),
                 ),
               ),
             ),
@@ -242,7 +294,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
               width: getFontSize(241, context),
               child:
             Text(textAlign: TextAlign.center,'You don’t have any medications as of now. Tap the button below for a quick session with a doctor/hospital/pharmacy.', style: TextStyle(fontSize: getFontSize(14.5, context),
-                color: Colors.black.withOpacity(0.40)),),),
+                color: AppColors.gray[700].withOpacity(0.40)),),),
             SizedBox(height: getFontSize(12, context),),
             SizedBox(
               width: double.infinity,
@@ -252,7 +304,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => TakeAQuickCheckup()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue[700],
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
@@ -262,7 +314,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Take a quick checkup  ',
-                    style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                    style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
                   ),
                 ),
               ),
@@ -300,7 +352,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('No medication history yet.', style: TextStyle(fontSize: getFontSize(16, context),
-                color: Colors.black.withOpacity(0.40)),),
+                color: AppColors.gray[700].withOpacity(0.40)),),
             ],
         ),
 
@@ -325,15 +377,15 @@ class _NoMedicationScreen extends  State<NoMedication> {
         children: [
           Row(
             children: [
-              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
+              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: AppColors.gray[700])),
               Spacer(),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xffE2EDFF),
+                  color: AppColors.blue[600],
                   borderRadius: BorderRadius.circular(50),
                 ),
                 padding: EdgeInsets.only(right: getFontSize(10, context), left: getFontSize(10, context), top: getFontSize(5, context), bottom: getFontSize(5, context)),
-                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue)),
+                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: AppColors.blue[700])),
               ),
             ],
           ),
@@ -344,6 +396,52 @@ class _NoMedicationScreen extends  State<NoMedication> {
           SizedBox(height: getFontSize(20, context)),
         ],
       ),
+      ),
+    );
+  }
+
+  quickActionButtons({
+    required String text,
+    required String description,
+    required String icon
+  }) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 12),
+      width: double.infinity,
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.blue[600].withOpacity(0.30),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(icon, width: 30, height: 30,),
+          SizedBox(width: getFontSize(8, context)),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(text, style: TextStyle(fontSize: getFontSize(18, context), color: AppColors.blue[700], fontWeight: FontWeight.w600)),
+              SizedBox(height: getFontSize(3, context)),
+             Container(
+               width: 210,
+                child: Text(
+                  maxLines: 4,
+                  description,
+                  style: TextStyle(
+                    fontSize: getFontSize(13, context),
+                    color: AppColors.gray[500],
+                  ),
+                ),
+              )
+
+            ],
+          ),
+          Spacer(),
+          Icon(Icons.arrow_forward_ios_outlined, color: AppColors.blue[700],)
+        ],
       ),
     );
   }

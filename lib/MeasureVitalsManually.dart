@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -87,11 +88,11 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
                 controller: _tabController,
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   borderRadius: BorderRadius.circular(30),
                 ),
                 indicatorColor: Colors.transparent, // Removes the default bottom underline
-                labelColor: Colors.black,
+                labelColor: AppColors.gray[700],
                 unselectedLabelColor: Color(0xff4F4F4F),
                 tabs: [
                   Tab(text: "Single entry"),
@@ -175,7 +176,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
 
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -185,7 +186,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save recording',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -212,7 +213,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
           padding: EdgeInsets.all(16),
           alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Color(0xFFE2EDFF),
+              color: AppColors.blue["600"],
               borderRadius: BorderRadius.circular(14),
             ),
             child: GestureDetector(
@@ -222,9 +223,9 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
                 child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.add_circle_outline, color: Colors.blue,),
+                Icon(Icons.add_circle_outline, color: AppColors.blue[700],),
                 SizedBox(width: getFontSize(10, context),),
-                Text('Add Entry', style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),)
+                Text('Add Entry', style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(16, context)),)
               ],
             )
             )
@@ -235,7 +236,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -245,7 +246,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save records',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -269,7 +270,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
           num,
           style: TextStyle(
             fontSize: getFontSize(20.0, context),
-            color: Colors.black
+            color: AppColors.gray[700]
           ),
         ),
         Text(textType),
@@ -281,10 +282,10 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             Container(
               width: getFontSize(33, context), height: getFontSize(33, context),
               decoration: BoxDecoration(
-                color: Color(0xffE2EDFF),
+                color: AppColors.blue[600],
               shape: BoxShape.circle
             ),
-            child: Icon(Icons.edit, color: Colors.blue,),
+            child: Icon(Icons.edit, color: AppColors.blue[700],),
             ),
             SizedBox(width: getFontSize(10, context),),
             Container(
@@ -374,7 +375,7 @@ cancel_dialog(BuildContext context){
                       onPressed: () {
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.blue[700],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
                         ),
@@ -383,7 +384,7 @@ cancel_dialog(BuildContext context){
                         padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
                         child: Text(
                           'Yes',
-                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -392,17 +393,17 @@ cancel_dialog(BuildContext context){
                       onPressed: () {
                       },
                       style: ElevatedButton.styleFrom(
-                        // backgroundColor: Colors.blue,
+                        // backgroundColor: AppColors.blue[700],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
-                          side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
+                          side: BorderSide(color: AppColors.blue[700], width: getFontSize(1, context)),
                         ),
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'No',
-                          style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -421,7 +422,7 @@ add_entry_bottom_sheet(BuildContext context) {
   showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       builder: (BuildContext context) {
         return Padding(
             padding: EdgeInsets.only(
@@ -496,7 +497,7 @@ add_entry_bottom_sheet(BuildContext context) {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
@@ -506,7 +507,7 @@ add_entry_bottom_sheet(BuildContext context) {
                     padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Save recording',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),

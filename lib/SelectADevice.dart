@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -83,7 +84,7 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -93,7 +94,7 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Proceed',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -103,7 +104,7 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Don’t have a device? ", style: TextStyle(fontSize: getFontSize(14, context))),
-            Text("Order now ", style: TextStyle(color: Colors.blue, fontSize: getFontSize(14, context))),
+            Text("Order now ", style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(14, context))),
           ],
         )
 

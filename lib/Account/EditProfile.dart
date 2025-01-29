@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -170,7 +172,7 @@ SizedBox(height: getFontSize(15, context),),
                 color: Colors.grey
               ),),
               Spacer(),
-              Icon(Icons.edit, color: Colors.black,)
+              Icon(Icons.edit, color: AppColors.gray[700],)
             ],
           ),
         ),
@@ -178,7 +180,7 @@ SizedBox(height: getFontSize(40, context),),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: AppColors.blue[700],
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
@@ -188,7 +190,7 @@ SizedBox(height: getFontSize(40, context),),
                 padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                 child: Text(
                   'Save changes',
-                  style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                  style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
                 ),
               ),
             ),

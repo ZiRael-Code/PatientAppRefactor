@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -96,10 +98,10 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
                           controller: _tabController,
                           indicatorSize: TabBarIndicatorSize.tab,
                           indicator: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColors.gray[100],
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          labelColor: Colors.black,
+                          labelColor: AppColors.gray[700],
                           unselectedLabelColor: Color(0xff4F4F4F),
                           tabs: [
                             Tab(text: "Current Orders"),
@@ -187,14 +189,14 @@ currentOrder(){
               ],),
 
               Align(alignment: Alignment.centerLeft,
-                  child: Text(text, style: TextStyle(color: Colors.blue),))
+                  child: Text(text, style: TextStyle(color: AppColors.blue[700]),))
             ],
           )
         ],
       ),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all( color: Colors.black.withOpacity(0.09))
+          border: Border.all( color: AppColors.gray[700].withOpacity(0.09))
       ),
     ),
     ),
@@ -243,7 +245,7 @@ orderADevice(){
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.black.withOpacity(0.1),
+          color: AppColors.gray[700].withOpacity(0.1),
           width: getFontSize(1, context),
         ),
         borderRadius: BorderRadius.circular(20),
@@ -276,7 +278,7 @@ orderADevice(){
                   prices,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: AppColors.blue[700],
                     fontSize: getFontSize(20, context),
                   ),
                 ),
@@ -294,14 +296,14 @@ orderADevice(){
                       );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12), // Border radius of 12
                     ),
                   ),
                   child: Text(
                     'Order Now',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: AppColors.gray[100]),
                   ),
                 ),
           ),
@@ -337,7 +339,7 @@ orderADevice(){
           return Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.gray[100],
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(20),
                 ),
@@ -359,7 +361,7 @@ orderADevice(){
                       Center(child:
                       Text(
                         'Wellue Bp2 Connect device',
-                        style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
+                        style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(16, context)),
                       ),
                       ),
 

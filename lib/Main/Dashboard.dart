@@ -1,3 +1,11 @@
+import 'dart:convert';
+
+import 'package:flutter_app/Login.dart';
+import 'package:flutter_app/MainManvigator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +19,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class Dashboard extends StatefulWidget{
   final void Function(int index) onItemTapped;
+  late final Map<String, dynamic> user;
   Dashboard({super.key,
-    required this.onItemTapped});
+    required this.onItemTapped, required this.user});
 
   @override
   DashboardState createState() => DashboardState();
@@ -26,22 +35,32 @@ class DashboardState extends State<Dashboard> {
     {
       'icon': Icon(
         Icons.message,
-        color: Colors.blue,
+        color: AppColors.blue[700],
       ),
       'text': "You have a new message from Alexander..."
     },
     {
       'icon': Icon(
         Icons.local_pharmacy,
-        color: Colors.blue,
+        color: AppColors.blue[700],
       ),
       'text': 'Your malaria drugs have been exhausted',
     },
     {
-      'icon': Icon(Icons.devices, color: Colors.blue),
+      'icon': Icon(Icons.devices, color: AppColors.blue[700]),
       'text': 'Your device is ready for pickup',
     },
   ];
+  late Map<String, dynamic> user;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    user = widget.user;
+    super.initState();
+  }
+  List<String> sliderTxt = ["An apple a day keeps the doctor away", "Hello world", "biscuit bone"];
+  int sIndex = 0;
   @override
   Widget  build(BuildContext context) {
 
@@ -49,10 +68,10 @@ class DashboardState extends State<Dashboard> {
     return d * (MediaQuery.of(context).size.width / 375.0 + MediaQuery.of(context).size.height / 812.0) / 2.0;
   }
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       appBar: AppBar(
           automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         title: Row(
           children: [
             SizedBox(
@@ -66,7 +85,7 @@ class DashboardState extends State<Dashboard> {
                   },
                   child: CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('assets/images/dr.png'),
+                    backgroundImage:  AssetImage('assets/images/default_avatar.png'),
                   )),
             ),
             SizedBox(width: ( 12.0)),
@@ -80,7 +99,8 @@ class DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Text(
-                  "Sanni Muiz",
+                  "${user["first_name"]} ${user["last_name"]}",
+
                   style: TextStyle(
                     fontSize: getFontSize(26.0, ),
                     fontWeight: FontWeight.bold,
@@ -89,12 +109,6 @@ class DashboardState extends State<Dashboard> {
               ],
             ),
             Spacer(),
-            // GestureDetector(child: SvgPicture.asset('ass')
-              // onTap: (){
-              //   Navigator.push(context, MaterialPageRoute(builder:
-              //       (context) => Community()));
-              // },
-            // ),
             SizedBox(
               width: getFontSize(10, ),
             ),
@@ -102,7 +116,7 @@ class DashboardState extends State<Dashboard> {
              onTap: (){
                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Community()));
              },
-             child: Icon(Icons.supervisor_account, color: Colors.black, size: (29),
+             child: Icon(Icons.supervisor_account, color: AppColors.gray[700], size: (29),
              )),
             SizedBox(width: getFontSize(10, ),),
             GestureDetector(
@@ -140,9 +154,9 @@ class DashboardState extends State<Dashboard> {
       },
                 child:
               quickAction(
-                  iconPath: 'assets/images/icons/dashboard/electric.png',
-                  iconBackground: Color(0xFFFF618F),
-                  actionBackground: Color(0xFFF5CFDD),
+                  iconPath: 'assets/images/speed.svg',
+                  iconBackground: AppColors.pink[700],
+                  actionBackground: AppColors.pink[700].withOpacity(0.20),
                   actionText: 'Take a quick checkup'
               ),
               ),
@@ -153,9 +167,9 @@ class DashboardState extends State<Dashboard> {
         },
         child:
               quickAction(
-                  iconPath: 'assets/images/icons/dashboard/device.png',
+                  iconPath: 'assets/images/computer.svg',
                   iconBackground: Color(0xFFA64FFE),
-                  actionBackground: Color(0xFFD3B6E8),
+                  actionBackground: Color(0xFFA64FFE).withOpacity(0.20),
                   actionText: 'Request a device'
               ),
               ),
@@ -177,8 +191,8 @@ class DashboardState extends State<Dashboard> {
           Row(
             children: [
               Text("Vitals readings",
-          style: TextStyle(fontSize: getFontSize(20),
-              color: Colors.black,
+          style: TextStyle(fontSize: getFontSize(18),
+              color: AppColors.gray[700],
               fontWeight: FontWeight.bold),),
               Spacer(),
               ElevatedButton(
@@ -209,7 +223,7 @@ class DashboardState extends State<Dashboard> {
             alignment: Alignment.centerLeft,
             child:
           vital(
-            themeColor: Color(0xFFFF618F),
+            themeColor: AppColors.pink[700],
             vitalIcon: 'assets/images/hearth2.svg',
             vitalRead: '77',
             subcriptOrnot: 'bpm',
@@ -221,13 +235,18 @@ class DashboardState extends State<Dashboard> {
           ),
           ),
 
-                SizedBox(width: getFontSize(25),),
+
 
                 Align(
             alignment: Alignment.centerLeft,
             child:
+      GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
+        },
+        child:
           vital(
-            themeColor: Colors.purple,
+            themeColor: Color(0xffA64FFE),
             vitalIcon: 'assets/images/presure.svg',
             vitalRead: '90/60',
             subcriptOrnot: 'mmHg',
@@ -238,13 +257,124 @@ class DashboardState extends State<Dashboard> {
             emoji: 'assets/images/smily.svg'
           ),
           ),
+          ),
+
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
+          },
+          child:
+            vital(
+            themeColor: Color(0xff2C68BF),
+            vitalIcon: 'assets/images/oxy.svg',
+            vitalRead: '95%',
+            subcriptOrnot: '',
+            isSubscript: true,
+            vitalType: 'Oxygen Saturation',
+            dateAdded: '2 days ago',
+            vitalsReadMessage: 'ABNORMAL',
+            emoji: 'assets/images/smily.svg'
+          ),
+          ),
+
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
+            },
+            child:
+            vital(
+            themeColor: Color(0xffFF6161),
+            vitalIcon: 'assets/images/hrv.svg',
+            vitalRead: '50',
+            subcriptOrnot: 'milliseconds',
+            isSubscript: true,
+            vitalType: 'Stress (HRV rate)',
+            dateAdded: 'Measured 10mins ago',
+            vitalsReadMessage: 'ABNORMAL',
+            emoji: 'assets/images/smily.svg'
+          ),
+          ),
             ],),
           ),
           SizedBox(height: getFontSize(15),),
-          SvgPicture.asset('assets/images/scroller.svg',
-          width: MediaQuery.of(context).size.width,
-          )
-          ,SizedBox(height: getFontSize(15),),
+          Container(
+            padding: EdgeInsets.all(14),
+            height: 145,
+            alignment: Alignment.center,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColors.blue[700],
+              borderRadius: BorderRadius.circular(14)
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Spacer(),
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        // color: Colors.white,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            if (sIndex > 0) {
+                              sIndex--;
+                            } else {
+                              sIndex = 3;
+                            }
+                          });
+
+                        },
+                        child: Icon(Icons.arrow_back_ios_new, color: Colors.white, size: getFontSize(14)),)
+                  ),
+                    Spacer(),
+                    Text(sliderTxt[sIndex],
+                      style: TextStyle(
+                        fontSize: getFontSize(16),
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.gray[100],
+                      ),
+                    ),
+
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        // color: Colors.white,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            sIndex = (sIndex + 1) % 4;
+                          });
+
+                        },
+                        child: Icon(Icons.arrow_forward_ios_outlined, color: Colors.white, size: getFontSize(14)),)
+                    )
+
+                  ],
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    Spacer(),
+                     SvgPicture.asset('assets/images/s1.svg', color: sIndex == 0 ? AppColors.gray[100] : AppColors.gray[400]),
+                     SvgPicture.asset('assets/images/s2.svg',width: 40, color: sIndex == 0 ? AppColors.gray[100] : AppColors.gray[400]),
+                     SvgPicture.asset('assets/images/s3.svg',width: 25, height: 2, color: sIndex == 0 ? AppColors.gray[100] : AppColors.gray[400]),
+                    Spacer(),
+
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: getFontSize(15),),
         ],
       ),
       ),
@@ -262,7 +392,7 @@ class DashboardState extends State<Dashboard> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-        color: Colors.black.withOpacity(0.1),
+        color: AppColors.gray[700].withOpacity(0.1),
       width: getFontSize(1.0, context),
     ),
         ),
@@ -271,7 +401,7 @@ class DashboardState extends State<Dashboard> {
           Container(
             decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Color(0xFFE2EDFF),
+            color: AppColors.blue["600"],
             ),
             width: getFontSize(35, context),
             height: getFontSize(35, context),
@@ -370,7 +500,7 @@ class DashboardState extends State<Dashboard> {
                   margin: EdgeInsets.only(bottom: getFontSize(10, context),),
                   padding: EdgeInsets.only(top: getFontSize(19, context), bottom: getFontSize(19, context), left: getFontSize(12, context), right: getFontSize(12, context)),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.circular(12.0),
                     boxShadow: [
                       BoxShadow(
@@ -388,7 +518,7 @@ class DashboardState extends State<Dashboard> {
                       Container(
                         padding: EdgeInsets.all(6),
                         decoration:
-                        BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
+                        BoxDecoration(shape: BoxShape.circle, color: AppColors.blue[600]),
                         child: icon,
                       ),
                       SizedBox(width: w * 0.04,),
@@ -398,14 +528,14 @@ class DashboardState extends State<Dashboard> {
                           alignment: Alignment.centerLeft,
                           width: textContSize,
                           child: AutoSizeText(text,
-                              style: TextStyle(fontSize: getFontSize(16.0, context)* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
+                              style: TextStyle(fontSize: getFontSize(16.0, context)* MediaQuery.of(context).textScaleFactor, color: AppColors.gray[700]),
                               overflow: TextOverflow.ellipsis),
                         ),
                       ),
                       Spacer(),
                       Align(
                         alignment: Alignment.centerRight,
-                        child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
+                        child: Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700]),
                       )
 
                     ],
@@ -442,7 +572,7 @@ class DashboardState extends State<Dashboard> {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Center(
-                  child: Image.asset(
+                  child: SvgPicture.asset(
                     iconPath,
                     width: getFontSize(16, context),
                     height: getFontSize(16, context),
@@ -474,11 +604,9 @@ class DashboardState extends State<Dashboard> {
     required vitalsReadMessage,
     required emoji,
   }) {
-    return GestureDetector(
-        onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
-    },
-    child: Stack(
+    return  Container(
+        margin: EdgeInsets.only(right: getFontSize(25, context)),
+        child: Stack(
       children: [
         Positioned(
           top: 10,
@@ -556,7 +684,7 @@ class DashboardState extends State<Dashboard> {
             Align(child: Text(vitalType,
               style: TextStyle(
                 fontSize: getFontSize(19.0, context),
-                color: Colors.white,
+                color: AppColors.gray[100],
               ),
               ),
               alignment: Alignment.centerLeft,
@@ -565,7 +693,7 @@ class DashboardState extends State<Dashboard> {
             Align(child:
             Text(dateAdded, style: TextStyle(
               fontSize: getFontSize(12.0, context),
-              color: Colors.white,
+              color: AppColors.gray[100],
             )),
               alignment: Alignment.centerLeft,
             ),
@@ -573,7 +701,7 @@ class DashboardState extends State<Dashboard> {
             Align(child:
                Container(
                 decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.20),
+                    color: AppColors.gray[100].withOpacity(0.20),
                     borderRadius: BorderRadius.circular(18)
                 ),
                 padding: EdgeInsets.only(left: getFontSize(10, context), top: getFontSize(10, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
@@ -587,7 +715,7 @@ class DashboardState extends State<Dashboard> {
                     SizedBox(width: getFontSize(5, context),),
                     Text(vitalsReadMessage,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                         fontSize: getFontSize(12.0, context),
                       ),
                     )

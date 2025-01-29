@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -21,7 +23,9 @@ import 'HowItWorks.dart';
 import 'Referral/Referrals.dart';
 
 class AccountProfile extends StatefulWidget {
-  AccountProfile({super.key});
+
+  late final Map<String, dynamic> user;
+  AccountProfile({super.key, required this.user});
 
   @override
   State<AccountProfile> createState() => _AccountProfileState();
@@ -29,6 +33,14 @@ class AccountProfile extends StatefulWidget {
 
 class _AccountProfileState extends State<AccountProfile> {
   List<dynamic> randomCreditCardMock = [CreditDebitNoCard(), CreditDebitCardAvailableCard()];
+  late Map<String, dynamic> user;
+  @override
+  void initState() {
+    user =widget.user;
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,7 +53,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   padding: EdgeInsets.only(left: getFontSize(20, context), right: getFontSize(20, context)),
                   width: double.infinity,
                       decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
@@ -86,7 +98,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                 Row(
                                   children: [
                                     Text(
-                                      'Sanni Muiz . ',
+                                      "${user["first_name"]} ${user["last_name"]}  . ",
                                       style: TextStyle(
                                             fontSize: getFontSize(22, context),
                                         fontWeight: FontWeight.bold,
@@ -96,7 +108,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                     Text(
                                       "Doctor",
                                       style: TextStyle(
-                                          color: Colors.black12, fontSize: getFontSize(17, context)),
+                                          color: AppColors.gray[700], fontSize: getFontSize(17, context)),
                                     )
                                   ],
                                 ),
@@ -104,7 +116,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                 SizedBox(height: getFontSize(8, context)),
                                 // Spacing between the two texts
                                 Text(
-                                  'johndoe@gmail.com', // Email text
+                                  user['email'], // Email text
                                   style: TextStyle(
                                         fontSize: getFontSize(14, context),
                                     color: Colors
@@ -122,7 +134,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                 height: getFontSize(27, context),
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Colors.blue, // Blue background
+                                  color: AppColors.blue[700], // Blue background
                                 ),
                                 child: GestureDetector(
                                       onTap: (){
@@ -136,7 +148,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                       child:  Center(
                                   child: Icon(
                                     Icons.edit, // Write (edit) icon
-                                    color: Colors.white, // White icon color
+                                    color: AppColors.gray[100], // White icon color
                                         size: getFontSize(16, context), // Adjust the size as needed
                                       ),
                                   ),
@@ -160,7 +172,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -168,29 +180,29 @@ class _AccountProfileState extends State<AccountProfile> {
                       padding:  EdgeInsets.only(top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(children: [
                     details(
                         icon: Icons.person,
                         detailType: "Name",
-                        detailInfo: "Sanni Muiz Dolapo",
+                        detailInfo: "${user["first_name"]} ${user["last_name"]} ",
                         shouldLine: true),
                     details(
                         icon: Icons.phone,
                         detailType: "Phone Number",
-                        detailInfo: "081112223344",
+                        detailInfo: user["phone"],
                         shouldLine: true),
                     details(
                         icon: Icons.email,
                         detailType: "Email Address",
-                        detailInfo: "johndoe@gmail.com",
+                        detailInfo: user["email"],
                         shouldLine: true),
                     details(
                         icon: Icons.male,
-                        detailType: "Email Address",
-                        detailInfo: "johndoe@gmail.com",
+                        detailType: "Gender",
+                        detailInfo: "Male",
                         shouldLine: true),
                   ])),
               Container(
@@ -202,7 +214,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -211,7 +223,7 @@ class _AccountProfileState extends State<AccountProfile> {
                     top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: GestureDetector(
@@ -238,7 +250,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -247,7 +259,7 @@ class _AccountProfileState extends State<AccountProfile> {
                     top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
@@ -301,7 +313,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -310,7 +322,7 @@ class _AccountProfileState extends State<AccountProfile> {
                       top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(children: [
@@ -349,7 +361,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -358,7 +370,7 @@ class _AccountProfileState extends State<AccountProfile> {
                       top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(children: [
@@ -396,7 +408,7 @@ class _AccountProfileState extends State<AccountProfile> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
               ),
@@ -405,7 +417,7 @@ class _AccountProfileState extends State<AccountProfile> {
                       top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(children: [
@@ -471,7 +483,7 @@ class _AccountProfileState extends State<AccountProfile> {
                 height: getFontSize(90, context),
                 width: double.infinity,
                     decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20))),
@@ -501,11 +513,11 @@ class _AccountProfileState extends State<AccountProfile> {
               width: getFontSize(41, context),
               height: getFontSize(41, context),
               decoration: BoxDecoration(
-                color: Color(0xffE2EDFF),
+                color: AppColors.blue[600],
                 shape: BoxShape.circle,
               ),
               child: Center(
-                child: Icon(icon, size: getFontSize(28, context), color: Colors.blue),
+                child: Icon(icon, size: getFontSize(28, context), color: AppColors.blue[700]),
               )),
           SizedBox(
             width: getFontSize(10, context),
@@ -519,7 +531,7 @@ class _AccountProfileState extends State<AccountProfile> {
                 style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),),
               SizedBox(height: getFontSize(10, context),),
               Text(detailInfo,
-                  style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)))
+                  style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context)))
             ],
           )
         ],
@@ -543,13 +555,13 @@ class _AccountProfileState extends State<AccountProfile> {
               height: getFontSize(41, context),
               decoration: BoxDecoration(
                 color: lol == null
-                    ? Color(0xffE2EDFF)
+                    ? AppColors.blue[600]
                     : Colors.red.withOpacity(0.05),
                 shape: BoxShape.circle,
               ),
               child: Center(
                 child: Icon(icon,
-                    size: getFontSize(28, context), color: lol == null ? Colors.blue : Colors.red),
+                    size: getFontSize(28, context), color: lol == null ? AppColors.blue[700] : Colors.red),
               )),
           SizedBox(
             width: getFontSize(10, context),
@@ -561,7 +573,7 @@ class _AccountProfileState extends State<AccountProfile> {
             children: [
               Text(detailInfo,
                   style: TextStyle(
-                      color: lol == null ? Colors.black : Colors.red,
+                      color: lol == null ? AppColors.gray[700] : Colors.red,
                       fontSize: getFontSize(18, context),
                       fontWeight:
                           lol == null ? FontWeight.normal : FontWeight.bold))

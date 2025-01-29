@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +107,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                           shape: BoxShape.circle,
                         ),
                         child: isFilterOpen
-                            ? Icon(Icons.close, color: Colors.black) // X icon when open
+                            ? Icon(Icons.close, color: AppColors.gray[700]) // X icon when open
                             : SvgPicture.asset('assets/images/filter.svg'), // Filter icon when closed
                       ),
                     ),
@@ -127,7 +129,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                         Text(
                           "Filters",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.gray[700],
                             fontSize: getFontSize(18, context),
                           ),
                         ),
@@ -143,11 +145,11 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   side: BorderSide(
-                                    color: i == btnText.length-1 ? Colors.blue : Colors.transparent, // Border color
+                                    color: i == btnText.length-1 ? AppColors.blue[700] : Colors.transparent, // Border color
                                     width:  i == btnText.length-1 ? 1.0 : 0.0, // Border width
                                   ),
                                   shadowColor: Colors.transparent,
-                                  backgroundColor: i == btnText.length-1 ? Colors.transparent : Color(0xFFE2EDFF)  , // Button color
+                                  backgroundColor: i == btnText.length-1 ? Colors.transparent : AppColors.blue["600"]  , // Button color
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50), // Rounded corners
                                   ),
@@ -156,7 +158,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                                   padding: EdgeInsets.all(0),
                                   child: Text(
                                     btnText[i],
-                                    style: TextStyle(color: Color(0xff3C8AFF), fontSize: getFontSize(11.5, context)), // Button text color
+                                    style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(11.5, context)), // Button text color
                                   ),
                                 ),
                               ),
@@ -247,7 +249,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                     name,
                     style: TextStyle(
                       fontSize: getFontSize(18, context),
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   SizedBox(height: getFontSize(5, context)),

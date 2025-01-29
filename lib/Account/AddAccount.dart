@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +106,7 @@ class _AddAccountScreen extends  State<AddAccount> {
                     width: getFontSize(178, context),
                     height: getFontSize(54, context),
                     decoration: BoxDecoration(
-                      color: Color(0xFFE2EDFF),
+                      color: AppColors.blue["600"],
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(child: Text(

@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class _CommunityFeedState extends State<CommunityFeed> {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Colors.white.withOpacity(0.30),
+                  color: AppColors.gray[100].withOpacity(0.30),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: getFontSize(8.0, context),

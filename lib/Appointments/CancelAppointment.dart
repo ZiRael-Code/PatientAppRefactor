@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
-              color: Colors.blue,
+              color: AppColors.blue[700],
             ),
               alignment: Alignment.centerLeft,
               child:
@@ -47,7 +49,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                 ),
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),
                 ),
@@ -60,7 +62,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: getFontSize(4, context))
+                        border: Border.all(color: AppColors.gray[100], width: getFontSize(4, context))
                       ),
                         child:
                         CircleAvatar(
@@ -116,7 +118,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Time:", style: TextStyle(color: Color(0xFF2E2E42)),),
-                                Text("12:00pm",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                                Text("12:00pm",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
@@ -128,7 +130,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Date:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                  Text("12th July 2022",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                                  Text("12th July 2022",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold))
                                 ]
                             ),
                           )
@@ -143,7 +145,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Appointment Type:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                Text("Online", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                                Text("Online", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
@@ -153,7 +155,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
                             child: Column(
                                 children: [
                                   Text("Consultation fee:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                  Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: Colors.blue, fontWeight: FontWeight.bold))
+                                  Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: AppColors.blue[700], fontWeight: FontWeight.bold))
                                 ]
                             ),
                           )
@@ -180,7 +182,7 @@ class CancelAppointmentPage extends State<CancelAppointment> {
               cancel_dialog();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
+              backgroundColor: AppColors.gray[100],
               fixedSize: Size.fromWidth(MediaQuery.of(context).size.width), // Button width
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(9),
@@ -221,7 +223,7 @@ width: MediaQuery.of(context).size.width * 0.8,
 decoration: BoxDecoration(
 borderRadius: BorderRadius.circular(9),
 border: Border.all(
-color: Colors.black.withOpacity(0.1),
+color: AppColors.gray[700].withOpacity(0.1),
 width: getFontSize(1.5, context),
 ),
 ),
@@ -266,7 +268,7 @@ width: getFontSize(1.5, context),
           Text(dateReviewed,
           textAlign: TextAlign.start,
           style: TextStyle(
-            color: Colors.blue,
+            color: AppColors.blue[700],
             fontSize: getFontSize(15, context)
           ),),
           ),
@@ -293,7 +295,7 @@ width: getFontSize(1.5, context),
       margin: EdgeInsets.only(right: getFontSize(5, context), top: getFontSize(15, context)),
       padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(25, context), bottom: getFontSize(12, context), right: getFontSize(25, context)),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black.withOpacity(0.1), width: getFontSize(0.5, context)),
+        border: Border.all(color: AppColors.gray[700].withOpacity(0.1), width: getFontSize(0.5, context)),
         color: Color(0xFFF1F1F1),
         borderRadius: BorderRadius.circular(50)
       ),
@@ -308,7 +310,7 @@ width: getFontSize(1.5, context),
       child: SvgPicture.asset(handleIconPath),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Colors.blue.withOpacity(0.15),
+        color: AppColors.blue[700].withOpacity(0.15),
       ),
       padding: EdgeInsets.all(14),
       width: getFontSize(50, context),
@@ -341,7 +343,7 @@ width: getFontSize(1.5, context),
                           Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ConfirmCalcellation()));
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
+                          backgroundColor: AppColors.blue[700],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -350,7 +352,7 @@ width: getFontSize(1.5, context),
                           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
                           child: Text(
                             'Yes',
-                            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                            style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                           ),
                         ),
                       ),
@@ -359,17 +361,17 @@ width: getFontSize(1.5, context),
                         onPressed: () {
                         },
                         style: ElevatedButton.styleFrom(
-                          // backgroundColor: Colors.blue,
+                          // backgroundColor: AppColors.blue[700],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
-                            side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
+                            side: BorderSide(color: AppColors.blue[700], width: getFontSize(1, context)),
                           ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                           child: Text(
                             'No',
-                            style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                            style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                           ),
                         ),
                       ),

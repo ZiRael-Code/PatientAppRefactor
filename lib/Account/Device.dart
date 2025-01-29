@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -99,14 +101,14 @@ class _DeviceScreen extends  State<Device> {
                   Text('BP2 Connect 1368',style: TextStyle(fontSize: getFontSize(18, context))),
                   SizedBox(width: getFontSize(26, context),),
                  Align(alignment: Alignment.centerLeft,
-                     child: Text('Connected', style: TextStyle(color: Colors.blue),))
+                     child: Text('Connected', style: TextStyle(color: AppColors.blue[700]),))
                 ],
               )
             ],
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: Border.all( color: Colors.black.withOpacity(0.09))
+            border: Border.all( color: AppColors.gray[700].withOpacity(0.09))
           ),
         ),
         SizedBox(height: getFontSize(20, context),),
@@ -241,7 +243,7 @@ class _DeviceScreen extends  State<Device> {
           Icon(
             Icons.arrow_forward_ios_outlined,
             size: getFontSize(16, context),
-            color: Colors.black,
+            color: AppColors.gray[700],
           ),
         ],
       ),
@@ -301,7 +303,7 @@ class _DeviceScreen extends  State<Device> {
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: getFontSize(16, context),
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
 

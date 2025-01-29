@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -144,7 +146,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
       height: getFontSize(229, context),
       margin: EdgeInsets.only(bottom: getFontSize(15, context)),
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: AppColors.blue[700],
         borderRadius: BorderRadius.circular(14),
       ),
       child: Container(
@@ -158,7 +160,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
         // // padding: EdgeInsets.all(15),
         //   decoration: BoxDecoration(
         //     borderRadius: BorderRadius.only(topRight: Radius.circular(14), topLeft: Radius.circular(14)),
-        //     color: Colors.blue,
+        //     color: AppColors.blue[700],
         //   ),
         // ),
 
@@ -171,7 +173,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(bottomRight: Radius.circular(14), bottomLeft: Radius.circular(14)),
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                   ),
         child:
         Column(
@@ -193,9 +195,9 @@ class _AllCommunityScreen extends  State<AllCommunity> {
                   height: getFontSize(30, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xffE2EDFF)
+                      color: AppColors.blue[600]
                   ),
-                  child: Icon(Icons.person, color: Colors.blue),
+                  child: Icon(Icons.person, color: AppColors.blue[700]),
                 ),
                 SizedBox(width: getFontSize(7, context),),
                 Text(
@@ -210,9 +212,9 @@ class _AllCommunityScreen extends  State<AllCommunity> {
                   height: getFontSize(30, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xffE2EDFF)
+                      color: AppColors.blue[600]
                   ),
-                  child: Icon(Icons.location_pin, color: Colors.blue),
+                  child: Icon(Icons.location_pin, color: AppColors.blue[700]),
                 ),
                 SizedBox(width: getFontSize(7, context),),
                 Text(
@@ -270,7 +272,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> CommunityFeed()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -280,7 +282,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Yes, continue',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -289,7 +291,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-            side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
+            side: BorderSide(color: AppColors.blue[700], width: getFontSize(1, context)),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
             ),
@@ -298,7 +300,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'No',
-              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

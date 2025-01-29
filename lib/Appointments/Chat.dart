@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,7 @@ class _ChatScreen extends  State<Chat> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Row(
@@ -80,19 +82,19 @@ class _ChatScreen extends  State<Chat> {
             Container(
               padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: Color(0xffE2EDFF),
+                color: AppColors.blue[600],
                 shape: BoxShape.circle
               ),
-              child: Icon(Icons.call, color: Colors.blue,),
+              child: Icon(Icons.call, color: AppColors.blue[700],),
             ),
               SizedBox(width: getFontSize(12, context),),
               Container(
               padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: Color(0xffE2EDFF),
+                color: AppColors.blue[600],
                 shape: BoxShape.circle
               ),
-              child: Icon(Icons.more_horiz_rounded, color: Colors.blue,),
+              child: Icon(Icons.more_horiz_rounded, color: AppColors.blue[700],),
             )
             ],
           ),
@@ -184,7 +186,7 @@ class _ChatScreen extends  State<Chat> {
                         hintText: 'Type a message...',
                         contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                         filled: true,
-                        fillColor: Colors.white,
+                        fillColor: AppColors.gray[100],
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide: BorderSide(
@@ -227,10 +229,10 @@ class _ChatScreen extends  State<Chat> {
                     width: getFontSize(51, context),
                     height: getFontSize(51, context),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(Icons.add, color: Colors.white),
+                    child: Icon(Icons.add, color: AppColors.gray[100]),
                   ),
                 ],
               ),
@@ -315,7 +317,7 @@ class _ChatScreen extends  State<Chat> {
             text,
             style: TextStyle(
               fontSize: getFontSize(14, context),
-              color: Colors.white,
+              color: AppColors.gray[100],
             ),
           ),
         ),
@@ -347,7 +349,7 @@ class _ChatScreen extends  State<Chat> {
             return Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.gray[100],
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(20),
                 ),
@@ -384,7 +386,7 @@ class _ChatScreen extends  State<Chat> {
                         order_information_sheet();
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.blue[700],
                         fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
@@ -395,7 +397,7 @@ class _ChatScreen extends  State<Chat> {
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Continue',
-                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -406,7 +408,7 @@ class _ChatScreen extends  State<Chat> {
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-                        side: BorderSide(color: Colors.blue),
+                        side: BorderSide(color: AppColors.blue[700]),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
                         ),
@@ -416,7 +418,7 @@ class _ChatScreen extends  State<Chat> {
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Close',
-                          style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -439,7 +441,7 @@ class _ChatScreen extends  State<Chat> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
           border: Border.all(width: getFontSize(1, context),
-              color: Colors.black.withOpacity(0.070))
+              color: AppColors.gray[700].withOpacity(0.070))
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -455,7 +457,7 @@ class _ChatScreen extends  State<Chat> {
               Text(pills, style: TextStyle(fontSize: getFontSize(12, context), color: Color(0xff000000).withOpacity(0.60)),),
             ],),
           Spacer(),
-          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: Colors.blue))
+          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: AppColors.blue[700]))
         ],
       ),
     );
@@ -481,7 +483,7 @@ class _ChatScreen extends  State<Chat> {
             return Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(20),
                   ),
@@ -500,7 +502,7 @@ class _ChatScreen extends  State<Chat> {
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
                           width: getFontSize(1, context),
-                          color: Colors.black.withOpacity(0.070),
+                          color: AppColors.gray[700].withOpacity(0.070),
                         ),
                       ),
                       child: Row(
@@ -537,7 +539,7 @@ class _ChatScreen extends  State<Chat> {
                       children: [
                         Text('price', style: TextStyle(color: Color(0xff666666))),
                         Spacer(),
-                        Text('N5,350.00', style: TextStyle(color: Colors.blue),
+                        Text('N5,350.00', style: TextStyle(color: AppColors.blue[700]),
                         )],
                     ),
                     SizedBox(height: getFontSize(20, context),),
@@ -545,7 +547,7 @@ class _ChatScreen extends  State<Chat> {
                       children: [
                         Text('TOTAL', style: TextStyle(fontWeight: FontWeight.bold)),
                         Spacer(),
-                        Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: Colors.blue),
+                        Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: AppColors.blue[700]),
                         )],
                     ),
 
@@ -564,7 +566,7 @@ class _ChatScreen extends  State<Chat> {
                             height: getFontSize(50, context),
                             width: MediaQuery.of(context).size.width * 0.40,
                             decoration: BoxDecoration(
-                              color: Color(0xFFE2EDFF),
+                              color: AppColors.blue["600"],
                               borderRadius: BorderRadius.circular(9),
                             ),
                             padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -582,7 +584,7 @@ class _ChatScreen extends  State<Chat> {
                                   isFilterOpen
                                       ? Icons.keyboard_arrow_up
                                       : Icons.keyboard_arrow_down,
-                                  color: Colors.blue,
+                                  color: AppColors.blue[700],
                                   size: getFontSize(26, context),
                                 ),
                               ],
@@ -594,7 +596,7 @@ class _ChatScreen extends  State<Chat> {
                               width: double.infinity, // Matches screen width
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                                 borderRadius: BorderRadius.circular(9),
                               ),
                               child: Column(
@@ -605,14 +607,14 @@ class _ChatScreen extends  State<Chat> {
                                       Text('No. of medications:',
                                           style: TextStyle(
                                             fontSize: getFontSize(14, context),
-                                            color: Colors.black.withOpacity(0.55),
+                                            color: AppColors.gray[700].withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
                                       Text('3 drugs',
                                           style: TextStyle(
                                             fontSize: getFontSize(14, context),
-                                            color: Colors.black,
+                                            color: AppColors.gray[700],
                                           )
                                       )
                                     ],
@@ -623,14 +625,14 @@ class _ChatScreen extends  State<Chat> {
                                       Text('Price:',
                                           style: TextStyle(
                                             fontSize: getFontSize(14, context),
-                                            color: Colors.black.withOpacity(0.55),
+                                            color: AppColors.gray[700].withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
                                       Text('N25,000.00',
                                           style: TextStyle(
                                             fontSize: getFontSize(14, context),
-                                            color: Colors.blue,
+                                            color: AppColors.blue[700],
                                           )
                                       )
                                     ],
@@ -641,7 +643,7 @@ class _ChatScreen extends  State<Chat> {
                                       Text('TOTAL:',
                                           style: TextStyle(
                                             fontSize: getFontSize(14, context),
-                                            color: Colors.black.withOpacity(0.55),
+                                            color: AppColors.gray[700].withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
@@ -649,7 +651,7 @@ class _ChatScreen extends  State<Chat> {
                                           style: TextStyle(
                                             fontSize: getFontSize(16, context),
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.blue,
+                                            color: AppColors.blue[700],
                                           )
                                       )
                                     ],
@@ -666,7 +668,7 @@ class _ChatScreen extends  State<Chat> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectADeliveryMethod()));
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.blue[700],
                         fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
@@ -677,7 +679,7 @@ class _ChatScreen extends  State<Chat> {
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Proceed to checkout',
-                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),

@@ -1,3 +1,7 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'Login.dart';
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'dart:convert';
 import 'dart:io';
@@ -9,7 +13,7 @@ import 'package:flutter_app/Appointments/MainAppointment.dart';
 import 'package:flutter_app/Notifications.dart';
 import 'package:flutter_app/Capture/VitalsReading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_app/Medication/NoMedication.dart';
+import 'package:flutter_app/Medication/Medication.dart';
 
 import 'Main/Dashboard.dart';
 class MainNavigator extends StatefulWidget {
@@ -20,12 +24,8 @@ class MainNavigator extends StatefulWidget {
 }
 
 class _MainNavigatorState extends State<MainNavigator> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
-
+  bool isFetchingUser = true;
   late int _selectedIndex = widget.index;
 
 
@@ -42,19 +42,104 @@ class _MainNavigatorState extends State<MainNavigator> {
       });
     }
   }
+  late Map<String, dynamic> user;
 
+  Future<void> _getUserInfo() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? userStr = prefs.getString('user');
+
+      if (userStr != null) {
+        user = jsonDecode(userStr);
+        setState(() {
+          isFetchingUser = false;
+        });
+      }else{
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => Login()),
+              (Route<dynamic> route) => false,
+        );
+
+      }
+    }catch(e){
+      print(e);
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+            (Route<dynamic> route) => false,
+      );
+    }
+  }
+  @override
+  void initState() {
+    _getUserInfo();
+    super.initState();
+  }
   late final List<Widget> _screens = [
-    Dashboard(onItemTapped: _onItemTapped),
+    Dashboard(onItemTapped: _onItemTapped,user:  user),
     NoMedication(),
     Container(), //
     MainAppointment(),
-    AccountProfile(),
+    AccountProfile(user: user,),
   ];
+
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Builder(
+      home:isFetchingUser ? Scaffold(
+        body: Center(
+      child: Stack(
+      alignment: Alignment.center,
+        children: [
+          // Background Circle
+          Container(
+            width: 150,
+            height: 150,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey.shade200,
+            ),
+          ),
+          // Circular Progress Indicator
+          SizedBox(
+            width: 120,
+            height: 120,
+            child: CircularProgressIndicator(
+              strokeWidth: 10,
+              value: 0.75, // Adjust the value to show progress (0.0 to 1.0)
+              backgroundColor: Colors.grey.shade300,
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xff3C8AFF)), // Custom blue color
+            ),
+          ),
+          // Progress Percentage Text
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "75%",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff3C8AFF),
+                ),
+              ),
+              Text(
+                "Loading...",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),)
+
+          : Builder(
         builder: (context) =>
             Scaffold(
               body: _screens[_selectedIndex],
@@ -70,8 +155,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 0
                           ? 'assets/images/s_home.svg'
                           : 'assets/images/un_home.svg',
-                      width: getFontSize(32, context),
-                      height: getFontSize(32, context),
+                      width: getFontSize(24, context),
+                      height: getFontSize(24, context),
                     ),
                     label: 'Home',
                   ),
@@ -80,8 +165,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 1
                           ? 'assets/images/s_medication.svg'
                           : 'assets/images/un_medication.svg',
-                      width: getFontSize(32, context),
-                      height: getFontSize(32, context),
+                      width: getFontSize(24, context),
+                      height: getFontSize(24, context),
                     ),
                     label: 'Medication',
                   ),
@@ -98,8 +183,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 3
                           ? 'assets/images/s_appointment.svg'
                           : 'assets/images/un_appointment.svg',
-                      width: getFontSize(32, context),
-                      height: getFontSize(32, context),
+                      width: getFontSize(24, context),
+                      height: getFontSize(24, context),
                     ),
                     label: 'Appointment',
                   ),
@@ -108,8 +193,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 4
                           ? 'assets/images/s_account.svg'
                           : 'assets/images/un_account.svg',
-                      width: getFontSize(39, context),
-                      height: getFontSize(39, context),
+                      width: getFontSize(24, context),
+                      height: getFontSize(24, context),
                     ),
                     label: 'Account',
                   ),

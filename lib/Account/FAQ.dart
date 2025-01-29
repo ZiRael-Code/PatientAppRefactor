@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -154,7 +156,7 @@ class _FAQScreen extends State<FAQ> {
                   child: Expanded(
                     child: Text(
                       question,
-                      style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black),
+                      style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[700]),
                       maxLines: _isExpandedList[index] ? null : 1,
                       overflow: _isExpandedList[index]
                           ? TextOverflow.visible
@@ -173,7 +175,7 @@ class _FAQScreen extends State<FAQ> {
                     _isExpandedList[index]
                         ? Icons.keyboard_arrow_up
                         : Icons.keyboard_arrow_down_sharp,
-                    color: Colors.blue,
+                    color: AppColors.blue[700],
                   ),
                 ),
               ],

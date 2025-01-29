@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -96,7 +98,7 @@ class _AddCardSuccessScreen extends  State<AddCardSuccess> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
+                          backgroundColor: AppColors.blue[700],
                           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width * 0.477),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
@@ -106,7 +108,7 @@ class _AddCardSuccessScreen extends  State<AddCardSuccess> {
                           padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context)),
                           child: Text(
                             'Add account',
-                            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                            style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                           ),
                         ),
                       ),

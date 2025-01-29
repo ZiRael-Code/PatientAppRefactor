@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  final directory = Directory('lib/Account/Referral');
+  final directory = Directory('lib/OnBoarding');
   if (!directory.existsSync()) {
     print('The directory "lib" does not exist.');
     return;
@@ -13,23 +13,24 @@ void main() {
         final content = fileEntity.readAsStringSync();
 
         // Remove the specific import statement
-        final updatedContent1 = content.replaceAll(
-          "import '../Main/Dashboard.dart';",
-          '',
-        );
+        // final updatedContent1 = content.replaceAll(
+        //   "import 'components/colors/colours.dart';",
+        //   '',
+        // );
         final updatedContent = content.replaceAll(
-          "import '../../MainSelectionScreen/Dashboard.dart';",
-          '',
+          "import 'components/colors/colours.dart';",
+          ' ',
         );
 
         // Write back updated content if there's a change
         if (updatedContent != content) {
           fileEntity.writeAsStringSync(updatedContent);
           print('Removed import from: ${fileEntity.path}');
-        }else if(updatedContent1 != content){
-          fileEntity.writeAsStringSync(updatedContent1);
-          print('Removed import from: ${fileEntity.path}');
         }
+        // else if(updatedContent1 != content){
+        //   fileEntity.writeAsStringSync(updatedContent1);
+        //   print('Removed import from: ${fileEntity.path}');
+        // }
       } catch (e) {
         print('Error processing file: ${fileEntity.path}, Error: $e');
       }

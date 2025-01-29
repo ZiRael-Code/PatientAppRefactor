@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -96,7 +98,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                               ),
                               child: Text("CARD 1", style: TextStyle(
                                   fontSize: getFontSize(11, context),
-                                  color: Colors.white
+                                  color: AppColors.gray[100]
                               ),),
                             ),
                             Spacer(),
@@ -112,7 +114,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                             style: TextStyle(
                               fontSize: getFontSize(23.0, context),
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: AppColors.gray[100],
                             ),
                           ),
                         ),
@@ -129,7 +131,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                                     'Card holder',
                                     style: TextStyle(
                                       fontSize: getFontSize(9.0, context),
-                                      color: Colors.white,
+                                      color: AppColors.gray[100],
                                     ),
                                   ),
                                 ),
@@ -140,7 +142,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                                     style: TextStyle(
                                       fontSize: getFontSize(12.0, context),
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white,
+                                      color: AppColors.gray[100],
                                     ),
                                   ),
                                 ),
@@ -158,7 +160,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                                     'Expiry',
                                     style: TextStyle(
                                       fontSize: getFontSize(9.0, context),
-                                      color: Colors.white,
+                                      color: AppColors.gray[100],
                                     ),
                                   ),
                                 ),
@@ -169,7 +171,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                                     style: TextStyle(
                                       fontSize: getFontSize(12.0, context),
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white,
+                                      color: AppColors.gray[100],
                                     ),
                                   ),
                                 ),
@@ -231,7 +233,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                     "Make this card the default card",
                     style: TextStyle(
                       fontSize: getFontSize(14.0, context),
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   Spacer(),
@@ -242,8 +244,8 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                         isSwitched = value;
                       });
                     },
-                    activeColor: Colors.blue,
-                    inactiveThumbColor: Colors.white,
+                    activeColor: AppColors.blue[700],
+                    inactiveThumbColor: AppColors.gray[100],
                     inactiveTrackColor: Colors.grey[300],
                   ),
                 ],
@@ -291,7 +293,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
         Text(
           textHeader,
           style: TextStyle(
-            color: Colors.black,
+            color: AppColors.gray[700],
             fontSize: getFontSize(16.0, context),
           ),
           textAlign: TextAlign.start,
@@ -311,7 +313,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
           child: Text(
             textHint,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.gray[700],
               fontSize: getFontSize(16.0, context),
             ),
           ),
@@ -330,7 +332,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                 Text(
                   'Are you sure you want to delete this card?',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: AppColors.gray[700]),
                 ),
                 SizedBox(height: getFontSize(20, context)),
                 Row(
@@ -338,7 +340,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.blue[700],
                       ),
                       onPressed: () {
                         Navigator.of(context).pushAndRemoveUntil(
@@ -348,7 +350,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                       },
                       child: Text(
                         'Yes',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: AppColors.gray[100]),
                       ),
                     ),
                     ElevatedButton(

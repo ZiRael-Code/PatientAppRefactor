@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -78,7 +79,7 @@ class _DeviceOrderInformationScreen extends  State<DeviceOrderInformation> {
               Center(child:
               Text(
               'Wellue Bp2 Connect device',
-              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(16, context)),
             ),
             ),
 

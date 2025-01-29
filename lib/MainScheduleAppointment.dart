@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -176,7 +177,7 @@ class _MainScheduleAppointmentScreen extends  State<MainScheduleAppointment> {
                   Text(name, style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black
+                    color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text(specialization, style: TextStyle(
@@ -194,14 +195,14 @@ class _MainScheduleAppointmentScreen extends  State<MainScheduleAppointment> {
                     Container(
                       padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                       decoration: BoxDecoration(
-                        color: Color(0xffE2EDFF),
+                        color: AppColors.blue[600],
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Text(
                         workingHours,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue,
+                          color: AppColors.blue[700],
                           fontSize: getFontSize(11, context)
                         ),
                       )
@@ -210,7 +211,7 @@ class _MainScheduleAppointmentScreen extends  State<MainScheduleAppointment> {
                   Text(
                           workingDays,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.gray[700],
                         )
                     ),
 

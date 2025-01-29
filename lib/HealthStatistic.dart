@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -80,10 +81,10 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
             Container(
               height: getFontSize(23, context),
               width: getFontSize(23, context),
-              child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
+              child: Center(child: Icon(Icons.arrow_back_ios, color: AppColors.blue[700], size: getFontSize(15, context),),),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue.withOpacity(0.20),
+                color: AppColors.blue[700].withOpacity(0.20),
               ),
             ),
             SizedBox(width: getFontSize(8, context),),
@@ -98,10 +99,10 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
             Container(
               height: getFontSize(23, context),
               width: getFontSize(23, context),
-              child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
+              child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700], size: getFontSize(15, context),),),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue.withOpacity(0.20),
+                color: AppColors.blue[700].withOpacity(0.20),
               ),
             ),
           ],),
@@ -123,9 +124,9 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                     width: getFontSize(161, context),
                     height: getFontSize(54, context),
                     decoration: BoxDecoration(
-                      color: isSelected ? Colors.blue : Colors.transparent,
+                      color: isSelected ? AppColors.blue[700] : Colors.transparent,
                       border: Border.all(
-                        color: isSelected ? Colors.transparent : Colors.blue,
+                        color: isSelected ? Colors.transparent : AppColors.blue[700],
                         width: getFontSize(1, context),
                       ),
                       borderRadius: BorderRadius.circular(12),
@@ -134,7 +135,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                     child: Text(
                       tabLabels[index],
                       style: TextStyle(
-                        color: isSelected ? Colors.white : Colors.blue,
+                        color: isSelected ? AppColors.gray[100] : AppColors.blue[700],
                         fontSize: getFontSize(16, context),
                       ),
                     ),
@@ -285,7 +286,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
           Icon(
             Icons.arrow_forward_ios_outlined,
             size: getFontSize(16, context),
-            color: Colors.black,
+            color: AppColors.gray[700],
           ),
         ],
       ),
@@ -295,7 +296,6 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
   }
 
   hearthRate() {}
-
 
 
 

@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +107,7 @@ class _CommunityScreen extends  State<Community> {
             anomymity();
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -115,7 +117,7 @@ class _CommunityScreen extends  State<Community> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Explore community',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -177,7 +179,7 @@ class _CommunityScreen extends  State<Community> {
                         shape: BoxShape.circle,
                         color: isSelected ? Colors.green : Color(0xffF2F2F2),
                       ),
-                      child: Icon(Icons.check, color: isSelected ? Colors.white : Color(0xffC2C2C2))
+                      child: Icon(Icons.check, color: isSelected ? AppColors.gray[100] : Color(0xffC2C2C2))
                   ),
                   ),
                   SizedBox(width: getFontSize(7, context),),
@@ -191,7 +193,7 @@ class _CommunityScreen extends  State<Community> {
                   Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> AllCommunity()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue[700],
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
@@ -201,7 +203,7 @@ class _CommunityScreen extends  State<Community> {
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Okay',
-                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                    style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),

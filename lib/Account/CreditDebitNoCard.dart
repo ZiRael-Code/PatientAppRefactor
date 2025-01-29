@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -73,7 +75,7 @@ class _CreditDebitNoCardScreen extends State<CreditDebitNoCard> {
                         'You have no cards yet.',
                         style: TextStyle(
                           fontSize: getFontSize(18.0, context),
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                         ),
                         ),
                       ),
@@ -98,7 +100,7 @@ class _CreditDebitNoCardScreen extends State<CreditDebitNoCard> {
                         child: Center(child:  Text(
                             'Add new card',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: AppColors.gray[100],
                               fontSize: getFontSize(18, context),
                             ),
                           ),

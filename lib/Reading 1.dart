@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -71,7 +72,7 @@ class _ReadingScreen extends  State<Reading> {
                 children: [
                   Container(
                       decoration: BoxDecoration(
-                        border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
+                        border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.15)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       margin: EdgeInsets.only(left: getFontSize(15, context)),
@@ -135,13 +136,13 @@ class _ReadingScreen extends  State<Reading> {
                     padding: EdgeInsets.all(14),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                        color: Color(0xffE2EDFF)
+                        color: AppColors.blue[600]
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.add_circle_outline, color: Colors.blue,),
+                        Icon(Icons.add_circle_outline, color: AppColors.blue[700],),
                         SizedBox(width: getFontSize(7, context)),
-                        Text('Edit entry', style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),),
+                        Text('Edit entry', style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.blue[700]),),
                       ],
                     ),
                   )
@@ -197,7 +198,7 @@ class _ReadingScreen extends  State<Reading> {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -207,7 +208,7 @@ class _ReadingScreen extends  State<Reading> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save entry',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

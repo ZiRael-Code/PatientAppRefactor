@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -92,7 +94,7 @@ int number = 0;
             SizedBox(height: getFontSize(5, context)),
             Text(
               'Wellue Bp2 Connect device',
-              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(16, context)),
             ),
 
 
@@ -109,7 +111,7 @@ int number = 0;
             SizedBox(height: getFontSize(5, context)),
             Text(
               'N25,000.00',
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: getFontSize(16, context)),
+              style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.blue[700], fontSize: getFontSize(16, context)),
             ),
 
             SizedBox(height: getFontSize(15, context)),
@@ -125,7 +127,7 @@ int number = 0;
             SizedBox(height: getFontSize(5, context)),
             Text(
               'Oxygen saturation, blood pressure, stress level, body temperature.',
-              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(16, context)),
             ),
             SizedBox(height: getFontSize(15, context)),
             SvgPicture.asset('assets/images/line.svg'),
@@ -136,7 +138,7 @@ int number = 0;
             // How many devices do you need?
            Center(child: Text(
               'How many devices do you need?',
-              style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context)),
             ),
             ),
 
@@ -153,10 +155,10 @@ int number = 0;
                   width: getFontSize(35, context),
                   height: getFontSize(35, context),
                   decoration: BoxDecoration(
-                    color: Color(0xffE2EDFF),
+                    color: AppColors.blue[600],
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.remove, size: getFontSize(16, context),color: Colors.blue),
+                  child: Icon(Icons.remove, size: getFontSize(16, context),color: AppColors.blue[700]),
                 ),
                   onTap: () {
                     setState(() {
@@ -173,7 +175,7 @@ int number = 0;
                 // Display quantity
                 Text(
                   number.toString(),
-                  style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: Colors.black),
+                  style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: AppColors.gray[700]),
                 ),
 
                 SizedBox(width: getFontSize(25, context)),
@@ -184,10 +186,10 @@ int number = 0;
                   width: getFontSize(35, context),
                   height: getFontSize(35, context),
                   decoration: BoxDecoration(
-                    color: Color(0xffE2EDFF),
+                    color: AppColors.blue[600],
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.add, size: getFontSize(16, context), color: Colors.blue),
+                  child: Icon(Icons.add, size: getFontSize(16, context), color: AppColors.blue[700]),
 
                   ),
                     onTap: () {
@@ -219,11 +221,11 @@ int number = 0;
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12), // Border radius of 12
                   ),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue[700],
                 ),
                 child: Text(
                   'Place an order',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: AppColors.gray[100]),
                 ),
               ),
             ),

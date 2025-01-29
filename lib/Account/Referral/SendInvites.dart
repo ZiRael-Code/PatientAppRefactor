@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import 'package:flutter_app/Account/Referral/send_invites_success_page.dart';
 
 import '../../Main/Dashboard.dart';
@@ -88,7 +90,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                   style: TextStyle(fontSize: getFontSize(14, context)),
                 ),
                 Row(children: [
-                  Text('Link: ', style: TextStyle(color: Colors.black, fontSize: getFontSize(14, context))),
+                  Text('Link: ', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(14, context))),
 
                   GestureDetector(
                     onTap: () {
@@ -98,7 +100,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                       '7f4j6n8qN6EDCP-9wd/8ac6g7ewo87',
                       style: TextStyle(
                         fontSize: getFontSize(14, context),
-                        color: Colors.blue,
+                        color: AppColors.blue[700],
                         decoration: TextDecoration.underline,              ),
                     ),
                   ),
@@ -111,7 +113,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                   '4 Contacts selected',
                   style: TextStyle(
                     fontSize: getFontSize(16, context),
-                    color: Colors.blue,
+                    color: AppColors.blue[700],
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -148,14 +150,14 @@ class _SendInvitesScreen extends  State<SendInvites> {
           builder: (context, scrollController) {
             return Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.gray[100],
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   topRight: Radius.circular(20),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
+                    color: AppColors.gray[700],
                     blurRadius: 10,
                     offset: Offset(0, -2),
                   ),
@@ -186,7 +188,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                               child: _actionButton(
                                 icon: Icons.phone,
                                 label: 'share on whatsapp',
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                               ),
                             ),
                             GestureDetector(
@@ -195,7 +197,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                               child: _actionButton(
                                 icon: Icons.message,
                                 label: 'share as text message',
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                               ),
                             ),
                           ],
@@ -208,7 +210,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SendInvitesSuccessPage()));
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
+                            backgroundColor: AppColors.blue[700],
                             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(9),
@@ -218,7 +220,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                             padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                             child: Text(
                               'Done',
-                              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                             ),
                           ),
                         ),
@@ -279,7 +281,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                           color: Color(0xff2e2e42),
                           shape: BoxShape.circle
                       ),
-                      child: Text(alphaOrder, textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: getFontSize(35, context), fontWeight: FontWeight.bold),),
+                      child: Text(alphaOrder, textAlign: TextAlign.center, style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(35, context), fontWeight: FontWeight.bold),),
                     ),
 
                     Align(
@@ -316,7 +318,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
           height: getFontSize(86, context),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xffE2EDFF)
+              color: AppColors.blue[600]
           ),
           child: icon is Icon ? icon : SvgPicture.asset(icon, width: getFontSize(26, context), height: getFontSize(26, context),),
         ),

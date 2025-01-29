@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -98,8 +99,8 @@ SizedBox(height: getFontSize(30, context),),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
-            textStyle: TextStyle(color: Colors.white),
+            backgroundColor: AppColors.blue[700],
+            textStyle: TextStyle(color: AppColors.gray[100]),
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -109,7 +110,7 @@ SizedBox(height: getFontSize(30, context),),
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Start using drugs',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -175,7 +176,7 @@ SizedBox(height: getFontSize(30, context),),
                 // Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> CommunityFeed()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: AppColors.blue[700],
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
@@ -185,7 +186,7 @@ SizedBox(height: getFontSize(30, context),),
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Yes',
-                  style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                  style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                 ),
               ),
             ),
@@ -194,7 +195,7 @@ SizedBox(height: getFontSize(30, context),),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-                side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
+                side: BorderSide(color: AppColors.blue[700], width: getFontSize(1, context)),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
                 ),
@@ -203,7 +204,7 @@ SizedBox(height: getFontSize(30, context),),
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'No i haven\'t',
-                  style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                  style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                 ),
               ),
             ),

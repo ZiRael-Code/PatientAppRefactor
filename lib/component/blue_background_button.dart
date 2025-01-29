@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+
+import '../components/colors/colours.dart';
 
 class BlueBackgroundButton extends StatelessWidget {
   final String label;
@@ -32,7 +35,7 @@ class BlueBackgroundButton extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          color: Colors.white,
+          color: AppColors.gray[100],
           fontSize: fontSize,
         ),
       ),

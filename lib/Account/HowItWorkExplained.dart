@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -79,16 +81,16 @@ class HowItWorkExplainedState extends  State<HowItWorkExplained> {
               Container(
                 decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(12),
-                 color: Colors.black
+                 color: AppColors.gray[700]
                 ),
                 child: Center(child:  Container(
 
                   width: getFontSize(59, context),
                   height: getFontSize(59, context),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.05)
+                    color: AppColors.gray[100].withOpacity(0.05)
                   ),
-                  child: Center(child: Icon(Icons.play_arrow, color: Colors.white)),
+                  child: Center(child: Icon(Icons.play_arrow, color: AppColors.gray[100])),
                 ),
                 ),
               ),

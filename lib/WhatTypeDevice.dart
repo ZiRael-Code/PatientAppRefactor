@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'dart:math';
@@ -9,6 +10,7 @@ import 'package:flutter_app/IsSupported.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'QrCodeScan.dart';
+
 
 
 void main(){
@@ -94,9 +96,9 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
           padding: EdgeInsets.only(left: getFontSize(16, context), right: getFontSize(16, context), top: getFontSize(10, context), bottom: getFontSize(10, context)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Color(0xffE2EDFF)
+            color: AppColors.blue[600]
           ),
-          child: Text(style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),'Scan with QR code instead'),
+          child: Text(style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.blue[700]),'Scan with QR code instead'),
         ),
         ),
         SizedBox(height: getFontSize(25, context),),
@@ -106,7 +108,7 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> page[Random.secure().nextInt(2)]));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -116,7 +118,7 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Check device',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -106,7 +108,7 @@ SizedBox(height: getFontSize(30, context),),
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => RenewOrderTotalPrice()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -116,7 +118,7 @@ SizedBox(height: getFontSize(30, context),),
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -163,7 +165,7 @@ SizedBox(height: getFontSize(30, context),),
             children: [
               Text(name, style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),),
              Spacer(),
-              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue, fontWeight: FontWeight.bold))
+              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.blue[700], fontWeight: FontWeight.bold))
             ],
           ),
           

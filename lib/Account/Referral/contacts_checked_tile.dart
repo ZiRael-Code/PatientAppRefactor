@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 
@@ -45,13 +47,13 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
                 height: getFontSize(50, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.black,
+                  color: AppColors.gray[700],
                 ),
                 child: Center(
                   child: Text(
                     widget.name[0],
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -95,7 +97,7 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
                   child: isChecked
                       ? Icon(
                           Icons.check,
-                          color: Colors.white,
+                          color: AppColors.gray[100],
                           size: getFontSize(16, context),
                         )
                       : null,

@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +25,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Row(
@@ -57,7 +58,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(
                       width: getFontSize(1, context),
-                      color: Colors.black.withOpacity(0.070),
+                      color: AppColors.gray[700].withOpacity(0.070),
                     ),
                   ),
                   child: Row(
@@ -94,7 +95,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                         height: getFontSize(50, context),
                         width: MediaQuery.of(context).size.width * 0.40,
                         decoration: BoxDecoration(
-                          color: Color(0xFFE2EDFF),
+                          color: AppColors.blue["600"],
                           borderRadius: BorderRadius.circular(9),
                         ),
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -112,7 +113,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                               isFilterOpen
                                   ? Icons.keyboard_arrow_up
                                   : Icons.keyboard_arrow_down,
-                              color: Colors.blue,
+                              color: AppColors.blue[700],
                               size: getFontSize(26, context),
                             ),
                           ],
@@ -124,7 +125,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                           width: double.infinity, // Matches screen width
                           padding: EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColors.gray[100],
                             borderRadius: BorderRadius.circular(9),
                           ),
                           child: Column(
@@ -135,14 +136,14 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                                   Text('No. of medications:',
                                   style: TextStyle(
                                     fontSize: getFontSize(14, context),
-                                    color: Colors.black.withOpacity(0.55),
+                                    color: AppColors.gray[700].withOpacity(0.55),
                                   )
                                   ),
                                   Spacer(),
                                   Text('3 drugs',
                                   style: TextStyle(
                                     fontSize: getFontSize(14, context),
-                                    color: Colors.black,
+                                    color: AppColors.gray[700],
                                   )
                                   )
                                 ],
@@ -153,14 +154,14 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                                   Text('Price:',
                                   style: TextStyle(
                                     fontSize: getFontSize(14, context),
-                                    color: Colors.black.withOpacity(0.55),
+                                    color: AppColors.gray[700].withOpacity(0.55),
                                   )
                                   ),
                                   Spacer(),
                                   Text('N25,000.00',
                                   style: TextStyle(
                                     fontSize: getFontSize(14, context),
-                                    color: Colors.blue,
+                                    color: AppColors.blue[700],
                                   )
                                   )
                                 ],
@@ -171,7 +172,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                                   Text('TOTAL:',
                                   style: TextStyle(
                                     fontSize: getFontSize(14, context),
-                                    color: Colors.black.withOpacity(0.55),
+                                    color: AppColors.gray[700].withOpacity(0.55),
                                   )
                                   ),
                                   Spacer(),
@@ -179,7 +180,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                                   style: TextStyle(
                                     fontSize: getFontSize(16, context),
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.blue,
+                                    color: AppColors.blue[700],
                                   )
                                   )
                                 ],
@@ -194,7 +195,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
@@ -205,7 +206,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
                         vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Proceed to checkout',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),

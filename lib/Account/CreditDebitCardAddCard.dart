@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -90,7 +92,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                   ),
                   child: Text("CARD 1", style: TextStyle(
                     fontSize: getFontSize(11, context),
-                    color: Colors.white
+                    color: AppColors.gray[100]
                   ),),
                 ),
                   Spacer(),
@@ -106,7 +108,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                     style: TextStyle(
                       fontSize: getFontSize(23.0, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                     ),
                   ),
                   ),
@@ -123,7 +125,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                                 'Card holder',
                                 style: TextStyle(
                                   fontSize: getFontSize(9.0, context),
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -134,7 +136,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                                 style: TextStyle(
                                   fontSize: getFontSize(12.0, context),
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -152,7 +154,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                                 'Expiry',
                                 style: TextStyle(
                                   fontSize: getFontSize(9.0, context),
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -163,7 +165,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                                 style: TextStyle(
                                   fontSize: getFontSize(12.0, context),
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -223,7 +225,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                       "Make this card the default card",
                       style: TextStyle(
                         fontSize: getFontSize(14.0, context),
-                        color: Colors.black,
+                        color: AppColors.gray[700],
                       ),
                     ),
                     Spacer(),
@@ -234,8 +236,8 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                           isSwitched = value;
                         });
                       },
-                      activeColor: Colors.blue,
-                      inactiveThumbColor: Colors.white,
+                      activeColor: AppColors.blue[700],
+                      inactiveThumbColor: AppColors.gray[100],
                       inactiveTrackColor: Colors.grey[300],
                     ),
                   ],
@@ -263,7 +265,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                   child: Center(child: Text(
                       'Continue',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                         fontSize: getFontSize(16, context),
                       ),
                     ),

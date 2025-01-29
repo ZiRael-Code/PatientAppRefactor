@@ -1,3 +1,4 @@
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Main/MeasureVitalsManuallyMenu.dart';
@@ -34,7 +35,7 @@ class _VitalsReadingState extends State<VitalsReading>
     return Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: AppColors.blue[700],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(30),
@@ -45,26 +46,26 @@ class _VitalsReadingState extends State<VitalsReading>
           width: getFontSize(35, context),
           height: getFontSize(35, context),
           decoration: BoxDecoration(
-            color: Colors.blue[200],
+            color: AppColors.blue[700],
             shape: BoxShape.circle,
           ),
-          child: InkWell(child: Icon(Icons.home_outlined, color: Colors.white),
+          child: InkWell(child: Icon(Icons.home_outlined, color: AppColors.gray[100]),
           onTap: (){
             Navigator.pop(context);
           },
           ),
         ),
         Spacer(),
-        Text('Vital Readings', style: TextStyle(color: Colors.white)),
+        Text('Vital Readings', style: TextStyle(color: AppColors.gray[100])),
           Spacer(),
           Container(
             width: getFontSize(35, context),
             height: getFontSize(35, context),
             decoration: BoxDecoration(
-              color: Colors.blue[200],
+              color: AppColors.blue[700],
               shape: BoxShape.circle,
             ),
-            child: Center(child: Icon(Icons.share, color: Colors.white)),
+            child: Center(child: Icon(Icons.share, color: AppColors.gray[100])),
           ),
         ],
       ),
@@ -73,7 +74,7 @@ class _VitalsReadingState extends State<VitalsReading>
 
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Colors.white,
+          indicatorColor: AppColors.gray[100],
           tabs: [
             _buildTabButton('Take Readings'),
             _buildTabButton('History'),
@@ -116,7 +117,7 @@ class _VitalsReadingState extends State<VitalsReading>
               child: Wrap(
                 children: [
                   vital(
-                    themeColor: Color(0xFFFF618F),
+                    themeColor: AppColors.pink[700],
                     vitalIcon: 'assets/images/hearth.svg',
                     vitalRead: '77',
                     subcriptOrnot: 'bpm',
@@ -171,10 +172,10 @@ class _VitalsReadingState extends State<VitalsReading>
                 // Navigate to the details page
                 Navigator.push(context, MaterialPageRoute(builder: (context) => MeasureVitalsManuallyMenu()));
               },
-              child: _buildActionButton('Capture Manually', Colors.blue, Colors.white)
+              child: _buildActionButton('Capture Manually', AppColors.blue[700], AppColors.gray[100])
             ),
             SizedBox(height: getFontSize(10, context)),
-            _buildActionButton('Request for the Device', Colors.transparent, Colors.blue, hasBorder: true),
+            _buildActionButton('Request for the Device', Colors.transparent, AppColors.blue[700], hasBorder: true),
             SizedBox(height: getFontSize(20, context)),
           ],
         ),
@@ -212,7 +213,7 @@ class _VitalsReadingState extends State<VitalsReading>
                   child:
                 readingHistory(
                   icon: "assets/images/hearth2.svg",
-                  themeColor: Color(0xFFFF618F),
+                  themeColor: AppColors.pink[700],
                   name: "Heart rate",
                 ),
                 ),
@@ -332,10 +333,10 @@ class _VitalsReadingState extends State<VitalsReading>
                   width: getFontSize(73, context),
                   height: getFontSize(73, context),
                   decoration: BoxDecoration(
-                    color: Color(0xffE2EDFF),
+                    color: AppColors.blue[600],
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Icon(Icons.add, color: Colors.blue, size: getFontSize(32, context),),
+                  child: Icon(Icons.add, color: AppColors.blue[700], size: getFontSize(32, context),),
                 ),
                 Text('Order for a new device')
               ]
@@ -355,7 +356,7 @@ class _VitalsReadingState extends State<VitalsReading>
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(12),
-        border: hasBorder ? Border.all(color: Colors.blue) : null,
+        border: hasBorder ? Border.all(color: AppColors.blue[700]) : null,
       ),
       child: Center(
         child: Text(
@@ -457,7 +458,7 @@ class _VitalsReadingState extends State<VitalsReading>
                       Align(child: Text(vitalType,
                         style: TextStyle(
                           fontSize: getFontSize(14.0, context),
-                          color: Colors.white,
+                          color: AppColors.gray[100],
                         ),
                       ),
                         alignment: Alignment.centerLeft,
@@ -466,7 +467,7 @@ class _VitalsReadingState extends State<VitalsReading>
                       Align(child:
                       Text(dateAdded, style: TextStyle(
                         fontSize: getFontSize(9.0, context),
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                       )),
                         alignment: Alignment.centerLeft,
                       ),
@@ -648,7 +649,7 @@ class _VitalsReadingState extends State<VitalsReading>
           Icon(
             Icons.arrow_forward_ios_outlined,
             size: getFontSize(16, context),
-            color: Colors.black,
+            color: AppColors.gray[700],
           ),
         ],
       ),
@@ -709,7 +710,7 @@ class _VitalsReadingState extends State<VitalsReading>
                   child: Icon(
                   Icons.arrow_forward_ios_outlined,
                   size: getFontSize(16, context),
-                  color: Colors.black,
+                  color: AppColors.gray[700],
                 ),
                 ),
 
@@ -734,7 +735,7 @@ class _VitalsReadingState extends State<VitalsReading>
       height: getFontSize(143, context),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.2))
+          border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.2))
       ),
       child:
       Center(child: SvgPicture.asset(imagePath),),

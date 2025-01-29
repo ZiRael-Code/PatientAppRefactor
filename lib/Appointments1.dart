@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -93,7 +94,7 @@ class Appointments1State extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                    fixedSize: Size.fromHeight(54),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
@@ -103,7 +104,7 @@ class Appointments1State extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Book an appointment',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
@@ -140,7 +141,7 @@ class Appointments1State extends StatelessWidget {
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color:  Colors.black.withOpacity(0.1)),
+                          border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
                         ),
                       ),
                     ],

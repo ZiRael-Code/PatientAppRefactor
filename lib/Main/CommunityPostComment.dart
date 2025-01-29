@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
     return  Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.gray[100],
           title: Row(
             children: [
               InkWell(
@@ -63,7 +65,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
         ),
         body:
         Container(
-          color: Colors.white,
+          color: AppColors.gray[100],
             padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
@@ -95,11 +97,11 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Rayoo Rayoo", style: TextStyle(fontSize: getFontSize(14, context)),),
-                        Text("11:20am"+" . "+"9th Sept 2022", style: TextStyle(color: Colors.black45))
+                        Text("11:20am"+" . "+"9th Sept 2022", style: TextStyle(color: AppColors.gray[700]))
                       ],
                     ),
                     Spacer(),
-                    Icon(Icons.more_vert, color: Colors.black,)
+                    Icon(Icons.more_vert, color: AppColors.gray[700],)
                   ],
                 ),
                 SizedBox(height: getFontSize(20, context),),
@@ -114,9 +116,9 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                   children: [
                     Text('All comments', style: TextStyle(fontSize: getFontSize(18, context))),
                     Spacer(),
-                    Icon(Icons.comment, color: Colors.black54,),
+                    Icon(Icons.comment, color: AppColors.gray[700],),
                     SizedBox(width: getFontSize(5, context),),
-                    Text('15'+" comments", style: TextStyle(color: Colors.black54)),
+                    Text('15'+" comments", style: TextStyle(color: AppColors.gray[700])),
                   ],
                 ),
                 comment(
@@ -182,7 +184,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                      Container(
                         width: getFontSize(240, context),
                        child:
-                         Text(comment, style: TextStyle(fontSize: getFontSize(12, context), color: Colors.black54),)
+                         Text(comment, style: TextStyle(fontSize: getFontSize(12, context), color: AppColors.gray[700]),)
 
                      )
                     ],
@@ -191,9 +193,9 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                       SizedBox(height: getFontSize(12, context)),
                       Row(
                         children: [
-                          Icon(Icons.reply, color: Colors.blue,),
+                          Icon(Icons.reply, color: AppColors.blue[700],),
                           SizedBox(width: getFontSize(5, context),),
-                          Text('Reply', style: TextStyle(fontSize: getFontSize(12, context), color: Colors.blue,))
+                          Text('Reply', style: TextStyle(fontSize: getFontSize(12, context), color: AppColors.blue[700],))
                         ],
                       )
                   ]

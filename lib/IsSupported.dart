@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,7 @@ class _IsSupportedScreen extends  State<IsSupported> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SyncDeviceToPhone()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -87,7 +88,7 @@ class _IsSupportedScreen extends  State<IsSupported> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Sync device now',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -98,17 +99,17 @@ class _IsSupportedScreen extends  State<IsSupported> {
           },
           style: ElevatedButton.styleFrom(
               fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-              side: BorderSide(width: getFontSize(1, context), color: Colors.blue),
+              side: BorderSide(width: getFontSize(1, context), color: AppColors.blue[700]),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(9),
               ),
-              textStyle: TextStyle(color: Colors.blue)
+              textStyle: TextStyle(color: AppColors.blue[700])
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'I’ll do this later',
-              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

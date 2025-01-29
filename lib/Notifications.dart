@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -113,7 +114,7 @@ class _NotificationsScreen extends  State<Notifications> {
         Align(
           alignment: Alignment.centerLeft,
           child:
-        Text('Today', style: TextStyle(fontSize: getFontSize(20, context),color: Colors.black, fontWeight: FontWeight.bold))),
+        Text('Today', style: TextStyle(fontSize: getFontSize(20, context),color: AppColors.gray[700], fontWeight: FontWeight.bold))),
         SizedBox(height: getFontSize(20, context),),
         notification(
           title: 'Message from Dr. Nelson',
@@ -195,14 +196,14 @@ class _NotificationsScreen extends  State<Notifications> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.gray[700])),
             SizedBox(height: getFontSize(5, context)),
             Container(
             width: getFontSize(224, context),
     child:
             Text(message, style: TextStyle(color: Color(0xff666666), fontSize: getFontSize(14, context))),)
             ,SizedBox(height: getFontSize(12, context)),
-            Text(time, style: TextStyle(color: Colors.blue, fontSize: getFontSize(12, context))),
+            Text(time, style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(12, context))),
     ],
         ),
         Spacer(),
@@ -214,13 +215,13 @@ class _NotificationsScreen extends  State<Notifications> {
                 // Add your onPressed functionality here
               },
               style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.blue,
+                foregroundColor: AppColors.gray[100],
+                backgroundColor: AppColors.blue[700],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              child: Text(buttonText, style: TextStyle(color: Colors.white),),
+              child: Text(buttonText, style: TextStyle(color: AppColors.gray[100]),),
             )
           ),
         )

@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -20,7 +22,7 @@ class _MontyState extends State<Monty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       appBar: AppBar(
           automaticallyImplyLeading: false,
         title: Text('Select Year and Month'),
@@ -78,7 +80,7 @@ class _MontyState extends State<Monty> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: _selectedMonth == _months[index]
-                          ? Colors.blue
+                          ? AppColors.blue[700]
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -87,8 +89,8 @@ class _MontyState extends State<Monty> {
                         _months[index],
                         style: TextStyle(
                           color: _selectedMonth == _months[index]
-                              ? Colors.white
-                              : Colors.black,
+                              ? AppColors.gray[100]
+                              : AppColors.gray[700],
                           fontSize: getFontSize(18, context),
                         ),
                       ),

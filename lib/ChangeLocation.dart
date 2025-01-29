@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,8 @@ import 'Main/Dashboard.dart';
 
 
 class ChangeLocation extends StatefulWidget {
-  ChangeLocation({super.key});
+  final dynamic nextScreen;
+  ChangeLocation({super.key, required this.nextScreen});
 
   @override
   State<ChangeLocation> createState() => _ChangeLocationState();
@@ -18,7 +20,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Row(
@@ -74,10 +76,10 @@ class _ChangeLocationState extends State<ChangeLocation> {
       ElevatedButton(
         onPressed: () {
           // TODO the popup nd select location no dey so redo it
-          Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout(nextScreen: widget.nextScreen,)));
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.blue[700],
           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(9),
@@ -88,7 +90,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           child: Text(
             'Confirm new location',
-            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+            style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
           ),
         ),
       ),
@@ -110,7 +112,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
         TextField(
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(color: Colors.black26),
+            hintStyle: TextStyle(color: AppColors.gray[700]),
             filled: true,
             fillColor: Colors.grey[200], // Light gray background
             border: OutlineInputBorder(
@@ -136,7 +138,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
             ),
             suffixIcon:  Icon(
               Icons.keyboard_arrow_down_sharp,
-              color: Colors.black45,
+              color: AppColors.gray[700],
             ),// Optional suffix icon
             constraints: BoxConstraints(
               maxWidth: 331, // Set the fixed width for the TextField

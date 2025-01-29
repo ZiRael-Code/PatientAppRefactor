@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,10 +36,10 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: AppColors.blue[700],
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.blue[700],
           title: Row(
             children: [
               Container(
@@ -51,7 +52,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: getFontSize(8.0, context),
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   height: getFontSize(15, context),),
               ),
               Spacer(),
@@ -65,7 +66,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
               borderRadius: BorderRadius.circular(50),
               color: Color(0xFFE5E5E5).withOpacity(0.40),
             ),
-            child: Icon(Icons.info_outlined, color: Colors.white,),
+            child: Icon(Icons.info_outlined, color: AppColors.gray[100],),
 
 
           ),
@@ -90,7 +91,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
         Align(child: Text("Add your device", textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: getFontSize(28, context),
-            color: Colors.white,
+            color: AppColors.gray[100],
             fontWeight: FontWeight.bold
           ),
         ),
@@ -101,7 +102,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
           child:
         Align(child: Text("Please switch your device on and make sure your phone’s bluetooth is on.", textAlign: TextAlign.center,
         style: TextStyle(
-          color: Colors.white,
+          color: AppColors.gray[100],
           fontSize: getFontSize(14, context),
         ),
         ),
@@ -118,7 +119,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
          width: getFontSize(183, context),
          height: getFontSize(183, context),
          decoration: BoxDecoration(
-           color: Colors.white,
+           color: AppColors.gray[100],
            shape: BoxShape.circle,
          ),
          child: SvgPicture.asset('assets/images/dev.svg'),
@@ -138,7 +139,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       builder: (BuildContext context) {
         return Padding(
           padding: EdgeInsets.all(16.0),
@@ -155,7 +156,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
       children: [
         Text(
           'How to connect?',
-          style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
+          style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context)),
         ),
         SizedBox(height: getFontSize(25, context)),
         numbering(

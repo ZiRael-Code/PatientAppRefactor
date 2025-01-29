@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -89,7 +90,7 @@ class _IrregularECGScreen extends  State<IrregularECG> {
                         style: TextStyle(
                           fontSize: getFontSize(38, context),
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                         ),
                       ),
 
@@ -98,12 +99,12 @@ class _IrregularECGScreen extends  State<IrregularECG> {
                         width: getFontSize(46, context),
                         height: getFontSize(46, context),
                         decoration: BoxDecoration(
-                          color: Color(0xFFFF618F),
+                          color: AppColors.gray[100],
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.favorite,  // Replace with your preferred icon
-                          color: Colors.white,
+                          color: AppColors.pink[700],
                         ),
                       ),
                     ],
@@ -161,7 +162,7 @@ class _IrregularECGScreen extends  State<IrregularECG> {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -171,7 +172,7 @@ class _IrregularECGScreen extends  State<IrregularECG> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Back to readings',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -202,7 +203,7 @@ class _IrregularECGScreen extends  State<IrregularECG> {
                     text: value, // Main value (e.g., 48)
                     style: TextStyle(
                       fontSize: getFontSize(18, context),
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   WidgetSpan(
@@ -212,7 +213,7 @@ class _IrregularECGScreen extends  State<IrregularECG> {
                         script, // Subscript text
                         style: TextStyle(
                           fontSize: getFontSize(12, context),
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                         ),
                       ),
                     ),

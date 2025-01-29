@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +74,11 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
       Column(
       children: [
         SizedBox(height: getFontSize(30, context)),
-        Container(
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchSpecialist()));
+          },
+          child:Container(
           padding: EdgeInsets.all(15),
           alignment: Alignment.center,
           width: double.infinity,
@@ -83,25 +89,20 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
               border: Border.all(width: getFontSize(1, context), 
-                  color: Colors.black.withOpacity(0.090))
+                  color: AppColors.gray[700].withOpacity(0.090))
             ),
               child: Row(
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchSpecialist()));
-          },
-                child:
+
               Container(
                 width: getFontSize(59, context),
                 height: getFontSize(59, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFFE2EDFF),
+                  color: AppColors.blue["600"],
                 ),
                 child: Icon(Icons.search, weight: 6, size: getFontSize(38, context),
-                  color: Colors.blue,),
-              ),
+                  color: AppColors.blue[700],),
               ),
 
               SizedBox(width: getFontSize(10, context),),
@@ -113,6 +114,7 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
         ]
       )
       ),
+        ),
         ),
         SizedBox(height: getFontSize(20, context),),
         Container(
@@ -188,7 +190,7 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
                   Text(name, style: TextStyle(
                       fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(

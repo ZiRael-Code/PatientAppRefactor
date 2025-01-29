@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +41,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                 Row(
                   children: [
                     Text('Drug name:    ', style: TextStyle(color: Color(0xff2E2E42))),
-                    Text('Ibuprofen 500mg x 24', style: TextStyle(color: Colors.blue, fontSize: getFontSize(20, context)),)
+                    Text('Ibuprofen 500mg x 24', style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(20, context)),)
                   ],
                 ),
                 SizedBox(height: getFontSize(15, context),),
@@ -52,7 +54,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Drug type:', style: TextStyle(color: Color(0xff666666))),
-                    Text('Capsules', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                    Text('Capsules', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                   ],
                 ),
                 Spacer(),
@@ -61,7 +63,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Dosage:', style: TextStyle(color: Color(0xff666666))),
-                    Text('2 pills', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                    Text('2 pills', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                   ],
                 ), ],
                 ),
@@ -74,7 +76,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Amount used:', style: TextStyle(color: Color(0xff666666))),
-                    Text('5/20', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                    Text('5/20', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                   ],
                 ),
                 Spacer(),
@@ -83,7 +85,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Total duration:', style: TextStyle(color: Color(0xff666666))),
-                    Text('2 weeks', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                    Text('2 weeks', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                   ],
                 ),  ],
                 ),
@@ -95,7 +97,7 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Frequency:', style: TextStyle(color: Color(0xff666666))),
-                    Text('3X daily [ Morning, Afternoon, Night ]', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                    Text('3X daily [ Morning, Afternoon, Night ]', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                   ],
                 ),
                 ),

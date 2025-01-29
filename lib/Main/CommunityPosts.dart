@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
       home: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.blue[700],
           title: Row(
             children: [
               Container(
@@ -38,7 +40,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),
-                color: Colors.white,),
+                color: AppColors.gray[100],),
               ),
               Spacer(),
           Container(
@@ -48,7 +50,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
               borderRadius: BorderRadius.circular(50),
               color: Color(0xFFFFFFFF).withOpacity(0.15),
             ),
-            child: Icon(Icons.more_vert, color: Colors.white,)
+            child: Icon(Icons.more_vert, color: AppColors.gray[100],)
           ),
 
             ],
@@ -57,7 +59,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
         ),
         body:
         Container(
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: BoxDecoration(color: AppColors.gray[100]),
             // padding.dart: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
@@ -71,7 +73,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
               width: double.infinity,
               height: getFontSize(120, context),
               decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(50), bottomLeft: Radius.circular(50))
               ),
             ),
@@ -94,7 +96,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
                             border: Border.all(width: getFontSize(0.1, context)),
-                            color: Colors.white,
+                            color: AppColors.gray[100],
                         ),
                           child:
                           Column(
@@ -116,9 +118,9 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
                                     height: getFontSize(30, context),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Color(0xffE2EDFF)
+                                        color: AppColors.blue[600]
                                     ),
-                                    child: Icon(Icons.person, color: Colors.blue),
+                                    child: Icon(Icons.person, color: AppColors.blue[700]),
                                   ),
                                   SizedBox(width: getFontSize(7, context),),
                                   Text(
@@ -133,9 +135,9 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
                                     height: getFontSize(30, context),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Color(0xffE2EDFF)
+                                        color: AppColors.blue[600]
                                     ),
-                                    child: Icon(Icons.location_pin, color: Colors.blue),
+                                    child: Icon(Icons.location_pin, color: AppColors.blue[700]),
                                   ),
                                   SizedBox(width: getFontSize(7, context),),
                                   Text(
@@ -189,7 +191,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
           'Post something',
           style: TextStyle(
             fontSize: getFontSize(14, context),
-            color: Colors.blue,
+            color: AppColors.blue[700],
           ),
         ),
           ],
@@ -267,7 +269,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
         child: Container(
       margin: EdgeInsets.only(bottom: getFontSize(15, context)),
       decoration: BoxDecoration(
-        color: Colors.white
+        color: AppColors.gray[100]
       ),
       padding: EdgeInsets.all(15),
       child: Column(
@@ -290,11 +292,11 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(fontSize: getFontSize(14, context)),),
-                  Text(time+" . "+date, style: TextStyle(color: Colors.black45))
+                  Text(time+" . "+date, style: TextStyle(color: AppColors.gray[700]))
                 ],
               ),
               Spacer(),
-              Icon(Icons.more_vert, color: Colors.black,)
+              Icon(Icons.more_vert, color: AppColors.gray[700],)
             ],
           ),
           SizedBox(height: getFontSize(20, context),),
@@ -307,9 +309,9 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
           SizedBox(height: getFontSize(10, context),),
           Row(
             children: [
-              Icon(Icons.comment, color: Colors.black,),
+              Icon(Icons.comment, color: AppColors.gray[700],),
               SizedBox(width: getFontSize(5, context),),
-              Text(comments+" comments", style: TextStyle(color: Colors.black)),
+              Text(comments+" comments", style: TextStyle(color: AppColors.gray[700])),
             ],
           )
         ],

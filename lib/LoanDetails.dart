@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -67,10 +68,10 @@ class _LoanDetailsState extends State<LoanDetails> {
           hint: "3 month "),
       Row(
         children: [
-          Text("Set a custom date", style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black45),),
+          Text("Set a custom date", style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[700]),),
           Spacer(),
           Switch(
-            activeColor: Colors.blue,
+            activeColor: AppColors.blue[700],
             value: _isSwitched,
             onChanged: (value) {
               setState(() {
@@ -89,9 +90,9 @@ class _LoanDetailsState extends State<LoanDetails> {
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: _isCheck ?  Colors.blue : Colors.grey.withOpacity(0.40),
+              color: _isCheck ?  AppColors.blue[700] : Colors.grey.withOpacity(0.40),
             ),
-            child: Icon(Icons.check, color: Colors.white,)
+            child: Icon(Icons.check, color: AppColors.gray[100],)
           ),
             onTap: (){
               setState(() {
@@ -114,7 +115,7 @@ class _LoanDetailsState extends State<LoanDetails> {
               (context) => RequestNewDeviceLoan()));
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.blue[700],
           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(9),
@@ -124,7 +125,7 @@ class _LoanDetailsState extends State<LoanDetails> {
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           child: Text(
             'Continue',
-            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+            style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
           ),
         ),
       ),
@@ -149,7 +150,7 @@ class _LoanDetailsState extends State<LoanDetails> {
         TextField(
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(color: Colors.black26),
+            hintStyle: TextStyle(color: AppColors.gray[700]),
             filled: true,
             fillColor: Colors.grey[200], // Light gray background
             border: OutlineInputBorder(
@@ -175,7 +176,7 @@ class _LoanDetailsState extends State<LoanDetails> {
             ),
             suffixIcon:  Icon(
               Icons.keyboard_arrow_down_sharp,
-              color: Colors.black45,
+              color: AppColors.gray[700],
             ),// Optional suffix icon
             constraints: BoxConstraints(
               maxWidth: 331, // Set the fixed width for the TextField

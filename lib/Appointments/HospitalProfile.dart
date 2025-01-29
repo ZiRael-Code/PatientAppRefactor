@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,7 @@ class _HospitalProfileState extends State<HospitalProfile> {
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
-              color: Colors.blue,
+              color: AppColors.blue[700],
             ),
               alignment: Alignment.centerLeft,
               child:
@@ -43,7 +45,7 @@ class _HospitalProfileState extends State<HospitalProfile> {
                 ),
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),
                 ),
@@ -157,7 +159,7 @@ class _HospitalProfileState extends State<HospitalProfile> {
                       borderRadius: BorderRadius.circular(9),
                       color: Color(0xFFF1F1F1),
                       border: Border.all(
-                        color: Colors.black.withOpacity(0.1),
+                        color: AppColors.gray[700].withOpacity(0.1),
                         width: getFontSize(1.5, context),
                       ),
                     ),
@@ -243,7 +245,7 @@ class _HospitalProfileState extends State<HospitalProfile> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.blue[700],
                         fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
@@ -253,7 +255,7 @@ class _HospitalProfileState extends State<HospitalProfile> {
                         padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Request to be a patient',
-                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                          style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -285,7 +287,7 @@ width: MediaQuery.of(context).size.width * 0.8,
 decoration: BoxDecoration(
 borderRadius: BorderRadius.circular(9),
 border: Border.all(
-color: Colors.black.withOpacity(0.1),
+color: AppColors.gray[700].withOpacity(0.1),
 width: getFontSize(1.5, context),
 ),
 ),
@@ -330,7 +332,7 @@ width: getFontSize(1.5, context),
           Text(dateReviewed,
           textAlign: TextAlign.start,
           style: TextStyle(
-            color: Colors.blue,
+            color: AppColors.blue[700],
             fontSize: getFontSize(15, context)
           ),),
           ),
@@ -357,7 +359,7 @@ width: getFontSize(1.5, context),
       margin: EdgeInsets.only(right: getFontSize(7, context), top: getFontSize(15, context)),
       padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(29, context), bottom: getFontSize(12, context), right: getFontSize(29, context)),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black.withOpacity(0.1), width: getFontSize(0.5, context)),
+        border: Border.all(color: AppColors.gray[700].withOpacity(0.1), width: getFontSize(0.5, context)),
         color: Color(0xFFF1F1F1),
         borderRadius: BorderRadius.circular(50)
       ),
@@ -372,7 +374,7 @@ width: getFontSize(1.5, context),
       child: SvgPicture.asset(handleIconPath),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Colors.blue.withOpacity(0.15),
+        color: AppColors.blue[700].withOpacity(0.15),
       ),
       padding: EdgeInsets.all(10),
       width: getFontSize(50, context),
@@ -393,7 +395,7 @@ request_to_be_a_patient(){
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
             ),
@@ -402,7 +404,7 @@ request_to_be_a_patient(){
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Ok, got it',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

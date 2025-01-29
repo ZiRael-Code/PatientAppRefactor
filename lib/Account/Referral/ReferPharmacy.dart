@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 
@@ -131,11 +133,11 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                                     width: getFontSize(49, context),
                                     height: getFontSize(49, context),
                                     decoration: BoxDecoration(
-                                      color: Colors.blue,
+                                      color: AppColors.blue[700],
                                       shape: BoxShape.circle,
                                     ),
                                     child: SvgPicture.asset("assets/images/pharmacyicon.svg",
-                                        color: Colors.white),
+                                        color: AppColors.gray[100]),
                                   ),
                                   SizedBox(width: getFontSize(10, context)),
 
@@ -170,7 +172,7 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                                       width: getFontSize(79, context),
                                       height: getFontSize(28, context),
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFE2EDFF),
+                                        color: AppColors.blue["600"],
                                         borderRadius: BorderRadius.circular(5),
                                       ),
                                       child: Row(
@@ -178,12 +180,12 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                                             MainAxisAlignment.center,
                                         children: [
                                           Icon(Icons.copy,
-                                              color: Colors.blue, size: getFontSize(16, context)),
+                                              color: AppColors.blue[700], size: getFontSize(16, context)),
                                           SizedBox(width: getFontSize(5, context)),
                                           Text(
                                             'Copy',
                                             style: TextStyle(
-                                                color: Colors.blue,
+                                                color: AppColors.blue[700],
                                                 fontWeight: FontWeight.bold),
                                           ),
                                         ],
@@ -232,7 +234,7 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                       child: Text(
                         "[ ${selectedContacts.length} selected ]", // Show the count of selected contacts
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: AppColors.blue[700],
                           fontSize: getFontSize(16, context),
                           fontWeight: FontWeight.bold,
                         ),
@@ -274,14 +276,14 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                           width: getFontSize(335, context),
                           height: getFontSize(54, context),
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: AppColors.blue[700],
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Center(
                             child: Text(
                               "Done",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                   fontWeight: FontWeight.bold,
                                   fontSize: getFontSize(16, context)),
                             ),

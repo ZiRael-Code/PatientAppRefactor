@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -123,10 +124,10 @@ class  _DoYouHaveDevice extends State<DoYouHaveDevice>{
             width: getFontSize(81, context),
             height: getFontSize(81, context),
             decoration: BoxDecoration(
-              color: Color(0xffE2EDFF),
+              color: AppColors.blue[600],
               borderRadius: BorderRadius.circular(50),
             ),
-            child: Icon(icon, size: getFontSize(55, context), weight: 4, color: Colors.blue,),
+            child: Icon(icon, size: getFontSize(55, context), weight: 4, color: AppColors.blue[700],),
           ),
           Container(
             margin: EdgeInsets.only(left: getFontSize(10, context)),

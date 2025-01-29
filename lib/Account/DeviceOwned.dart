@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -136,7 +138,7 @@ class _DeviceOwnedScreen extends  State<DeviceOwned> {
           height: getFontSize(143, context),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.2))
+              border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.2))
           ),
           child:
           Center(child: SvgPicture.asset(imagePath),),

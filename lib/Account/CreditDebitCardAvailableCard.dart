@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -96,7 +98,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                   ),
                   child: Text("CARD 1", style: TextStyle(
                     fontSize: getFontSize(11, context),
-                    color: Colors.white
+                    color: AppColors.gray[100]
                   ),),
                 ),
                   Spacer(),
@@ -112,7 +114,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                     style: TextStyle(
                       fontSize: getFontSize(23.0, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                     ),
                   ),
                   ),
@@ -129,7 +131,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                                 'Card holder',
                                 style: TextStyle(
                                   fontSize: getFontSize(9.0, context),
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -140,7 +142,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                                 style: TextStyle(
                                   fontSize: getFontSize(12.0, context),
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -158,7 +160,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                                 'Expiry',
                                 style: TextStyle(
                                   fontSize: getFontSize(9.0, context),
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -169,7 +171,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                                 style: TextStyle(
                                   fontSize: getFontSize(12.0, context),
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: AppColors.gray[100],
                                 ),
                               ),
                               ),
@@ -203,7 +205,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                   child: Center(child:  Text(
                       'Add new card',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                         fontSize: getFontSize(16, context),
                       ),
                     ),
@@ -288,7 +290,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
           return Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.gray[100],
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(20),
                 ),
@@ -348,7 +350,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                         ),
                         child: Text("CARD 1", style: TextStyle(
                             fontSize: getFontSize(11, context),
-                            color: Colors.white
+                            color: AppColors.gray[100]
                         ),),
                       ),
                       Spacer(),
@@ -364,7 +366,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                       style: TextStyle(
                         fontSize: getFontSize(23.0, context),
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                       ),
                     ),
                   ),
@@ -381,7 +383,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                               'Card holder',
                               style: TextStyle(
                                 fontSize: getFontSize(9.0, context),
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                               ),
                             ),
                           ),
@@ -392,7 +394,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                               style: TextStyle(
                                 fontSize: getFontSize(12.0, context),
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                               ),
                             ),
                           ),
@@ -410,7 +412,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                               'Expiry',
                               style: TextStyle(
                                 fontSize: getFontSize(9.0, context),
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                               ),
                             ),
                           ),
@@ -421,7 +423,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                               style: TextStyle(
                                 fontSize: getFontSize(12.0, context),
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                               ),
                             ),
                           ),

@@ -1,7 +1,11 @@
+import 'package:flutter_app/Medication/DrugPurchasedSuccess.dart';
+
+import '../Checkout.dart';
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/BuyDrugCheckout.dart';
 import 'package:flutter_svg/svg.dart';
 
 
@@ -80,7 +84,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
               width: getFontSize(1, context),
-              color: Colors.black.withOpacity(0.070),
+              color: AppColors.gray[700].withOpacity(0.070),
             ),
           ),
           child: Row(
@@ -115,16 +119,16 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: Color(0xffE2EDFF),
+              color: AppColors.blue[600],
             ),
             child: GestureDetector(
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('See details', style: TextStyle(color: Colors.blue),),
+                Text('See details', style: TextStyle(color: AppColors.blue[700]),),
                 SizedBox(width: getFontSize(10, context),),
-                Icon(Icons.keyboard_arrow_down, color: Colors.blue,),
+                Icon(Icons.keyboard_arrow_down, color: AppColors.blue[700],),
               ],
           ),
               onTap: (){
@@ -148,7 +152,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
           children: [
             Text('price', style: TextStyle(color: Color(0xff666666))),
             Spacer(),
-            Text('N5,350.00', style: TextStyle(color: Colors.blue),
+            Text('N5,350.00', style: TextStyle(color: AppColors.blue[700]),
             )],
         ),
         SizedBox(height: getFontSize(20, context),),
@@ -156,7 +160,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
           children: [
             Text('TOTAL', style: TextStyle(fontWeight: FontWeight.bold)),
             Spacer(),
-            Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: Colors.blue),
+            Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: AppColors.blue[700]),
             )],
         ),
 
@@ -165,10 +169,10 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
         Spacer(),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Checkout()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Checkout(nextScreen: DrugPurchasedSuccess(),)));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -178,7 +182,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Proceed to checkout',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -192,7 +196,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       builder: (BuildContext context) {
         return Padding(
           padding: EdgeInsets.all(16.0),
@@ -225,14 +229,14 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
-                      side: BorderSide(width: getFontSize(1, context), color: Colors.blue)
+                      side: BorderSide(width: getFontSize(1, context), color: AppColors.blue[700])
                   ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Close',
-                    style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                    style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
@@ -268,7 +272,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
               ,SizedBox(height: getFontSize(15, context)),
             ],),
             Spacer(),
-            Text(price, style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),),
+            Text(price, style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(16, context)),),
           ],
         ),
 

@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 
@@ -31,7 +32,7 @@ class _MeasureHearthRateState extends State<MeasureHearthRate> {
                     color: Color(0xFFE5E5E5),
                   ),
                   child: Icon(Icons.arrow_back_ios_new_rounded,),
-                  // color: Colors.black,
+                  // color: AppColors.gray[700],
                   // width: getFontSize(8.0, context),
                   // height: getFontSize(15, context),),
                 ),
@@ -51,7 +52,7 @@ class _MeasureHearthRateState extends State<MeasureHearthRate> {
               ],
             )
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         body: Padding(
             padding: EdgeInsets.all(12),
             child: Column(children: [
@@ -140,7 +141,7 @@ class _MeasureHearthRateState extends State<MeasureHearthRate> {
                       'See all',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                        color: AppColors.blue[700],
                       ),
                     ),
                   ),
@@ -230,7 +231,7 @@ class _MeasureHearthRateState extends State<MeasureHearthRate> {
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: getFontSize(16, context),
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
 

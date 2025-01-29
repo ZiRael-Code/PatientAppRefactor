@@ -1,3 +1,4 @@
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Row(
@@ -86,7 +87,7 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -96,7 +97,7 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'See all readings',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -106,9 +107,9 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MeasuringVitals ()));// TODO fix
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.gray[100],
             side: BorderSide(
-              color: Colors.blue,
+              color: AppColors.blue[700],
               width: getFontSize(1, context)
             ),
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
@@ -120,7 +121,7 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Back to capture page',
-              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

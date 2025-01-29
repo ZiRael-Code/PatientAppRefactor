@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -168,7 +170,7 @@ class _MessageScreen extends  State<Message> {
                             borderRadius: BorderRadius.circular(50),
                             color: isActive ? Colors.green : Colors.transparent,
                             border: Border.all(
-                              color: isActive ? Colors.white : Colors.transparent,
+                              color: isActive ? AppColors.gray[100] : Colors.transparent,
                               width: getFontSize(2, context),
                             ),
                           ),
@@ -210,11 +212,11 @@ class _MessageScreen extends  State<Message> {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                 ),
                 child: Text(
                   unReadSms.toString(),
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: AppColors.gray[100]),
                 ),
               ),
             ),

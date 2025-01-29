@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,6 +37,25 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
           automaticallyImplyLeading: false,
               title: Row(
                 children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child:
+                  Container(
+                    width: getFontSize(35, context),
+                    height: getFontSize(35, context),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Color(0xFFE5E5E5),
+                    ),
+                    child: SvgPicture.asset('assets/images/back.svg',
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),),
+                  ),
+                  ),
+                SizedBox(width: 20,),
                 Text(
                       'Medication',
                       style: TextStyle(
@@ -63,7 +84,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                               decoration: BoxDecoration(
                                 color: Color(0xffE40404),
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(width: getFontSize(2, context), color: Colors.white),
+                                border: Border.all(width: getFontSize(2, context), color: AppColors.gray[100]),
                               ),
                             ),
                           ),
@@ -105,16 +126,16 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                         hint: Text(
                           'Select a Time',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: AppColors.gray[100],
                           ),
                         ),
                         isExpanded: true,
                         underline: SizedBox(),
                         style: TextStyle(
                           fontSize: getFontSize(15, context),
-                          color: Colors.white,
+                          color: AppColors.gray[100],
                         ),
-                        icon: Icon(Icons.keyboard_arrow_down, color: Colors.white),
+                        icon: Icon(Icons.keyboard_arrow_down, color: AppColors.gray[100]),
                         onChanged: (newValue) {
                           setState(() {
                             _selectedValue = newValue;
@@ -127,7 +148,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                             value: value,
                             child: Text(
                               value,
-                              style: TextStyle(color: Colors.white), // White text for items
+                              style: TextStyle(color: AppColors.gray[100]), // White text for items
                             ),
                           );
                         }).toList(),
@@ -166,7 +187,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                     color: isSelectedList[0] ? Colors.green : Color(0xffF2F2F2),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child:Center(child: SvgPicture.asset('assets/images/mark.svg', color: isSelectedList[0] ? Colors.white : Color(0xffC2C2C2))
+                  child:Center(child: SvgPicture.asset('assets/images/mark.svg', color: isSelectedList[0] ? AppColors.gray[100] : Color(0xffC2C2C2))
                   ),
                   ),
                // Text('data'),
@@ -202,11 +223,11 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                   child:
                 Container(
                   decoration: BoxDecoration(
-                    color: Color(0xffE2EDFF),
+                    color: AppColors.blue[600],
                     borderRadius: BorderRadius.circular(50),
                   ),
                   padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(14, context), bottom: getFontSize(8, context), top: getFontSize(8, context)),
-                  child: Text('See more details', style: TextStyle(color: Colors.blue),),
+                  child: Text('See more details', style: TextStyle(color: AppColors.blue[700]),),
                 )
                 )
                 ],
@@ -231,7 +252,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(width: getFontSize(0.05, context), color: Colors.black)
+          border: Border.all(width: getFontSize(0.05, context), color: AppColors.gray[700])
       ),
       child: Row(
         children: [
@@ -262,7 +283,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
               shape: BoxShape.circle,
               color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),
             ),
-            child: Icon(Icons.check, color: isSelectedList[index] ? Colors.white : Color(0xffC2C2C2))
+            child: Icon(Icons.check, color: isSelectedList[index] ? AppColors.gray[100] : Color(0xffC2C2C2))
           ),
         ],
       ),

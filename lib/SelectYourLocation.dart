@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,8 @@ import 'package:flutter_svg/svg.dart';
 import 'ConfirmLocation.dart';
 
 class SelectYourLocation extends StatefulWidget {
-  SelectYourLocation({super.key});
+  final dynamic nextScreen;
+  SelectYourLocation({super.key, required this.nextScreen});
 
   @override
   State<SelectYourLocation> createState() => _SelectYourLocationState();
@@ -132,12 +134,12 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                             Container(
                               padding: EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: Color(0xffE2EDFF),
+                                color: AppColors.blue[600],
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
                                 Icons.location_on,
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                               ),
                             ),
                           ],
@@ -149,7 +151,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(builder:
-                            (builder) => ConfirmLocation()));
+                            (builder) => ConfirmLocation(nextScreen: widget.nextScreen,)));
                       },
                       child: addressWidget(
                         address["address"] ?? "No Address",
@@ -167,12 +169,12 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                 children: [
                   Container(
                     padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(color: Color(0xffE2EDFF),
+                    decoration: BoxDecoration(color: AppColors.blue[600],
                     shape: BoxShape.circle
                     ),
                     child: Icon(
                       Icons.location_on,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                     ),
                   ),
                   SizedBox(width: getFontSize(15, context)),
@@ -181,7 +183,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                     style: TextStyle(
                       fontSize: getFontSize(16, context),
                       fontWeight: FontWeight.w500,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                     ),
                   )
                 ],
@@ -202,8 +204,4 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(home: SelectYourLocation()));
 }

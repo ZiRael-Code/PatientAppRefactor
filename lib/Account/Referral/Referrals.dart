@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 
@@ -112,7 +114,7 @@ class _ReferralsScreen extends  State<Referrals> {
                             },
                                   child:
                                 referOption(
-                                    icon: Icon(Icons.person, color: Colors.blue,size: getFontSize(36, context),),
+                                    icon: Icon(Icons.person, color: AppColors.blue[700],size: getFontSize(36, context),),
                                     referText: "Refer a regular person"
                                 ),
                                 ),
@@ -175,7 +177,7 @@ class _ReferralsScreen extends  State<Referrals> {
           height: getFontSize(86, context),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xffE2EDFF)
+              color: AppColors.blue[600]
           ),
           child: icon is Icon ? icon : SvgPicture.asset(icon, width: getFontSize(26, context), height: getFontSize(26, context),),
         ),

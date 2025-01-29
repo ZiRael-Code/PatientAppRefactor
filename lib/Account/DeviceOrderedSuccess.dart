@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -99,7 +101,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
           height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.40,
           decoration: BoxDecoration(
-            color: Color(0xFFE2EDFF),
+            color: AppColors.blue["600"],
             borderRadius: BorderRadius.circular(9),
           ),
           padding: EdgeInsets.symmetric(horizontal: getFontSize(16.0, context)),
@@ -141,7 +143,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             );
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -151,7 +153,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Done',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

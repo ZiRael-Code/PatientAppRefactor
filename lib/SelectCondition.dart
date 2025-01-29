@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,7 +35,7 @@ class  _SelectCondition extends State<SelectCondition>{
          alignment: Alignment.centerRight,
          child: Container(
            padding: EdgeInsets.only(left: getFontSize(18, context), right: getFontSize(18, context)),
-           child: Text('skip', style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context))),
+           child: Text('skip', style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(16, context))),
          ),
          ),
            SizedBox(height: getFontSize(45, context),),
@@ -105,7 +106,7 @@ class  _SelectCondition extends State<SelectCondition>{
            margin: EdgeInsets.only(right: getFontSize(8, context), bottom: getFontSize(12, context)),
            decoration: BoxDecoration(
              border: Border.all(width: getFontSize(1, context),
-               color: Colors.blue,
+               color: AppColors.blue[700],
            ),
                borderRadius: BorderRadius.circular(50)
            ),
@@ -113,8 +114,8 @@ class  _SelectCondition extends State<SelectCondition>{
            Row(
              mainAxisSize: MainAxisSize.min,
              children: [
-               Icon(Icons.add, color: Colors.blue,),
-               Text('Add new', style: TextStyle(color: Colors.blue),),
+               Icon(Icons.add, color: AppColors.blue[700],),
+               Text('Add new', style: TextStyle(color: AppColors.blue[700]),),
 
              ],
            )
@@ -132,7 +133,7 @@ class  _SelectCondition extends State<SelectCondition>{
                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> DoYouHaveDevice()));
              },
              style: ElevatedButton.styleFrom(
-               backgroundColor: Colors.blue,
+               backgroundColor: AppColors.blue[700],
                fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(9),
@@ -142,7 +143,7 @@ class  _SelectCondition extends State<SelectCondition>{
                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                 style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                ),
              ),
            ),
@@ -167,13 +168,13 @@ class  _SelectCondition extends State<SelectCondition>{
         padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(8, context), bottom: getFontSize(8, context)),
         margin: EdgeInsets.only(right: getFontSize(8, context), bottom: getFontSize(16, context)),
         decoration: BoxDecoration(
-          color: selectedList[index] ? Colors.blue : Color(0xffE2EDFF),
+          color: selectedList[index] ? AppColors.blue[700] : AppColors.blue[600],
           borderRadius: BorderRadius.circular(50),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: selectedList[index] ? Colors.white : Colors.blue,
+            color: selectedList[index] ? AppColors.gray[100] : AppColors.blue[700],
           ),
         ),
       ),

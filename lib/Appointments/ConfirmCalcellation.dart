@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +91,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10)),
-              border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.05))
+              border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.05))
             ),
 
             child: Column(
@@ -128,7 +130,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+                        Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold),)),
                         SizedBox(height: getFontSize(5, context),),
                         Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                       ],
@@ -137,7 +139,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color:  Colors.black.withOpacity(0.1)),
+                  border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
                 ),
               ),
               SizedBox(height: getFontSize(40, context),),
@@ -146,11 +148,11 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                 height: getFontSize(56, context),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Center( child: Text("FEE: ", style: TextStyle(fontSize: getFontSize(16, context),color: Colors.black),),),Center( child: Text("N25,000", style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: Colors.blue),),),]),
+                    children: [Center( child: Text("FEE: ", style: TextStyle(fontSize: getFontSize(16, context),color: AppColors.gray[700]),),),Center( child: Text("N25,000", style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: AppColors.blue[700]),),),]),
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(13),
-                  border: Border.all(color:  Colors.black.withOpacity(0.1)),
+                  border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
                 ),
               ),
               SizedBox(height: getFontSize(20, context),),
@@ -197,7 +199,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (builder)=> CancelSuccess()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue[700],
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
@@ -207,7 +209,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Confirm cancellation',
-                    style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                    style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
                   ),
                 ),
               ),

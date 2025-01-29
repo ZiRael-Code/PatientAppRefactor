@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -167,7 +169,7 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
                           name,
                           style: TextStyle(
                             fontSize: getFontSize(14, context),
-                            color: Colors.black,
+                            color: AppColors.gray[700],
                           ),
                         ),
                         SizedBox(height: getFontSize(5, context)),
@@ -208,7 +210,7 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
               SizedBox(height: getFontSize(12, context)),
               Container(
                 child: Text(description,
-                  style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                  style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                   maxLines: 7, // Limit to a max of 10 lines
                   overflow: TextOverflow.ellipsis, // Add "..." if it overflows
                 ),
@@ -223,7 +225,7 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
                   'See More',
                   style: TextStyle(
                     fontSize: getFontSize(14, context),
-                    color: Colors.blue,
+                    color: AppColors.blue[700],
                   ),
                 ),
               ),
@@ -233,16 +235,16 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
               // Row with eye icon, view count, and text
               Row(
                 children: [
-                  Icon(Icons.remove_red_eye, size: getFontSize(23, context), color: Colors.black), // Eye icon
+                  Icon(Icons.remove_red_eye, size: getFontSize(23, context), color: AppColors.gray[700]), // Eye icon
                   SizedBox(width: getFontSize(8, context)), // Space between icon and views count
                   Text(
                     views,
-                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                   ),
                   SizedBox(width: getFontSize(4, context)),
                   Text(
                     'Views',
-                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                   ),
                 ],
               ),

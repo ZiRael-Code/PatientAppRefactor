@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 import 'package:flutter/material.dart';

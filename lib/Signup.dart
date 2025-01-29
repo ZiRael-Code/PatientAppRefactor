@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -184,7 +185,7 @@ class _SignupStateState extends State<SignupState> {
               child: Text(
                 'Register',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   fontSize: getFontSize(16, context),
                 ),
               ),
@@ -195,7 +196,7 @@ class _SignupStateState extends State<SignupState> {
         'Or signup with',
         style: TextStyle(
           fontSize: getFontSize(16, context),
-          color: Colors.black,
+          color: AppColors.gray[700],
         ),
       ),
       SizedBox(height: getFontSize(10.0, context)),
@@ -230,7 +231,7 @@ class _SignupStateState extends State<SignupState> {
             'Already have an account?',
             style: TextStyle(
               fontSize: getFontSize(16, context),
-              color: Colors.black,
+              color: AppColors.gray[700],
             ),
           ),
           TextButton(

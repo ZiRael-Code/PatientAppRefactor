@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -97,9 +99,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               margin: EdgeInsets.only(right: getFontSize(10, context)),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: Colors.blue,
+                color: AppColors.blue[700],
               ),
-              child: Text(style: TextStyle(color: Colors.white),'14th June; 2022'),
+              child: Text(style: TextStyle(color: AppColors.gray[100]),'14th June; 2022'),
             ),
             Container(
               padding: EdgeInsets.only(left: getFontSize(16, context), right: getFontSize(16, context), top: getFontSize(12, context), bottom: getFontSize(12, context)),
@@ -109,10 +111,10 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 color: Colors.transparent,
                 border: Border.all(
                   width: getFontSize(1, context),
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                 )
               ),
-              child: Text('24th June; 2022', style: TextStyle(color: Colors.blue),),
+              child: Text('24th June; 2022', style: TextStyle(color: AppColors.blue[700]),),
             )
           ],
         )
@@ -126,9 +128,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
           child:
         Row(
           children: [
-            Text('July 2022', style: TextStyle( fontSize: getFontSize(16, context),color: Colors.blue),),
+            Text('July 2022', style: TextStyle( fontSize: getFontSize(16, context),color: AppColors.blue[700]),),
             SizedBox(width: getFontSize(5, context)),
-            Icon(Icons.keyboard_arrow_down_outlined, color: Colors.blue,)
+            Icon(Icons.keyboard_arrow_down_outlined, color: AppColors.blue[700],)
           ],
         ),
         ),
@@ -203,16 +205,16 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 hint: Text(
                   'Select a Time',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.gray[100],
                   ),
                 ),
                 isExpanded: true,
                 underline: SizedBox(),
                 style: TextStyle(
                   fontSize: getFontSize(15, context),
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                 ),
-                icon: Icon(Icons.keyboard_arrow_down, color: Colors.white),
+                icon: Icon(Icons.keyboard_arrow_down, color: AppColors.gray[100]),
                 onChanged: (newValue) {
                   setState(() {
                     _selectedValue = newValue;
@@ -225,7 +227,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     value: value,
                     child: Text(
                       value,
-                      style: TextStyle(color: Colors.white), // White text for items
+                      style: TextStyle(color: AppColors.gray[100]), // White text for items
                     ),
                   );
                 }).toList(),
@@ -314,14 +316,14 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 width: getFontSize(48, context),
                 height: getFontSize(67, context),
                 decoration: BoxDecoration(
-                  color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
+                  color: isToday ? AppColors.blue[700] : AppColors.blue[600].withOpacity(0.30),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
                   children: [
-                    Text(day, style: TextStyle(color: isToday ? Colors.white : Colors.black,),),
+                    Text(day, style: TextStyle(color: isToday ? AppColors.gray[100] : AppColors.gray[700],),),
                     SizedBox(height: getFontSize(4, context),),
-                    Text(date, style: TextStyle(color: isToday ? Colors.white : Colors.black, fontSize: getFontSize(24, context), fontWeight: FontWeight.bold),)
+                    Text(date, style: TextStyle(color: isToday ? AppColors.gray[100] : AppColors.gray[700], fontSize: getFontSize(24, context), fontWeight: FontWeight.bold),)
                   ],
                 ),
               ),
@@ -360,7 +362,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(width: getFontSize(0.05, context), color: Colors.black)
+            border: Border.all(width: getFontSize(0.05, context), color: AppColors.gray[700])
         ),
         child: Row(
           children: [
@@ -391,7 +393,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   shape: BoxShape.circle,
                   color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),
                 ),
-                child: Icon(Icons.check, color: isSelectedList[index] ? Colors.white : Color(0xffC2C2C2))
+                child: Icon(Icons.check, color: isSelectedList[index] ? AppColors.gray[100] : Color(0xffC2C2C2))
             ),
           ],
         ),
@@ -412,7 +414,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         children: [
           Row(
             children: [
-              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
+              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: AppColors.gray[700])),
               Spacer(),
       GestureDetector(
         onTap: () {
@@ -422,11 +424,11 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         child:
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xffE2EDFF),
+                  color: AppColors.blue[600],
                   borderRadius: BorderRadius.circular(50),
                 ),
                 padding: EdgeInsets.only(right: getFontSize(10, context), left: getFontSize(10, context), top: getFontSize(5, context), bottom: getFontSize(5, context)),
-                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue)),
+                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: AppColors.blue[700])),
               ),
               ),
             ],
@@ -474,7 +476,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   Expanded(
                     child: Text(
                       'Ibuprofen 500mg x 24',
-                      style: TextStyle(color: Colors.blue, fontSize: getFontSize(20, context)),
+                      style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(20, context)),
                     ),
                   ),
                 ],
@@ -491,7 +493,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     children: [
                       Text('Drug type:', style: TextStyle(color: Color(0xff666666))),
                       SizedBox(height: getFontSize(4, context)),
-                      Text('Capsules', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                      Text('Capsules', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                     ],
                   ),
                   Spacer(),
@@ -500,7 +502,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     children: [
                       Text('Dosage:', style: TextStyle(color: Color(0xff666666))),
                       SizedBox(height: getFontSize(4, context)),
-                      Text('2 pills', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                      Text('2 pills', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                     ],
                   ),
                 ],
@@ -515,7 +517,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     children: [
                       Text('Amount used:', style: TextStyle(color: Color(0xff666666))),
                       SizedBox(height: getFontSize(4, context)),
-                      Text('5/20', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                      Text('5/20', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                     ],
                   ),
                   Spacer(),
@@ -524,7 +526,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     children: [
                       Text('Total duration:', style: TextStyle(color: Color(0xff666666))),
                       SizedBox(height: getFontSize(4, context)),
-                      Text('2 weeks', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
+                      Text('2 weeks', style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context))),
                     ],
                   ),
                 ],
@@ -541,7 +543,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     SizedBox(height: getFontSize(4, context)),
                     Text(
                       '3X daily [ Morning, Afternoon, Night ]',
-                      style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
+                      style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context)),
                     ),
                   ],
                 ),
@@ -585,7 +587,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                         ? Center(
                       child: SvgPicture.asset(
                         'assets/images/mark.svg',
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                       ),
                     )
                         : null,
@@ -624,7 +626,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
     showModalBottomSheet(
         context: context,
         isScrollControlled: true,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         builder: (BuildContext context) {
           return Padding(
             padding: EdgeInsets.all(16.0),
@@ -637,7 +639,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_left, color: Colors.blue),
+                        icon: Icon(Icons.arrow_left, color: AppColors.blue[700]),
                         onPressed: () {
                           setState(() {
                             _focusedDay = DateTime(
@@ -666,7 +668,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                         ],
                       ),
                       IconButton(
-                        icon: Icon(Icons.arrow_right, color: Colors.blue),
+                        icon: Icon(Icons.arrow_right, color: AppColors.blue[700]),
                         onPressed: () {
                           setState(() {
                             _focusedDay = DateTime(
@@ -695,25 +697,25 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   calendarStyle: CalendarStyle(
                     outsideDaysVisible: true,
                     todayDecoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     selectedDecoration: BoxDecoration(
-                      color: Colors.blueAccent,
+                      color: AppColors.blue[700],
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     defaultDecoration: BoxDecoration(
-                      color: Color(0xffE2EDFF).withOpacity(0.30),
+                      color: AppColors.blue[600].withOpacity(0.30),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     weekendDecoration: BoxDecoration(
-                      color: Color(0xffE2EDFF).withOpacity(0.30),
+                      color: AppColors.blue[600].withOpacity(0.30),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     outsideTextStyle: TextStyle(color: Colors.grey),
-                    defaultTextStyle: TextStyle(color: Colors.black),
+                    defaultTextStyle: TextStyle(color: AppColors.gray[700]),
                     cellMargin: EdgeInsets.all(
                         18.0), // Vertical space between cells
                   ),
@@ -792,7 +794,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               width: getFontSize(48, context),
               height: getFontSize(67, context),
               decoration: BoxDecoration(
-                color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
+                color: isToday ? AppColors.blue[700] : AppColors.blue[600].withOpacity(0.30),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Column(
@@ -801,14 +803,14 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   Text(
                     formattedDay,
                     style: TextStyle(
-                      color: isToday ? Colors.white : Colors.black,
+                      color: isToday ? AppColors.gray[100] : AppColors.gray[700],
                     ),
                   ),
                   SizedBox(height: getFontSize(4, context)),
                   Text(
                     date,
                     style: TextStyle(
-                      color: isToday ? Colors.white : Colors.black,
+                      color: isToday ? AppColors.gray[100] : AppColors.gray[700],
                       fontSize: getFontSize(24, context),
                       fontWeight: FontWeight.bold,
                     ),
@@ -849,7 +851,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
           SizedBox(width: getFontSize(8, context)),
           RichText(
             text: TextSpan(
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: AppColors.gray[700]),
               children: [
                 TextSpan(text: '$boldText ', style: TextStyle(fontWeight: FontWeight.bold)),
                 TextSpan(text: text.replaceFirst(boldText, '')),

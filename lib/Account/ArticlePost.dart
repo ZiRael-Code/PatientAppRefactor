@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -160,7 +162,7 @@ class _ArticlePostScreen extends  State<ArticlePost> {
                           name,
                           style: TextStyle(
                             fontSize: getFontSize(14, context),
-                            color: Colors.black,
+                            color: AppColors.gray[700],
                           ),
                         ),
                         SizedBox(height: getFontSize(5, context)),
@@ -201,7 +203,7 @@ class _ArticlePostScreen extends  State<ArticlePost> {
               SizedBox(height: getFontSize(12, context)),
               Container(
                 child: Text(description,
-                  style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                  style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                 ),
               ),
               SizedBox(height: getFontSize(12, context)),
@@ -221,11 +223,11 @@ class _ArticlePostScreen extends  State<ArticlePost> {
                     'See source link',
                     style: TextStyle(
                       fontSize: getFontSize(14, context),
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                     ),
                   ),
                   SizedBox(width: getFontSize(5, context)),
-                  Icon(Icons.arrow_forward, color: Colors.blue,),
+                  Icon(Icons.arrow_forward, color: AppColors.blue[700],),
                 ],),
               ),
 
@@ -238,16 +240,16 @@ class _ArticlePostScreen extends  State<ArticlePost> {
               // Row with eye icon, view count, and text
               Row(
                 children: [
-                  Icon(Icons.remove_red_eye, size: getFontSize(23, context), color: Colors.black), // Eye icon
+                  Icon(Icons.remove_red_eye, size: getFontSize(23, context), color: AppColors.gray[700]), // Eye icon
                   SizedBox(width: getFontSize(8, context)), // Space between icon and views count
                   Text(
                     views,
-                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                   ),
                   SizedBox(width: getFontSize(4, context)),
                   Text(
                     'Views',
-                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),
                   ),
                 ],
               ),

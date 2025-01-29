@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 
@@ -109,10 +111,10 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                       width: getFontSize(49, context),
                       height: getFontSize(49, context),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: AppColors.blue[700],
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(Icons.person, color: Colors.white),
+                      child: Icon(Icons.person, color: AppColors.gray[100]),
                     ),
                     SizedBox(width: getFontSize(10, context)),
 
@@ -143,17 +145,17 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                         width: getFontSize(79, context),
                         height: getFontSize(28, context),
                         decoration: BoxDecoration(
-                          color: Color(0xFFE2EDFF),
+                          color: AppColors.blue["600"],
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.copy, color: Colors.blue, size: getFontSize(16, context)),
+                            Icon(Icons.copy, color: AppColors.blue[700], size: getFontSize(16, context)),
                             SizedBox(width: getFontSize(5, context)),
                             Text(
                               'Copy',
-                              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                              style: TextStyle(color: AppColors.blue[700], fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -184,7 +186,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
 
                 SizedBox(height: getFontSize(20, context),),
                 Text("[ ${size} selected ]", style: TextStyle(
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   fontSize: getFontSize(18, context),
                   fontWeight: FontWeight.bold,
                 ),),
@@ -234,7 +236,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SendInvites( )));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
@@ -244,7 +246,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                     child: Text(
                       'Done',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
@@ -274,7 +276,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                 child: Center(
                   child: Text(
                     alphaOrder.toUpperCase(),
-                    style: TextStyle(fontSize: getFontSize(16, context), color: Colors.white),
+                    style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[100]),
                   ),
                 ),
               ),
@@ -292,7 +294,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                   color: Color(0xffF2F2F2),
                 ),
                 child: isSelected
-                    ? Icon(Icons.check, color: Colors.blue)
+                    ? Icon(Icons.check, color: AppColors.blue[700])
                     : Container(),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -93,7 +94,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                         style: TextStyle(
                           fontSize: getFontSize(38, context),
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                         ),
                       ),
 
@@ -107,7 +108,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                         ),
                         child: Icon(
                           Icons.favorite,  // Replace with your preferred icon
-                          color: Colors.white,
+                          color: AppColors.gray[100],
                         ),
                       ),
                     ],
@@ -185,7 +186,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.blue, width: getFontSize(2, context)), // Focused border color
+                borderSide: BorderSide(color: AppColors.blue[700], width: getFontSize(2, context)), // Focused border color
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -221,7 +222,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                     text: value, // Main value (e.g., 48)
                     style: TextStyle(
                       fontSize: getFontSize(18, context),
-                      color: Colors.black,
+                      color: AppColors.gray[700],
                     ),
                   ),
                   WidgetSpan(
@@ -231,7 +232,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                         script, // Subscript text
                         style: TextStyle(
                           fontSize: getFontSize(12, context),
-                          color: Colors.black,
+                          color: AppColors.gray[700],
                         ),
                       ),
                     ),

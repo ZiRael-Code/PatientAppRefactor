@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +52,7 @@ class AppointmentPaymentSummary extends StatelessWidget {
           ],
         )
     ),
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.gray[100],
           body: AppointmentPaymentAppointmentPaymentSummaryState(),
     );
   }
@@ -78,7 +80,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+              Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold),)),
               SizedBox(height: getFontSize(10, context),),
               Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
             ],
@@ -87,7 +89,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
         ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            border: Border.all(color:  Colors.black.withOpacity(0.1)),
+            border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
           ),
         ),
         SizedBox(height: getFontSize(20, context),),
@@ -97,11 +99,11 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
           width: getFontSize(180, context),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Center( child: Text("FEE: ", style: TextStyle(color: Colors.black),),),Center( child: Text("N25,000", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),),),]),
+              children: [Center( child: Text("FEE: ", style: TextStyle(color: AppColors.gray[700]),),),Center( child: Text("N25,000", style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.blue[700]),),),]),
 
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(13),
-            border: Border.all(color:  Colors.black.withOpacity(0.1)),
+            border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
           ),
         ),
         SizedBox(height: getFontSize(10, context),),
@@ -169,7 +171,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentPaymentSuccess()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -179,7 +181,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue  to schedule appointment',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
             ),
           ),
         ),

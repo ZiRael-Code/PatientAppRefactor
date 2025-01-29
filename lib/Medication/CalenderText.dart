@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -30,7 +32,7 @@ class _CalenderTextState extends State<CalenderText> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_left, color: Colors.blue),
+                  icon: Icon(Icons.arrow_left, color: AppColors.blue[700]),
                   onPressed: () {
                     setState(() {
                       _focusedDay = DateTime(
@@ -59,7 +61,7 @@ class _CalenderTextState extends State<CalenderText> {
                   ],
                 ),
                 IconButton(
-                  icon: Icon(Icons.arrow_right, color: Colors.blue),
+                  icon: Icon(Icons.arrow_right, color: AppColors.blue[700]),
                   onPressed: () {
                     setState(() {
                       _focusedDay = DateTime(
@@ -88,25 +90,25 @@ class _CalenderTextState extends State<CalenderText> {
             calendarStyle: CalendarStyle(
               outsideDaysVisible: true,
               todayDecoration: BoxDecoration(
-                color: Colors.blue,
+                color: AppColors.blue[700],
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(8),
               ),
               selectedDecoration: BoxDecoration(
-                color: Colors.blueAccent,
+                color: AppColors.blue[700],
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(8),
               ),
               defaultDecoration: BoxDecoration(
-                color: Color(0xffE2EDFF).withOpacity(0.30),
+                color: AppColors.blue[600].withOpacity(0.30),
                 borderRadius: BorderRadius.circular(8),
               ),
               weekendDecoration: BoxDecoration(
-                color: Color(0xffE2EDFF).withOpacity(0.30),
+                color: AppColors.blue[600].withOpacity(0.30),
                 borderRadius: BorderRadius.circular(8),
               ),
               outsideTextStyle: TextStyle(color: Colors.grey),
-              defaultTextStyle: TextStyle(color: Colors.black),
+              defaultTextStyle: TextStyle(color: AppColors.gray[700]),
               cellMargin: EdgeInsets.all(18.0), // Vertical space between cells
             ),
             headerVisible: false,
@@ -177,7 +179,7 @@ class _CalenderTextState extends State<CalenderText> {
             width: getFontSize(48, context),
             height: getFontSize(67, context),
             decoration: BoxDecoration(
-              color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
+              color: isToday ? AppColors.blue[700] : AppColors.blue[600].withOpacity(0.30),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
@@ -186,14 +188,14 @@ class _CalenderTextState extends State<CalenderText> {
                 Text(
                   formattedDay,
                   style: TextStyle(
-                    color: isToday ? Colors.white : Colors.black,
+                    color: isToday ? AppColors.gray[100] : AppColors.gray[700],
                   ),
                 ),
                 SizedBox(height: getFontSize(4, context)),
                 Text(
                   date,
                   style: TextStyle(
-                    color: isToday ? Colors.white : Colors.black,
+                    color: isToday ? AppColors.gray[100] : AppColors.gray[700],
                     fontSize: getFontSize(24, context),
                     fontWeight: FontWeight.bold,
                   ),
@@ -234,7 +236,7 @@ class _CalenderTextState extends State<CalenderText> {
         SizedBox(width: getFontSize(8, context)),
         RichText(
           text: TextSpan(
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: AppColors.gray[700]),
             children: [
               TextSpan(text: '$boldText ', style: TextStyle(fontWeight: FontWeight.bold)),
               TextSpan(text: text.replaceFirst(boldText, '')),

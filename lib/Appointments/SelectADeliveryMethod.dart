@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +17,7 @@ class _SelectADeliveryMethodState extends State<SelectADeliveryMethod> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Row(
@@ -58,12 +60,12 @@ class _SelectADeliveryMethodState extends State<SelectADeliveryMethod> {
         body: Column(
           children: [
            fundMethod(text: "Select  a delivery address",
-          imagePath: Icon(Icons.home, color: Colors.blue,),
-          icon:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue,)
+          imagePath: Icon(Icons.home, color: AppColors.blue[700],),
+          icon:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700],)
            ),
             fundMethod(text: "Use a pickup location",
-                imagePath: Icon(Icons.location_pin, color: Colors.blue,),
-               icon:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue,)
+                imagePath: Icon(Icons.location_pin, color: AppColors.blue[700],),
+               icon:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700],)
            ),
           ],
       ),
@@ -83,7 +85,7 @@ required Icon icon,
       width: double.infinity,
       height: getFontSize(74, context),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.gray[100],
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Color(0xFFE5E5E5),
@@ -96,7 +98,7 @@ required Icon icon,
             height: getFontSize(42, context),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Color(0xFFE2EDFF),
+              color: AppColors.blue["600"],
               shape: BoxShape.circle,
             ),
             child: imagePath,

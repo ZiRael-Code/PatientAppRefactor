@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -107,7 +109,7 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
           'Click on any of the profiles to book an appointment or search for a particular specialist.',
           style: TextStyle(
             fontSize: getFontSize(14, context),
-            color: Colors.black
+            color: AppColors.gray[700]
           ),
         ),
         SizedBox(height: getFontSize(45, context)),
@@ -191,7 +193,7 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                   Text(name, style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black
+                    color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text(specialization, style: TextStyle(
@@ -205,13 +207,13 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                         Container(
                             padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                             decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                                 borderRadius: BorderRadius.circular(50)
                             ),
                             child: Text(
                               workingDays,
                               style: TextStyle(
-                                color: Colors.white,
+                                color: AppColors.gray[100],
                               ),
                             )
                         ),
@@ -220,13 +222,13 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                         Container(
                             padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                             decoration: BoxDecoration(
-                              color: Color(0xffE2EDFF),
+                              color: AppColors.blue[600],
                               borderRadius: BorderRadius.circular(50),
                             ),
                             child: Text(
                               workingHours,
                               style: TextStyle(
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                               ),
                             )
                         ),

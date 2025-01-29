@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -100,7 +101,7 @@ class _ShareReadingDRScreen extends  State<ShareReadingDR> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+                  Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold),)),
                   SizedBox(height: getFontSize(5, context),),
                   Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                 ],
@@ -109,7 +110,7 @@ class _ShareReadingDRScreen extends  State<ShareReadingDR> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            border: Border.all(color:  Colors.black.withOpacity(0.1)),
+            border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
           ),
         ),
 

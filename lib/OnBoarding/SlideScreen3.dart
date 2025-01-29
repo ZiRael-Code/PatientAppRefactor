@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,7 @@ class SlideScreen3 extends StatelessWidget{
              onTap: (){
                Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder)=>Signup()));
              },
-             child: Text('skip', style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)))),
+             child: Text('skip', style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(16, context)))),
          ),
          ),
            Spacer(),
@@ -53,7 +55,7 @@ class SlideScreen3 extends StatelessWidget{
                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Signup()));
              },
              style: ElevatedButton.styleFrom(
-               backgroundColor: Colors.blue,
+               backgroundColor: AppColors.blue[700],
                fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(9),
@@ -63,7 +65,7 @@ class SlideScreen3 extends StatelessWidget{
                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                 style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                ),
              ),
            ),

@@ -1,3 +1,5 @@
+import 'DeviceOrderPayment.dart';
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -93,10 +95,10 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
         SizedBox(height: getFontSize(25, context),),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout(nextScreen: DeviceOrderPayment())));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -106,7 +108,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -117,7 +119,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             Text('Need a Loan to Buy Device?'),
             GestureDetector(
               child:
-            Text(' Apply Here', style: TextStyle(color: Colors.blue),),
+            Text(' Apply Here', style: TextStyle(color: AppColors.blue[700]),),
               onTap: () {
                 // TODO: implement apply loan here
                 Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Applyforloan()));
@@ -143,7 +145,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
       padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(width: getFontSize(0.5, context), color: Colors.black54),
+        border: Border.all(width: getFontSize(0.5, context), color: AppColors.gray[700]),
       ),
       child:Stack(
         children: [
@@ -155,9 +157,9 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: Colors.blue,
+                color: AppColors.blue[700],
               ),
-              child: Icon(Icons.check, color: Colors.white,),
+              child: Icon(Icons.check, color: AppColors.gray[100],),
             ),
           )
               :
@@ -172,7 +174,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             children: [
               Text(name, style: TextStyle(fontSize: getFontSize(16, context), ),),
               SizedBox(height: getFontSize(10, context),),
-              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),),
+              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.blue[700]),),
               SizedBox(height: getFontSize(10, context),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -181,7 +183,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
                   Container(
                     width: getFontSize(183, context),
                     child:
-                  Text(message, style: TextStyle(fontSize: getFontSize(12, context), color: Colors.black54),)
+                  Text(message, style: TextStyle(fontSize: getFontSize(12, context), color: AppColors.gray[700]),)
     )
                 ],
               ),
@@ -191,7 +193,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
                     padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(14, context), top: getFontSize(8, context), bottom: getFontSize(8, context)),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      border: Border.all(width: getFontSize(0.5, context), color: Colors.black54),
+                      border: Border.all(width: getFontSize(0.5, context), color: AppColors.gray[700]),
                     ),
                     child: Row(
                         children: [
@@ -202,9 +204,9 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
                               height: getFontSize(15, context),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
-                                  color: Color(0xffE2EDFF)
+                                  color: AppColors.blue[600]
                               ),
-                              child: Icon(Icons.minimize,size: getFontSize(11, context) ,color: Colors.blue),
+                              child: Icon(Icons.minimize,size: getFontSize(11, context) ,color: AppColors.blue[700]),
                             ),
                             onTap: () {
                               setState(() {
@@ -223,9 +225,9 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
                             height: getFontSize(15, context),
                             decoration: BoxDecoration(
                                borderRadius: BorderRadius.circular(50),
-                                color: Color(0xffE2EDFF)
+                                color: AppColors.blue[600]
                             ),
-                            child: Icon(Icons.add, size: getFontSize(11, context), color: Colors.blue,),
+                            child: Icon(Icons.add, size: getFontSize(11, context), color: AppColors.blue[700],),
                           ),
                             onTap: () {
                               setState(() {

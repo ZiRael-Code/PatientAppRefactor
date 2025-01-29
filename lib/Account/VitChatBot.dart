@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -68,7 +70,7 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                         Text(
                           'Vit the Chatbot',
                           style: TextStyle(
-                            color: Colors.black, // Black text color
+                            color: AppColors.gray[700], // Black text color
                             fontSize: getFontSize(16, context), // Font size 16
                           ),
                         ),
@@ -135,7 +137,7 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                         hintText: 'Type a message...',
                         contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context), horizontal: getFontSize(20, context)),
                         filled: true,
-                        fillColor: Colors.white,
+                        fillColor: AppColors.gray[100],
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide: BorderSide(
@@ -178,10 +180,10 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                     width: getFontSize(51, context),
                     height: getFontSize(51, context),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(Icons.add, color: Colors.white),
+                    child: Icon(Icons.add, color: AppColors.gray[100]),
                   ),
                 ],
               ),
@@ -248,7 +250,7 @@ outGoingMessage({
             text,
             style: TextStyle(
               fontSize: getFontSize(14, context),
-              color: Colors.white,
+              color: AppColors.gray[100],
             ),
           ),
         ),

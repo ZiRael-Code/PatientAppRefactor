@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -105,7 +106,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
             );
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -115,7 +116,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Add a condition',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
             ),
           ),
         ),
@@ -156,7 +157,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
             SvgPicture.asset('assets/images/box.svg'),
             SizedBox(height: getFontSize(20, context),),
             Text('No medical conditions added.', style: TextStyle(fontSize: getFontSize(16, context),
-                color: Colors.black.withOpacity(0.40)),),
+                color: AppColors.gray[700].withOpacity(0.40)),),
             Spacer(),
 
           ],

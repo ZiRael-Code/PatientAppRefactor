@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -90,7 +92,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
               Center(child:
               Text(
               'Wellue Bp2 Connect device',
-              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
+              style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(16, context)),
             ),
             ),
 
@@ -124,7 +126,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                     'N25,000.00',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       fontSize: getFontSize(16, context),
                     ),
                   ),
@@ -202,11 +204,11 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12), // Border radius of 12
                   ),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue[700],
                 ),
                 child: Text(
                   'Proceed with online payment',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: AppColors.gray[100]),
                 ),
               ),
             ),

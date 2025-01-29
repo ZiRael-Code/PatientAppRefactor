@@ -1,9 +1,10 @@
-import '../Main/Dashboard.dart';
+import '../components/colors/colours.dart';
+import '../../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/NewDrugs.dart';
 import 'package:flutter_svg/svg.dart';
-import 'Main/Dashboard.dart';
+import '../Main/Dashboard.dart';
 
 
 void main(){
@@ -81,7 +82,7 @@ class _DrugPurchasedSuccessScreen extends  State<DrugPurchasedSuccess> {
           height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.40,
           decoration: BoxDecoration(
-            color: Color(0xFFE2EDFF),
+            color: AppColors.blue["600"],
             borderRadius: BorderRadius.circular(9),
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -120,7 +121,7 @@ class _DrugPurchasedSuccessScreen extends  State<DrugPurchasedSuccess> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> NewDrugs()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -130,7 +131,7 @@ class _DrugPurchasedSuccessScreen extends  State<DrugPurchasedSuccess> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Finish',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

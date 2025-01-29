@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +43,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
               ),
               child: SvgPicture.asset(
                 'assets/images/back.svg',
-                color: Colors.white,
+                color: AppColors.gray[100],
                 width: getFontSize(8.0, context),
                 height: getFontSize(15, context),
               ),
@@ -85,37 +87,37 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 leftChevronIcon: Container(
                   height: getFontSize(23, context),
                   width: getFontSize(23, context),
-                  child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
+                  child: Center(child: Icon(Icons.arrow_back_ios, color: AppColors.blue[700], size: getFontSize(15, context),),),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blue.withOpacity(0.20),
+                    color: AppColors.blue[700].withOpacity(0.20),
                   ),
                 ),
                 rightChevronIcon: Container(
                   height: getFontSize(23, context),
                   width: getFontSize(23, context),
-                  child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
+                  child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700], size: getFontSize(15, context),),),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blue.withOpacity(0.20),
+                    color: AppColors.blue[700].withOpacity(0.20),
                   ),
                 ),
               ),
               daysOfWeekStyle: DaysOfWeekStyle(
-                weekendStyle: TextStyle(color: Colors.black, fontSize: getFontSize(14, context)),
-                weekdayStyle: TextStyle(color: Colors.black, fontSize: getFontSize(14, context)),
+                weekendStyle: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(14, context)),
+                weekdayStyle: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(14, context)),
                 decoration: BoxDecoration()
               ),
               calendarStyle: CalendarStyle(
                 todayDecoration: BoxDecoration(
-                  color: Colors.blueAccent,
+                  color: AppColors.blue[700],
                   shape: BoxShape.circle,
                 ),
                 selectedDecoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   shape: BoxShape.circle,
                 ),
-                weekendTextStyle: TextStyle(color: Colors.black,fontSize: getFontSize(20, context)),
+                weekendTextStyle: TextStyle(color: AppColors.gray[700],fontSize: getFontSize(20, context)),
                 weekNumberTextStyle: TextStyle(fontSize: getFontSize(20, context)),
                 defaultTextStyle: TextStyle(fontSize: getFontSize(20, context)),
                 todayTextStyle: TextStyle(fontSize: getFontSize(20, context)),
@@ -197,7 +199,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 underline: SizedBox(), // Hides the default underline
                 style: TextStyle(
                   fontSize: getFontSize(16, context),
-                  color: Colors.black, // Dropdown item color
+                  color: AppColors.gray[700], // Dropdown item color
                 ),
                 icon: Icon(Icons.arrow_drop_down), // Dropdown icon
                 onChanged: (newValue) {
@@ -221,7 +223,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentPaymentSummary()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: AppColors.blue[700],
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
@@ -231,7 +233,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Continue',
-                  style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                  style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                 ),
               ),
             ),
@@ -253,8 +255,8 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
       margin: EdgeInsets.only(right: getFontSize(5, context), top: getFontSize(15, context)),
       padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(25, context), bottom: getFontSize(12, context), right: getFontSize(25, context)),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.black.withOpacity(0.1), width: getFontSize(0.5, context)),
-          color: Color(0xFFE2EDFF),
+          border: Border.all(color: AppColors.gray[700].withOpacity(0.1), width: getFontSize(0.5, context)),
+          color: AppColors.blue["600"],
           borderRadius: BorderRadius.circular(50)
       ),
       child: Text(text, style: TextStyle(fontSize: getFontSize(12, context)),),

@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import 'package:flutter_app/SetupComplete.dart';
 
 import '../Main/Dashboard.dart';
@@ -94,7 +96,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
                     height: getFontSize(50, context),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
-                      color: Colors.black.withOpacity(0.05),
+                      color: AppColors.gray[700].withOpacity(0.05),
                       border: Border.all(color: Color(0xFFE2E2E2)),
                     ),
                     child: Row(
@@ -211,7 +213,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
           TextStyle(
             fontSize: getFontSize(32, context),
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: AppColors.gray[700],
           ),
         ),
       ),

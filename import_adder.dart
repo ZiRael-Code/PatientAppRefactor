@@ -1,8 +1,8 @@
 import 'dart:io';
 
 void main() {
-  final directory = Directory('lib/Account/Referral');
-  const importStatement = "import '../../Main/Dashboard.dart';";
+  final directory = Directory('lib/Capture');
+  const importStatement = "import '../components/colors/colours.dart';";
   if (directory.existsSync()) {
     directory.listSync(recursive: true).forEach((fileEntity) {
       if (fileEntity is File && fileEntity.path.endsWith('.dart')) {

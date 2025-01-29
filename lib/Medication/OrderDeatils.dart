@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +90,7 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
               width: getFontSize(1, context),
-              color: Colors.black.withOpacity(0.070),
+              color: AppColors.gray[700].withOpacity(0.070),
             ),
           ),
           child: Row(
@@ -151,7 +153,7 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
             cancel_dialog();
           },
           style: ElevatedButton.styleFrom(
-            // backgroundColor: Colors.blue,
+            // backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -214,7 +216,7 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
           Text(usage, style: TextStyle(color: Color(0xff666666)))
         ],
       ),
-    Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black, fontWeight: FontWeight.bold),)
+    Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[700], fontWeight: FontWeight.bold),)
     ],
       ),
     );
@@ -241,9 +243,12 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Order Cancelled"))
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: AppColors.blue[700],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
                       ),
@@ -252,26 +257,27 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
                       padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
                       child: Text(
                         'Yes',
-                        style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                        style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                       ),
                     ),
                   ),
                   SizedBox(width: getFontSize(10, context),),
                   ElevatedButton(
                     onPressed: () {
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      // backgroundColor: Colors.blue,
+                      // backgroundColor: AppColors.blue[700],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
-                        side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
+                        side: BorderSide(color: AppColors.blue[700], width: getFontSize(1, context)),
                       ),
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                       child: Text(
                         'No',
-                        style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+                        style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
                       ),
                     ),
                   ),

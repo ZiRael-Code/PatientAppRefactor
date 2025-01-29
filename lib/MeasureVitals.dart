@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -80,7 +81,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -88,7 +89,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                   child: Text(
                     'Order a device',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       fontSize: getFontSize(14, context),
                     ),
                   ),
@@ -153,7 +154,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.black.withOpacity(0.1),
+          color: AppColors.gray[700].withOpacity(0.1),
           width: getFontSize(1, context),
         ),
         borderRadius: BorderRadius.circular(12),
@@ -186,7 +187,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                   prices,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: AppColors.blue[700],
                     fontSize: getFontSize(20, context),
                   ),
                 ),
@@ -196,11 +197,11 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: AppColors.blue[700],
                     ),
                     child: Text(
                       'Order Now',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: AppColors.gray[100]),
                     ),
                   ),
                 ),

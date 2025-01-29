@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +23,10 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
       home: Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         title: Center(child: Text('Appointment Information')),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       body:
         Padding(
         padding: EdgeInsets.all(20),
@@ -45,7 +46,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+                Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold),)),
                 SizedBox(height: getFontSize(10, context),),
                 Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
               ],
@@ -55,7 +56,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(color:  Colors.black.withOpacity(0.1)),
+          border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
         ),
         ),
 
@@ -65,7 +66,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
                   child: Column(
                     children: [
                       Text("Time:", style: TextStyle(color: Color(0xFF2E2E42)),),
-                      Text("12:00pm",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                      Text("12:00pm",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
@@ -75,7 +76,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
             child: Column(
               children: [
                 Text("Date:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                Text("12th July 2022",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                Text("12th July 2022",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold))
                 ]
             ),
           )
@@ -88,7 +89,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
                   child: Column(
                     children: [
                       Text("Appointment Type:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                      Text("Online", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                      Text("Online", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
@@ -98,7 +99,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
             child: Column(
               children: [
                 Text("Consultation fee:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: Colors.blue, fontWeight: FontWeight.bold))
+                Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: AppColors.blue[700], fontWeight: FontWeight.bold))
                 ]
             ),
           )
@@ -108,7 +109,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
+                backgroundColor: AppColors.gray[100],
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width), // Button width
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),

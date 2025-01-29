@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -77,7 +78,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -87,7 +88,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -97,7 +98,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
           style: ElevatedButton.styleFrom(
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             side: BorderSide(
-              color: Colors.blue
+              color: AppColors.blue[700]
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -107,7 +108,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Close',
-              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -125,7 +126,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
       decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(14),
   border: Border.all(width: getFontSize(1, context),
-      color: Colors.black.withOpacity(0.070))
+      color: AppColors.gray[700].withOpacity(0.070))
     ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -141,7 +142,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             Text(pills, style: TextStyle(fontSize: getFontSize(12, context), color: Color(0xff000000).withOpacity(0.60)),),
           ],),
           Spacer(),
-          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: Colors.blue))
+          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: AppColors.blue[700]))
         ],
       ),
     );

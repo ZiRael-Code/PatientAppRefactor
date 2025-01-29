@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -83,11 +85,11 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                       controller: _tabController,
                       indicatorSize: TabBarIndicatorSize.tab,
                       indicator: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                         borderRadius: BorderRadius.circular(30),
                       ),
                       indicatorColor: Colors.transparent, // Removes the default bottom underline
-                      labelColor: Colors.black,
+                      labelColor: AppColors.gray[700],
                       dividerColor: Colors.transparent,
                       unselectedLabelColor: Color(0xff4F4F4F),
                       tabs: [
@@ -218,7 +220,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                 children: [
                   Text(name, style: TextStyle(
                       fontSize: getFontSize(18, context),
-                      color: Colors.black
+                      color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(
@@ -274,7 +276,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                   Text(name, style: TextStyle(
                       fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text(type, style: TextStyle(
@@ -329,7 +331,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                   Text(name, style: TextStyle(
                       fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: AppColors.gray[700]
                   ),),
                   SizedBox(height: getFontSize(5, context),),
                   Text(type, style: TextStyle(

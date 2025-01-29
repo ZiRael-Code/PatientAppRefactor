@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -107,7 +109,7 @@ class _AppointmentPaymentScreen extends  State<RetypePin> {
                         height: getFontSize(50, context),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(11),
-                          color: Colors.black.withOpacity(0.05),
+                          color: AppColors.gray[700].withOpacity(0.05),
                           border: Border.all(color: Color(0xFFE2E2E2)),
                         ),
                         child: Row(
@@ -194,14 +196,14 @@ class _AppointmentPaymentScreen extends  State<RetypePin> {
                         text: TextSpan(
                           text: 'Forgot your PIN? ',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.gray[700],
                             fontSize: getFontSize(16.0, context),
                           ),
                           children: <TextSpan>[
                             TextSpan(
                               text: 'Reset here',
                               style: TextStyle(
-                                color: Colors.blue,
+                                color: AppColors.blue[700],
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -244,7 +246,7 @@ class _AppointmentPaymentScreen extends  State<RetypePin> {
         TextStyle(
           fontSize: getFontSize(32, context),
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: AppColors.gray[700],
         ),
       ),
     ),

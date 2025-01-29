@@ -1,3 +1,7 @@
+import 'package:flutter_app/components/api/requests.dart';
+
+import '../components/colors/colours.dart';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_app/SetupComplete.dart';
 
@@ -33,42 +37,32 @@ class EnableFingerprintState extends State<EnableFingerprint>{
     super.initState();
   }
   bool isLoading = false;
-  Dio _dio = Dio();
 
   void handleSignUp() async {
-    try {
-      Response response = await _dio.post(
-        "http://myaccount.myvitalz.org/api/signup-patient",
-        queryParameters : widget.user,
-        options: Options(
-          contentType: Headers.jsonContentType,
-        ),
+    setState(() {
+    isLoading = true;
+  });
+    ApiServices apiServices = ApiServices();
+    dynamic response = await apiServices.signup_patient(widget.user);
+    if (response is Response) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Signup success")),
       );
-      if (response.data["rtn"].toString().isEmpty && response.data["reg"] == "1") {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("signup success")),
-        );
-        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SetupComplete()));
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SetupComplete()),
+            (route) => false,
+      );
 
-      }else{
+    } else () {
         setState(() {
           isLoading = false;
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(response.data["rtn"])),
-        );
-        print("error==-$response");
-      }
-    } catch (e) {
-      setState(() {
-      isLoading = false;
-    });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Connection failed, please check your connection and try again")),
-      );
-      print('Error occurred: $e');
-    }
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("${response["rtn"]}")),
 
+          );
+      };
   }
 
 
@@ -100,14 +94,9 @@ class EnableFingerprintState extends State<EnableFingerprint>{
                        : SvgPicture.asset('assets/images/fingerprint.svg'),
            Spacer(),
            showButton ? ElevatedButton(
-             onPressed: () {
-               setState(() {
-                 isLoading = true;
-               });
-               handleSignUp();
-             },
+             onPressed: isLoading ? null : handleSignUp,
              style: ElevatedButton.styleFrom(
-               backgroundColor: Colors.blue,
+               backgroundColor: AppColors.blue[700],
                fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(9),
@@ -118,7 +107,7 @@ class EnableFingerprintState extends State<EnableFingerprint>{
                width: 20,
                height: 20,
                child: CircularProgressIndicator(
-                 color: Colors.white,
+                 color: AppColors.gray[100],
                  strokeWidth: 2,
                ),
              )
@@ -127,7 +116,7 @@ class EnableFingerprintState extends State<EnableFingerprint>{
                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                 style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                ),
              ),
            ): SizedBox()

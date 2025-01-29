@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -107,14 +108,14 @@ class _NewPrescriptionScreen extends  State<NewPrescription> {
           children: [
             Text('TOTAL:'),
             Spacer(),
-            Text('N3,200', style: TextStyle(fontSize: getFontSize(20, context), color: Colors.blue, fontWeight: FontWeight.bold)),
+            Text('N3,200', style: TextStyle(fontSize: getFontSize(20, context), color: AppColors.blue[700], fontWeight: FontWeight.bold)),
           ],
         ),
         Spacer(),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -124,7 +125,7 @@ class _NewPrescriptionScreen extends  State<NewPrescription> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Buy drugs',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -144,7 +145,7 @@ class _NewPrescriptionScreen extends  State<NewPrescription> {
       children: [
         Text(type, style: TextStyle(fontSize: getFontSize(14, context), color: Color(0xff666666))),
         Spacer(),
-        Text(des, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black)),
+        Text(des, style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[700])),
       ],
     ),
         SizedBox(height: getFontSize(12, context)),

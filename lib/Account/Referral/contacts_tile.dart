@@ -1,4 +1,6 @@
 
+import '../../components/colors/colours.dart';
+
 
 import 'package:flutter/material.dart';
 
@@ -30,13 +32,13 @@ class ContactsTile extends StatelessWidget {
                 height: getFontSize(50, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.black,
+                  color: AppColors.gray[700],
                 ),
                 child: Center(
                   child: Text(
                     name[0],
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -73,7 +75,7 @@ class ContactsTile extends StatelessWidget {
                 width: getFontSize(79, context),
                 height: getFontSize(27, context),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: AppColors.blue[700],
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextButton(
@@ -81,7 +83,7 @@ class ContactsTile extends StatelessWidget {
                   child: Text(
                     "Add Patient",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       fontSize: getFontSize(10, context),
                     ),
                   ),

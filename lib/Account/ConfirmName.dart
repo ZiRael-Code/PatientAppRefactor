@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -89,7 +91,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
                   child: Text(
                     'Confirm',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.gray[100],
                       fontSize: getFontSize(16, context),
                     ),
                   ),
@@ -111,7 +113,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
         Text(
         textHeader,
         style: TextStyle(
-          color: Colors.black,
+          color: AppColors.gray[700],
           fontSize: getFontSize(16.0, context),
         ),
         textAlign: TextAlign.start,
@@ -131,7 +133,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
           child: Text(
             textHint,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.gray[700],
               fontSize: getFontSize(16.0, context),
             ),
           ),

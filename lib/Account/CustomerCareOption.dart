@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -97,7 +99,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
               // Blue forward arrow icon
               Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.blue,
+                color: AppColors.blue[700],
               ),
             ],),
             careImgPath: "assets/images/careimgage.svg",
@@ -118,7 +120,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
               // Blue forward arrow icon
               Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.blue,
+                color: AppColors.blue[700],
               ),
             ],),
             careImgPath: "assets/images/email.svg",
@@ -139,7 +141,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
               // Blue forward arrow icon
               Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.blue,
+                color: AppColors.blue[700],
               ),
             ],),
             careImgPath: "assets/images/phone.svg",
@@ -171,7 +173,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
             height: getFontSize(59, context),
             padding: EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: Color(0xFFE2EDFF),
+              color: AppColors.blue["600"],
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(careImgPath),

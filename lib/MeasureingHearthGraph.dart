@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -70,7 +71,7 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                   SizedBox(height: getFontSize(30, context)),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
+                      border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.15)),
                       borderRadius: BorderRadius.circular(12),
                     ),
                       margin: EdgeInsets.only(left: getFontSize(15, context)),
@@ -131,7 +132,7 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: AppColors.blue[700],
                       fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
@@ -141,7 +142,7 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                       padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                       child: Text(
                         'Back to readings',
-                        style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                        style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
                       ),
                     ),
                   ),

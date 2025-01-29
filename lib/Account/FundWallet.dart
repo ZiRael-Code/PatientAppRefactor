@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -69,11 +71,11 @@ class FundWallet extends StatefulWidget {
           children: [
            fundMethod(text: "Online payment",
           imagePath: "assets/images/wallet.svg",
-          icon:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue,)
+          icon:  Icon(Icons.arrow_forward_ios_rounded, color: AppColors.blue[700],)
            ),
             fundMethod(text: "Bank transfer",
                 imagePath: "assets/images/bank.svg",
-               icon:  Icon(Icons.keyboard_arrow_down_sharp, size: getFontSize(32, context),color: Colors.blue,)
+               icon:  Icon(Icons.keyboard_arrow_down_sharp, size: getFontSize(32, context),color: AppColors.blue[700],)
            ),
           ],
       ),
@@ -94,7 +96,7 @@ required Icon icon,
       width: double.infinity,
       height: getFontSize(74, context),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.gray[100],
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Color(0xFFE5E5E5),
@@ -107,7 +109,7 @@ required Icon icon,
             height: getFontSize(42, context),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Color(0xFFE2EDFF),
+              color: AppColors.blue["600"],
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(imagePath),

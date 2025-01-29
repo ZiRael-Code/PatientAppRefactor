@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -112,7 +114,7 @@ class PhoneNumberOtpState extends  State<PhoneNumberOtp> {
                 height: getFontSize(66, context),
                 decoration: BoxDecoration(
                   border: Border.all(color: Color(0xffe2e2e2)),
-                  color: Colors.black.withOpacity(0.05),
+                  color: AppColors.gray[700].withOpacity(0.05),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextFormField(
@@ -150,7 +152,7 @@ class PhoneNumberOtpState extends  State<PhoneNumberOtp> {
           Text("Resend OTP",
             style: TextStyle(fontSize: getFontSize(14, context),
                 fontWeight: FontWeight.bold,
-                color: Colors.blue),),
+                color: AppColors.blue[700]),),
       ],
     ),
     )) );

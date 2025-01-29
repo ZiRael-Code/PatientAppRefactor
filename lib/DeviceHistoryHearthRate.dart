@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -53,10 +54,10 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                         child: SvgPicture.asset('assets/images/back.svg',
                           width: getFontSize(8.0, context),
                           height: getFontSize(15, context),
-                        color: Colors.white,),
+                        color: AppColors.gray[100],),
                       ),
                       Spacer(),
-                      Text('Heart rate', style: TextStyle(fontSize: getFontSize(20, context), color: Colors.white),),
+                      Text('Heart rate', style: TextStyle(fontSize: getFontSize(20, context), color: AppColors.gray[100]),),
                       Spacer(),
                       Container(
                         width: getFontSize(35, context),
@@ -66,7 +67,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                           borderRadius: BorderRadius.circular(50),
                           color: Color(0xFFFFFFFF).withOpacity(0.45),
                         ),
-                        child: Icon(Icons.share, color: Colors.white,),
+                        child: Icon(Icons.share, color: AppColors.gray[100],),
                       ),
 
                     ],
@@ -121,22 +122,22 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      color: Colors.black.withOpacity(0.5),
+                      color: AppColors.gray[700].withOpacity(0.5),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('107/160', style: TextStyle(fontSize: getFontSize(30, context),color: Colors.white, fontWeight: FontWeight.bold),),
+                        Text('107/160', style: TextStyle(fontSize: getFontSize(30, context),color: AppColors.gray[100], fontWeight: FontWeight.bold),),
                         SizedBox(width: getFontSize(16, context)),
-                        Text('bpm', style: TextStyle( color: Colors.white ),),
+                        Text('bpm', style: TextStyle( color: AppColors.gray[100] ),),
 
                       ],
                     ),
                   ),
                   SizedBox(height: getFontSize(15, context),),
-                  Text('measured 10mins ago', style: TextStyle( color: Colors.white ),),
+                  Text('measured 10mins ago', style: TextStyle( color: AppColors.gray[100] ),),
                   SizedBox(height: getFontSize(15, context),),
                 ],
       )
@@ -152,7 +153,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-              Text('History', style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
+              Text('History', style: TextStyle(fontSize: getFontSize(18, context), color: AppColors.gray[700])),
                   SizedBox(height: getFontSize(20, context),),
                  Column(
                    children: [
@@ -168,10 +169,10 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                          controller: _tabController,
                          indicatorSize: TabBarIndicatorSize.tab,
                          indicator: BoxDecoration(
-                           color: Colors.white,
+                           color: AppColors.gray[100],
                            borderRadius: BorderRadius.circular(30),
                          ),
-                         labelColor: Colors.black,
+                         labelColor: AppColors.gray[700],
                          unselectedLabelColor: Color(0xff4F4F4F),
                          tabs: [
                            Tab(text: "Device Reading"),
@@ -220,10 +221,10 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
             //             //     controller: _tabController,
             //             //     indicatorSize: TabBarIndicatorSize.tab,
             //             //     indicator: BoxDecoration(
-            //             //       color: Colors.white,
+            //             //       color: AppColors.gray[100],
             //             //       borderRadius: BorderRadius.circular(30),
             //             //     ),
-            //             //     labelColor: Colors.black,
+            //             //     labelColor: AppColors.gray[700],
             //             //     unselectedLabelColor: Color(0xff4F4F4F),
             //             //     tabs: [
             //             //       Tab(text: "Device Reading"),
@@ -268,11 +269,11 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
         margin: EdgeInsets.only(right: getFontSize(10, context)),
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: isSelected ?Colors.white   : Colors.white.withOpacity(0.20),
+          color: isSelected ?AppColors.gray[100]   : AppColors.gray[100].withOpacity(0.20),
           borderRadius: BorderRadius.circular(50),
         ),
         child: Center(child: SvgPicture.asset(icon,
-          color: isSelected ? Color(0xffFF618F) : Colors.white.withOpacity(0.20),
+          color: isSelected ? Color(0xffFF618F) : AppColors.gray[100].withOpacity(0.20),
 
         )
         ),
@@ -362,7 +363,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: getFontSize(16, context),
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
 

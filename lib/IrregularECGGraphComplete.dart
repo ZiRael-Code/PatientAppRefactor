@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -73,7 +74,7 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
                           children: [
                             Container(
                                 decoration: BoxDecoration(
-                                  border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
+                                  border: Border.all(width: getFontSize(1, context), color: AppColors.gray[700].withOpacity(0.15)),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 margin: EdgeInsets.only(left: getFontSize(15, context)),

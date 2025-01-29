@@ -1,3 +1,5 @@
+import 'components/api/requests.dart';
+import 'components/colors/colours.dart';
 import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
@@ -5,7 +7,6 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/api_call.dart';
-import 'package:flutter_app/component/colors.dart';
 import 'package:flutter_app/component/input_field.dart';
 
 import '../Main/Dashboard.dart';
@@ -74,23 +75,15 @@ class _LoginStateState extends State<LoginState> {
       "email" : emailTrim,
       "password" : passwordTrim,
   };
-    print("$params-0-0=-0-");
 
-    try {
-      Response response = await _dio.post(
-        "http://myaccount.myvitalz.org/api/login",
-        queryParameters : params,
-        options: Options(
-            contentType: Headers.jsonContentType,
-        ),
-      );
+      ApiServices apiServices = ApiServices();
+      dynamic response = await apiServices.login(params);
 
-      if (response.data["user"] != null && response.data["rtn"].toString().isEmpty) {
+      if (response is Response) {
         Map<String, dynamic> user = response.data["user"][0] as Map<String, dynamic>;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Login successful"))
         );
-        // print('$user after casting');
         SharedPreferences prefs = await SharedPreferences.getInstance();
         String? userStr = prefs.getString('user');
         if (userStr == null) {
@@ -105,22 +98,18 @@ class _LoginStateState extends State<LoginState> {
         }
         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> MainNavigator(index: 0)));
 
-        isLoading = false;
-
-      }else{
+        setState(() {
+          isLoading = false;
+        });
+      }else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(response["rtn"]))
+        );
         print("error==-$response");
-        isLoading = false;
+        setState(() {
+          isLoading = false;
+        });
       }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login failed")),
-      );
-      setState(() {
-      isLoading = false;
-    });
-      print('Error occurred: $e');
-  }
-
   }
 
   void _handleFacebookLogin() {
@@ -179,7 +168,7 @@ class _LoginStateState extends State<LoginState> {
               child: Text(
                 'Forgot Password',
                 style: TextStyle(
-                  color: colors.dark_blue(),
+                  color: AppColors.blue[700],
                 ),
               ),
             ),
@@ -190,7 +179,7 @@ class _LoginStateState extends State<LoginState> {
             child: ElevatedButton(
               onPressed: isLoading ? null : _handleLogin,
               style: ElevatedButton.styleFrom(
-                backgroundColor: colors.dark_blue(),
+                backgroundColor: AppColors.blue[700],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -201,7 +190,7 @@ class _LoginStateState extends State<LoginState> {
                 width: 20,
                 height: 20,
                 child: CircularProgressIndicator(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   strokeWidth: 2,
                 ),
               )
@@ -210,7 +199,7 @@ class _LoginStateState extends State<LoginState> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                 ),
                 maxLines: 1,
               ),
@@ -222,7 +211,7 @@ class _LoginStateState extends State<LoginState> {
             'Or login with',
             style: TextStyle(
               fontSize: getFontSize(16, context),
-              color: Colors.black,
+              color: AppColors.gray[700],
             ),
           ),
            SizedBox(height: getFontSize(10.0, context)),
@@ -255,7 +244,7 @@ class _LoginStateState extends State<LoginState> {
                 'Don\'t have an account yet?',
                 style: TextStyle(
                   fontSize: getFontSize(16, context),
-                  color: Colors.black,
+                  color: AppColors.gray[700],
                 ),
               ),
               TextButton(
@@ -270,7 +259,7 @@ class _LoginStateState extends State<LoginState> {
                   style: TextStyle(
                     fontSize: getFontSize(16, context),
                     fontWeight: FontWeight.bold,
-                    color: colors.dark_blue(),
+                    color: AppColors.blue[700],
                   ),
                 ),
               ),

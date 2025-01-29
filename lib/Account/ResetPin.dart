@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -126,13 +128,13 @@ return Column(
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black38),),
+        Text(label, style: TextStyle(fontSize: getFontSize(14, context), color: AppColors.gray[700]),),
         SizedBox(height: getFontSize(10, context),),
-        Text(name, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black),)
+        Text(name, style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.gray[700]),)
       ],
     ),
     Spacer(),
-    Icon(Icons.arrow_forward_ios, color: Colors.blue,),
+    Icon(Icons.arrow_forward_ios, color: AppColors.blue[700],),
   ],
       ),
       SizedBox(height: getFontSize(20, context),),

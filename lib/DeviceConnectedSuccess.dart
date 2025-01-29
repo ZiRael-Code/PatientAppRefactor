@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +86,7 @@ class _DeviceConnectedSuccessScreen extends  State<DeviceConnectedSuccess> {
             height: getFontSize(185, context),
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-                color: Color(0xffE2EDFF).withOpacity(0.30),
+                color: AppColors.blue[600].withOpacity(0.30),
                 shape: BoxShape.circle
             ),
             child:
@@ -98,7 +99,7 @@ class _DeviceConnectedSuccessScreen extends  State<DeviceConnectedSuccess> {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Login()));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -108,7 +109,7 @@ class _DeviceConnectedSuccessScreen extends  State<DeviceConnectedSuccess> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue to login',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

@@ -1,3 +1,5 @@
+
+import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 
 
@@ -105,13 +107,13 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                         width: MediaQuery.of(context).size.width * 0.50,
                         height: getFontSize(54, context),
                         decoration: BoxDecoration(
-                          color: Color(0xFFE2EDFF),
+                          color: AppColors.blue["600"],
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(child: Text(
                             'Add another account',
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: AppColors.blue[700],
                               fontSize: getFontSize(16, context),
                             ),
                           ),
@@ -133,7 +135,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                           child: Text(
                             'Confirm',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: AppColors.gray[100],
                               fontSize: getFontSize(16, context),
                             ),
                           ),
@@ -167,7 +169,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                       accountNo,
                       style: TextStyle(
                         fontSize: getFontSize(18, context),
-                        color: Colors.black,
+                        color: AppColors.gray[700],
                       ),
                     ),
                     SizedBox(height: getFontSize(5, context)),
@@ -208,7 +210,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                           shape: BoxShape.circle,
                         ),
                         child: isSelected
-                            ? Icon(Icons.check, color: Colors.white)
+                            ? Icon(Icons.check, color: AppColors.gray[100])
                             : null,
                       ),
                     ],
@@ -262,7 +264,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: index < _enteredPin.length
-                            ? Colors.black
+                            ? AppColors.gray[700]
                             : Colors.grey,
                       ),
                     );

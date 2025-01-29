@@ -1,3 +1,5 @@
+
+import '../../components/colors/colours.dart';
 import '../../Main/Dashboard.dart';
 
 
@@ -15,14 +17,14 @@ class MyBlueButton extends StatelessWidget {
       padding: EdgeInsets.all(20),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: AppColors.blue[700],
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
         child: Text(
           text,
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: getFontSize(16, context)),
+              color: AppColors.gray[100], fontWeight: FontWeight.bold, fontSize: getFontSize(16, context)),
         ),
       ),
     );

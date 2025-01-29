@@ -1,3 +1,4 @@
+import 'components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,19 +12,19 @@ import 'SelectYourLocation.dart';
 import 'Main/Dashboard.dart';
 
 
-void main(){
-  runApp(Checkout());
-}
-
 class Checkout extends StatefulWidget {
-  Checkout({super.key});
+  final dynamic nextScreen;
+  final String? deliveryMethod;
+  final Map<String, String>? address;
+  Checkout({super.key, required this.nextScreen, this.deliveryMethod, this.address});
   @override
   _CheckoutScreen createState() => _CheckoutScreen();
 }
 
 class _CheckoutScreen extends  State<Checkout> {
   String? _selectedValue;
-
+  String deliveryMethod = "";
+  late Map<String, String> address = {};
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -93,7 +94,7 @@ class _CheckoutScreen extends  State<Checkout> {
           children: [
             Text('TOTAL', style: TextStyle(color: Color(0xff666666)),),
             Spacer(),
-            Text('N4,2000', style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue,fontWeight: FontWeight.bold)),
+            Text('N4,2000', style: TextStyle(fontSize: getFontSize(16, context), color: AppColors.blue[700],fontWeight: FontWeight.bold)),
           ],
         ),
         SizedBox(height: getFontSize(12, context),),
@@ -101,26 +102,27 @@ class _CheckoutScreen extends  State<Checkout> {
         SizedBox(height: getFontSize(16, context),),
 
         deliverMethod(
-            text: 'Not set yet',
-            header: 'Delivery method'
+            'Not set yet',
+             'Delivery method',
+             deliveryMethod
         ),
-        GestureDetector(
-          child:
+
         deliverMethod(
-            text: 'Not set yet',
-            header: 'Address'
+             'Not set yet',
+             'Address',
+             address
         ),
-          onTap: () {
-            showHowToConnectPopup(context);
-          },
-        ),
+
         Spacer(),
+        Visibility(
+          visible: deliveryMethod.isNotEmpty && address.isNotEmpty,
+          child:
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> DeviceOrderPayment()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> widget.nextScreen));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -130,9 +132,10 @@ class _CheckoutScreen extends  State<Checkout> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
+        ),
         ),
         SizedBox(height: getFontSize(20, context),)
       ],
@@ -141,7 +144,8 @@ class _CheckoutScreen extends  State<Checkout> {
   }
   info({
     required String type,
-    required String des}) {
+    required String des,
+  }) {
     return Column(
         children: [
           Row(
@@ -155,10 +159,24 @@ class _CheckoutScreen extends  State<Checkout> {
         ]
     );
   }
-  deliverMethod({
-    required String text,
-    required String header,
-}) {
+  deliverMethod(  String text, String header, dynamic info){
+
+    String result = "Not set yet";
+
+    if (info != null) {
+      if (info is String) {
+        result = info.isNotEmpty ? info : "Not set yet.";
+      } else() {
+        if (!info.isEmpty) {
+          result = "addressofmap[]";
+        }else{
+          result = "Not set yet.";
+        }
+      };
+    } else {
+      result = "Not set yet.";
+    }
+
     return Column(children: [
      Align(
        alignment: Alignment.centerLeft,
@@ -185,24 +203,29 @@ class _CheckoutScreen extends  State<Checkout> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Not set yet.', style: TextStyle(fontSize: getFontSize(14, context),
-                  color: Colors.black.withOpacity(0.40)),),
+              Text(result, style: TextStyle(fontSize: getFontSize(14, context),
+                  color: AppColors.gray[700].withOpacity(0.40)),),
               Spacer(),
               SizedBox(
                 width: getFontSize(79, context),
                 child:   ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (!(info is String)){
+                      showHowToConnectPopup(context);
+                    }
+
+                  },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.only(left: getFontSize(5, context), right: getFontSize(5, context)),
-                    backgroundColor: Colors.blue,
-                    textStyle: TextStyle(color: Colors.white),
+                    backgroundColor: AppColors.blue[700],
+                    textStyle: TextStyle(color: AppColors.gray[100]),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
                     ),
                   ),
                   child: Text(
                       'Set Now',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(12, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(12, context)),
                   ),
                 ),
               )
@@ -222,7 +245,7 @@ class _CheckoutScreen extends  State<Checkout> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.gray[100],
       builder: (BuildContext context) {
         return Padding(
           padding: EdgeInsets.all(16.0),
@@ -239,16 +262,16 @@ class _CheckoutScreen extends  State<Checkout> {
       children: [
         Text(
           'Select deliver method',
-          style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
+          style: TextStyle(color: AppColors.gray[700], fontSize: getFontSize(18, context)),
         ),
         SizedBox(height: getFontSize(25, context)),
         ElevatedButton(
           onPressed: () {
             // TODO the popup nd select location no dey so redo it
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectYourLocation()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectYourLocation(nextScreen: widget.nextScreen,)));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.blue[700],
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -258,28 +281,28 @@ class _CheckoutScreen extends  State<Checkout> {
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Select delivery location',
-              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(18, context)),
             ),
           ),
         ),
         SizedBox(height: getFontSize(15, context),),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Selectpickuplocation()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Selectpickuplocation(nextScreen: widget.nextScreen,)));
           },
           style: ElevatedButton.styleFrom(
               fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-              side: BorderSide(width: getFontSize(1, context), color: Colors.blue),
+              side: BorderSide(width: getFontSize(1, context), color: AppColors.blue[700]),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(9),
               ),
-              textStyle: TextStyle(color: Colors.blue)
+              textStyle: TextStyle(color: AppColors.blue[700])
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Select pickup location',
-              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
+              style: TextStyle(color: AppColors.blue[700], fontSize: getFontSize(18, context)),
             ),
           ),
         ),

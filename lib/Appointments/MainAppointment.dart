@@ -1,3 +1,5 @@
+import '../components/colors/colours.dart';
+ 
 import '../Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +30,14 @@ class _MainAppointmentState extends State<MainAppointment> {
     return Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.gray[100],
         elevation: 0,
         title: Text(
-          'MainAppointment',
+          'Appointment',
           style: TextStyle(
             fontSize: getFontSize(26, context),
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: AppColors.gray[700],
           ),
         ),
         actions: [
@@ -48,7 +50,7 @@ class _MainAppointmentState extends State<MainAppointment> {
               IconButton(
                 icon: Icon(
                   Icons.message,
-                  color: Colors.black,
+                  color: AppColors.gray[700],
                   size: getFontSize(28, context),
                 ),
                 onPressed: () {},
@@ -90,7 +92,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   appointmentOptions(
                     icon: Icon(
                       Icons.electric_bolt,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       size: getFontSize(30, context),
                     ),
                     text: "Take a quick checkup"
@@ -105,7 +107,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   appointmentOptions(
                     icon: Icon(
                       Icons.local_hospital,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       size: getFontSize(30, context),
                     ),
                     text: "Book appointment"
@@ -121,7 +123,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   appointmentOptions(
                     icon: Icon(
                       Icons.refresh,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       size: getFontSize(30, context),
                     ),
                     text: "Scheduled appointment"
@@ -136,7 +138,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   appointmentOptions(
                     icon: Icon(
                       Icons.share,
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                       size: getFontSize(30, context),
                     ),
                     text: 'View affiliated network',
@@ -157,7 +159,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   style: TextStyle(
                     fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.gray[700],
                   ),
                 ),
                 TextButton(
@@ -166,7 +168,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     'See more',
                     style: TextStyle(
                       fontSize: getFontSize(16, context),
-                      color: Colors.blue,
+                      color: AppColors.blue[700],
                     ),
                   ),
                 ),
@@ -207,7 +209,7 @@ class _MainAppointmentState extends State<MainAppointment> {
               style: TextStyle(
                 fontSize: getFontSize(18, context),
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: AppColors.gray[700],
               ),
             ),
 
@@ -229,8 +231,8 @@ class _MainAppointmentState extends State<MainAppointment> {
       strokeWidth: 2,
       child: Container(
         padding: EdgeInsets.all(10),
-        width: getFontSize(342, context),
-        height: getFontSize(206, context),
+        width: double.infinity,
+        height: getFontSize(216, context),
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.10)
         ),
@@ -238,8 +240,8 @@ class _MainAppointmentState extends State<MainAppointment> {
           children: [
             SvgPicture.asset('assets/images/box.svg'),
             Text('No appointment yet.', style: TextStyle(fontSize: getFontSize(16, context),
-                color: Colors.black.withOpacity(0.40)),),
-            SizedBox(height: getFontSize(12, context),),
+                color: AppColors.gray[700].withOpacity(0.40)),),
+            SizedBox(height: getFontSize(11, context),),
             SizedBox(
               width: double.infinity,
               child: GestureDetector(
@@ -251,7 +253,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => BookAppointmentSpecialistSearch()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.blue[700],
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
@@ -261,7 +263,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Book an appointment',
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                      style: TextStyle(color: AppColors.gray[100], fontSize: getFontSize(16, context)),
                     ),
                   ),
                 ),
@@ -304,7 +306,7 @@ class _MainAppointmentState extends State<MainAppointment> {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.black.withOpacity(0.09))
+        border: Border.all(color: AppColors.gray[700].withOpacity(0.09))
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -312,19 +314,19 @@ class _MainAppointmentState extends State<MainAppointment> {
        children: [
          Text(name, style: TextStyle(
            fontSize: getFontSize(16, context),
-           color: Colors.black,
+           color: AppColors.gray[700],
          ),),
          SizedBox(height: getFontSize(5, context),),
          Row(
            children: [
              Text(time, style: TextStyle(
                fontSize: getFontSize(14, context),
-               color: Colors.black,
+               color: AppColors.gray[700],
              ),),
              SizedBox(width: getFontSize(8, context),),
              Text(date, style: TextStyle(
                fontSize: getFontSize(14, context),
-               color: Colors.black,
+               color: AppColors.gray[700],
              ),),
            ],
          ),
@@ -360,7 +362,7 @@ class _MainAppointmentState extends State<MainAppointment> {
           width: getFontSize(60, context),
           height: getFontSize(60, context),
           decoration: BoxDecoration(
-            color: Color(0xFFE2EDFF),
+            color: AppColors.blue[600],
             shape: BoxShape.circle,
           ),
           child: icon
@@ -392,7 +394,7 @@ class _MainAppointmentState extends State<MainAppointment> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-            color: Colors.black.withOpacity(0.09),
+            color: AppColors.gray[700].withOpacity(0.09),
         ),
       ),
       width: getFontSize(237, context),
@@ -419,7 +421,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   width: getFontSize(51, context),
                   height: getFontSize(24, context),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.45),
+                    color: AppColors.gray[700].withOpacity(0.45),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
@@ -434,7 +436,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                       Text(
                         ratings,
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColors.gray[100],
                           fontSize: getFontSize(12, context),
                         ),
                       ),
@@ -450,7 +452,7 @@ class _MainAppointmentState extends State<MainAppointment> {
             style: TextStyle(
               fontSize: getFontSize(18, context),
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: AppColors.gray[700],
             ),
           ),
           SizedBox(height: getFontSize(4, context)),
@@ -468,13 +470,13 @@ class _MainAppointmentState extends State<MainAppointment> {
                 Container(
                     padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                     decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: AppColors.blue[700],
                         borderRadius: BorderRadius.circular(50)
                     ),
                     child: Text(
                       workingDays,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.gray[100],
                       ),
                     )
                 ),
@@ -482,13 +484,13 @@ class _MainAppointmentState extends State<MainAppointment> {
                 Container(
                     padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                     decoration: BoxDecoration(
-                      color: Color(0xffE2EDFF),
+                      color: AppColors.blue[600],
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: Text(
                       workingHours,
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: AppColors.blue[700],
                       ),
                     )
                 ),
@@ -526,7 +528,7 @@ class _MainAppointmentState extends State<MainAppointment> {
             Container(
               padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.gray[100],
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 child: Column(
@@ -546,7 +548,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
+                                Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold),)),
                                 SizedBox(height: getFontSize(10, context),),
                                 Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                               ],
@@ -556,7 +558,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color:  Colors.black.withOpacity(0.1)),
+                          border: Border.all(color:  AppColors.gray[700].withOpacity(0.1)),
                         ),
                       ),
                       SizedBox(height: getFontSize(20, context),),
@@ -566,7 +568,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                             child: Column(
                               children: [
                                 Text("Time:", style: TextStyle(color: Color(0xFF2E2E42)),),
-                                Text("12:00pm",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                                Text("12:00pm",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
                             ),
@@ -578,7 +580,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Date:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                  Text("12th July 2022",  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                                  Text("12th July 2022",  style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold))
                                 ]
                             ),
                           )
@@ -592,7 +594,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Appointment Type:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                Text("Online", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                                Text("Online", style: TextStyle(color: AppColors.gray[700], fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
@@ -603,7 +605,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Consultation fee:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                  Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: Colors.blue, fontWeight: FontWeight.bold))
+                                  Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: AppColors.blue[700], fontWeight: FontWeight.bold))
                                 ]
                             ),
                           )
@@ -613,7 +615,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
+                          backgroundColor: AppColors.gray[100],
                           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width), // Button width
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
