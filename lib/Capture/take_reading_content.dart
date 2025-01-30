@@ -6,6 +6,8 @@ import '../component/build_action_button.dart';
 import '../component/vitals.dart';
 import '../component/vitals_text_format.dart';
 import '../components/colors/colours.dart';
+import 'MeasureBPAutomatically/measure_BP_automatically_tip.dart';
+import 'MeasureHearthRateAutomatically/MeasureHearthRateAutomaticallyTip.dart';
 
 class TakeReadingsContent extends StatelessWidget {
   const TakeReadingsContent({super.key});
@@ -23,8 +25,9 @@ class TakeReadingsContent extends StatelessWidget {
               text2: 'Select what vitals you want to measure',
             ),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Wrap(
+                spacing: 5,
                 children: [
                   vital(
                     themeColor: AppColors.pink[700],
@@ -36,6 +39,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
+                    onTap: MeasureHearthRateAutomaticallyTip()
                   ),
                   vital(
                     themeColor: Colors.purple,
@@ -47,17 +51,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
-                  ),
-                  vital(
-                    themeColor: Colors.deepOrange,
-                    vitalIcon: 'assets/images/tunder.svg',
-                    vitalRead: '77',
-                    subcriptOrnot: 'bpm',
-                    isSubscript: true,
-                    vitalType: 'Heart rate (ECG)',
-                    dateAdded: 'Measured 10mins ago',
-                    vitalsReadMessage: 'NORMAL',
-                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
 
                   ),
                   vital(
@@ -70,6 +64,80 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+
+                  ),
+                  vital(
+                    themeColor: Colors.deepOrange,
+                    vitalIcon: 'assets/images/tunder.svg',
+                    vitalRead: '50',
+                    subcriptOrnot: 'milliseconds',
+                    isSubscript: true,
+                    vitalType: 'Stress (HRV rate)',
+                    dateAdded: 'Measured 10mins ago',
+                    vitalsReadMessage: 'NORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+                  ),
+                  vital(
+                    themeColor: Color(0xFF3C8AFF),
+                    vitalIcon: 'assets/images/blood_glucose.svg',
+                    vitalRead: '70-80',
+                    subcriptOrnot: 'mg/DL',
+                    isSubscript: false,
+                    vitalType: 'Blood glucose',
+                    dateAdded: '5 days ago',
+                    vitalsReadMessage: 'ABNORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+                  ),
+                  vital(
+                    themeColor: Color(0xff1C9A9A),
+                    vitalIcon: 'assets/images/lipid.svg',
+                    vitalRead: '100',
+                    subcriptOrnot: 'mg/DL',
+                    isSubscript: true,
+                    vitalType: 'Stress (HRV rate)',
+                    dateAdded: 'Measured 10mins ago',
+                    vitalsReadMessage: 'NORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+                  ),
+                  vital(
+                    themeColor: Color(0xffE052DA),
+                    vitalIcon: 'assets/images/hbac.svg',
+                    vitalRead: '42',
+                    subcriptOrnot: 'mmol/mol',
+                    isSubscript: true,
+                    vitalType: 'HbA1c',
+                    dateAdded: 'Measured 10mins ago',
+                    vitalsReadMessage: 'NORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+                  ),
+                  vital(
+                    themeColor: Color(0xFF4BA33D),
+                    vitalIcon: 'assets/images/ihra.svg',
+                    vitalRead: '5.7',
+                    subcriptOrnot: '%',
+                    isSubscript: true,
+                    vitalType: 'IHRA',
+                    dateAdded: '5 days ago',
+                    vitalsReadMessage: 'ABNORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
+                  ),
+                  vital(
+                    themeColor: Color(0xffFF8E3C),
+                    vitalIcon: 'assets/images/body_temp.svg',
+                    vitalRead: '33',
+                    subcriptOrnot: 'C',
+                    isSubscript: true,
+                    vitalType: 'Body temperature',
+                    dateAdded: 'Measured 10mins ago',
+                    vitalsReadMessage: 'NORMAL',
+                    context: context,
+                      onTap: MeasureBPAutomaticallyTip()
                   ),
                 ],
               ),

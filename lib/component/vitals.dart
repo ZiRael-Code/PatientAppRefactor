@@ -13,7 +13,8 @@ class vital extends StatelessWidget {
   final String vitalType;
   final String dateAdded;
   final String vitalsReadMessage;
-  final BuildContext context; // If needed for getFontSize
+  final BuildContext context;
+  final dynamic onTap;
 
   const vital({
     Key? key,
@@ -25,12 +26,17 @@ class vital extends StatelessWidget {
     required this.vitalType,
     required this.dateAdded,
     required this.vitalsReadMessage,
-    required this.context, // If getFontSize requires context
+    required this.context,
+    required this.onTap, // If getFontSize requires context
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){
+        Navigator.of(this.context).push(MaterialPageRoute(builder: (builder)=> onTap));
+      },
+        child: Container(
       margin: EdgeInsets.only(right: getFontSize(3, context)),
       child: Stack(
         children: [
@@ -121,6 +127,7 @@ class vital extends StatelessWidget {
             ),
           ),
         ],
+      ),
       ),
     );
   }

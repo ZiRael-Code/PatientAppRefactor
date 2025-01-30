@@ -7,8 +7,7 @@ import '../components/colors/colours.dart';
 import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Main/MeasureVitalsManuallyMenu.dart';
-import 'package:flutter_app/MeasureBloodPresure.dart';
-import 'package:flutter_app/MeasureHearthRate.dart';
+import 'package:flutter_app/Capture/MeasureHearthRateAutomatically/MeasureHearthRateAutomaticallyTip.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() => runApp(VitalsReading());
@@ -101,7 +100,7 @@ class _VitalsReadingState extends State<VitalsReading>
     return Tab(
       child: Text(
         text,
-        style: TextStyle(fontWeight: FontWeight.bold),
+        style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.gray[100]),
       ),
     );
   }

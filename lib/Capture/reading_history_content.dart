@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/component/irregular_reading_history.dart';
 
 import '../Main/Dashboard.dart';
-import '../MeasureBloodPresure.dart';
-import '../MeasureHearthRate.dart';
+import 'MeasureBPAutomatically/measure_BP_automatically_tip.dart';
+import 'MeasureHearthRateAutomatically/MeasureHearthRateAutomaticallyTip.dart';
 import '../component/reading_history.dart';
 import '../component/vitals_text_format.dart';
 import '../components/colors/colours.dart';
@@ -38,7 +38,7 @@ class HistoryContent extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MeasureHearthRate()),
+                      MaterialPageRoute(builder: (context) => MeasureHearthRateAutomaticallyTip()),
                     );
                   },
                   child: ReadingHistoryIcon(
@@ -51,7 +51,7 @@ class HistoryContent extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MeasureBloodPresure()),
+                      MaterialPageRoute(builder: (context) => MeasureBPAutomaticallyTip()),
                     );
                   },
                   child: ReadingHistoryIcon(

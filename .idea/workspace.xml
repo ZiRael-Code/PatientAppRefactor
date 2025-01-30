@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fec967e-84f6-4439-b668-e7e6b4516f15" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/lib/Capture/devices_content.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/Capture/reading_history_content.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/Capture/take_reading_content.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/build_action_button.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/device_item.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/irregular_reading_history.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/reading_history.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/vitals.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/component/vitals_text_format.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/reading_history_icon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/blood_glucose.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/body_temp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/hbac.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/ihra.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/lipid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Capture/MeasureBPAutomatically/BPReadingInterface.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Capture/MeasureHearthRateAutomatically/HearthRateReadingInterface.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/8.6/executionHistory/executionHistory.bin" afterDir="false" />
@@ -24,6 +21,13 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Capture/VitalsReading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/VitalsReading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Capture/reading_history_content.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/reading_history_content.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Capture/take_reading_content.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/take_reading_content.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MeasureBloodPresure.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/MeasureBPAutomatically/measure_BP_automatically_tip.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MeasureHearthRate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/MeasureHearthRateAutomatically/MeasureHearthRateAutomaticallyTip.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/component/vitals.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/component/vitals.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/api/endpoints.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/api/endpoints.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/colors/colours.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/colors/colours.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +107,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/wandg/IdeaProjects/Patient-main/lib/Medication",
+    "last_opened_file_path": "C:/Users/wandg/IdeaProjects/Patient-main/lib/Capture",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,18 +123,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Medication" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Capture" />
       <recent name="C:\Users\wandg\IdeaProjects\Patient-main\assets\images" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\assets" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Medication" />
       <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\components\texts" />
-      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\operation_room" />
-      <recent name="C:\Users\wandg\IdeaProjects\Patient-main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Capture\MeasureHearthRateAutomatically" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Capture\MeasureBloodPressureAutomatically" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Capture" />
+      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\assets\images" />
       <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\Medication" />
-      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\components\padding" />
-      <recent name="C:\Users\wandg\IdeaProjects\Patient-main\lib\components\texts" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\lib" />
-      <recent name="C:\Users\olade\IdeaProjects\MyVatalsPatientApp\TheOperationRoom" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -211,6 +215,8 @@
       <workItem from="1738071158395" duration="12457000" />
       <workItem from="1738139110192" duration="8186000" />
       <workItem from="1738151321661" duration="12774000" />
+      <workItem from="1738168509298" duration="1123000" />
+      <workItem from="1738224389029" duration="6496000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -259,7 +265,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/components/colors/colours.dart</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
@@ -296,21 +302,6 @@
           <url>file://$PROJECT_DIR$/lib/Medication/Medication.dart</url>
           <line>272</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/Capture/VitalsReading.dart</url>
-          <line>93</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/Capture/VitalsReading.dart</url>
-          <line>92</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/Capture/VitalsReading.dart</url>
-          <line>94</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

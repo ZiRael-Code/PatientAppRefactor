@@ -12,8 +12,8 @@ class AppColors {
   };
   static  Map<int, dynamic> blue = {
     700: Color(0xff3C8AFF),
+    // 700: Color(0xff3C8AFF),
     600: Color(0xffE2EDFF)
-
   };
 
   static  Map<int, dynamic> pink = {
