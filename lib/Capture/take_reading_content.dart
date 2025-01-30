@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Capture/MeasureBPAutomatically/BPReadingInterface.dart';
+import 'package:flutter_app/Capture/MeasureHearthRateAutomatically/HearthRateReadingInterface.dart';
 
 import '../Main/Dashboard.dart';
 import '../Main/MeasureVitalsManuallyMenu.dart';
@@ -39,7 +41,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
-                    onTap: MeasureHearthRateAutomaticallyTip()
+                    onTap: HearthRateReadingInterface()
                   ),
                   vital(
                     themeColor: Colors.purple,
@@ -51,7 +53,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
 
                   ),
                   vital(
@@ -64,7 +66,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
 
                   ),
                   vital(
@@ -77,7 +79,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                   vital(
                     themeColor: Color(0xFF3C8AFF),
@@ -89,7 +91,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                   vital(
                     themeColor: Color(0xff1C9A9A),
@@ -101,7 +103,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                   vital(
                     themeColor: Color(0xffE052DA),
@@ -113,7 +115,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                   vital(
                     themeColor: Color(0xFF4BA33D),
@@ -125,7 +127,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                   vital(
                     themeColor: Color(0xffFF8E3C),
@@ -137,7 +139,7 @@ class TakeReadingsContent extends StatelessWidget {
                     dateAdded: 'Measured 10mins ago',
                     vitalsReadMessage: 'NORMAL',
                     context: context,
-                      onTap: MeasureBPAutomaticallyTip()
+                      onTap: BPReadingInterface()
                   ),
                 ],
               ),

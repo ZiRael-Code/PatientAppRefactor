@@ -26,8 +26,8 @@ void processFile(File file) {
 
 String replaceColor(String content) {
   // Regex to match Color(0xff3C8AFF)
-  // final regex = RegExp(r'Color\(0xFFE2EDFF\)', multiLine: true);
-  final regex = RegExp(r'AppColors\.pink\[600\]', multiLine: true);
+  // final regex = RegExp(r'Colors.blue.shade(100))', multiLine: true);
+  final regex = RegExp(r'Colors.blue.shade(100)', multiLine: true);
 
   return content.replaceAll(regex, 'AppColors.blue[600]');
 }
